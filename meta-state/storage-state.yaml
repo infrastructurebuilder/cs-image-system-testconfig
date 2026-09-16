@@ -1,0 +1,124 @@
+storages:
+  default-bucket:
+    history:
+    - from: null
+      run: 2026_09_01t07_02_35_567104
+      to: active
+    state: active
+  efs-storage:
+    history:
+    - from: null
+      run: 2026_09_01t07_02_35_567104
+      to: active
+    state: active
+  gce_bucket:
+    facts:
+      bucket_name: csis-sandbox-86233086783-default-bucket
+      builder: gcp-gcs
+      type: gcs
+    generation: 2
+    history:
+    - from: null
+      run: 2026_09_03t07_26_18_484877
+      to: active
+    - from: active
+      run: 2026_09_07t09_30_49_890290
+      to: destroyed
+    - action: regenerate
+      from: destroyed
+      generation: 2
+      run: 2026_09_08t09_07_42_833740
+      to: active
+    state: active
+  gce_data:
+    facts:
+      builder: gcp-pd
+      type: pd
+    generation: 2
+    history:
+    - from: null
+      run: 2026_09_03t07_26_18_484877
+      to: active
+    - from: active
+      run: 2026_09_07t09_30_49_890290
+      to: destroyed
+    - action: regenerate
+      from: destroyed
+      generation: 2
+      run: 2026_09_08t09_07_42_833740
+      to: active
+    state: active
+  mnt_data:
+    history:
+    - from: null
+      run: 2026_09_01t07_02_35_567104
+      to: active
+    state: active
+  scratch:
+    facts:
+      archive: csis-scratch-archive
+      builder: gcp-pd
+      type: pd
+    generation: 2
+    history:
+    - from: null
+      generation: 1
+      run: 2026_09_08t15_44_53_266829
+      to: active
+    - from: active
+      generation: 1
+      run: 2026_09_08t15_50_02_024569
+      to: archived
+    - from: archived
+      generation: 1
+      run: 2026_09_08t15_55_58_904431
+      to: active
+    - action: undeclared
+      from: active
+      generation: 1
+      run: 2026_09_08t16_06_26_662892
+      to: destroyed
+    - action: regenerate
+      from: destroyed
+      generation: 2
+      run: 2026_09_09t08_07_33_779160
+      to: active
+    - from: active
+      generation: 2
+      run: 2026_09_09t09_17_31_652580
+      to: archived
+    - from: archived
+      generation: 2
+      run: 2026_09_09t09_22_31_108645
+      to: active
+    - action: undeclared
+      from: active
+      generation: 2
+      run: 2026_09_09t09_42_07_019533
+      to: destroyed
+    state: destroyed
+  scratch-ebs:
+    facts:
+      archive: csis-scratch-ebs-archive
+      builder: aws-ebs
+      type: ebs
+    generation: 1
+    history:
+    - from: null
+      generation: 1
+      run: 2026_09_10t21_56_37_991481
+      to: active
+    - from: active
+      generation: 1
+      run: 2026_09_10t22_20_47_868408
+      to: archived
+    - from: archived
+      generation: 1
+      run: 2026_09_10t22_27_18_450370
+      to: active
+    - action: undeclared
+      from: active
+      generation: 1
+      run: 2026_09_10t22_44_39_831629
+      to: destroyed
+    state: destroyed

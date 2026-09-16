@@ -1,0 +1,2327 @@
+runs:
+- apply: {}
+  dry_run: true
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''plan'']'' returned
+    non-zero exit status 1.'
+  ok: false
+  requested:
+  - identity
+  run: 2026_08_26t16_48_51_589085
+- apply:
+    base-image: not-attempted
+    identity: not-attempted
+    instance-image: not-attempted
+    storage: not-attempted
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  run: 2026_08_26t16_54_19_896782
+- apply: {}
+  dry_run: true
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/packer'', ''validate'',
+    ''.'']'' returned non-zero exit status 1.'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_08_27t05_19_35_400710
+- apply:
+    base-image: not-attempted
+    identity: not-attempted
+    instance-image: not-attempted
+    storage: not-attempted
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_08_27t05_21_00_295685
+- apply:
+    base-image: not-attempted
+    identity: not-attempted
+    instance-image: not-attempted
+    storage: not-attempted
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_08_27t07_09_46_742278
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  run: 2026_08_31t08_42_23_002630
+- apply: {}
+  dry_run: false
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/packer'', ''fmt'', ''.'']''
+    returned non-zero exit status 1.'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t10_22_00_383339
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t10_23_42_760956
+- apply:
+    identity: executed
+    storage: failed
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle storage'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t10_29_28_074879
+- apply:
+    base-image: failed
+    identity: no-script
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t10_31_41_302464
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t10_33_38_987342
+- apply:
+    base-image: failed
+    identity: no-script
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t10_39_43_611454
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t11_00_05_993521
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t11_01_09_290959
+- apply: {}
+  dry_run: true
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/packer'', ''fmt'', ''.'']''
+    returned non-zero exit status 1.'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t11_02_03_651872
+- apply: {}
+  dry_run: true
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/packer'', ''fmt'', ''.'']''
+    returned non-zero exit status 1.'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t11_07_58_227417
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t11_14_38_450751
+- apply:
+    base-image: failed
+    identity: no-script
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t11_19_33_503092
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t11_38_23_155195
+- apply:
+    base-image: failed
+    identity: no-script
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t11_43_37_713407
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t12_14_14_162931
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t12_19_30_894280
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t12_24_48_950358
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t12_30_14_191945
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t12_36_39_119109
+- apply:
+    base-image: failed
+    identity: no-script
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t12_41_25_865659
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t12_58_33_699973
+- apply:
+    base-image: failed
+    identity: no-script
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t13_04_07_208128
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t13_35_46_359577
+- apply:
+    base-image: failed
+    identity: no-script
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t13_51_36_079862
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t14_19_43_187937
+- apply:
+    base-image: failed
+    identity: no-script
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t14_24_37_788528
+- apply:
+    base-image: dry-run
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t14_43_08_698069
+- apply:
+    base-image: executed
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: false
+  error: 'CalledProcessError: Command ''[''git'', ''-C'', ''/Volumes/MiniSSD/git/Work/Lynker/cs-image-system-3'',
+    ''add'', ''-A'', ''--'', ''/Volumes/MiniSSD/git/Work/Lynker/cs-image-system-3/test_folder/meta-state'',
+    ''/Volumes/MiniSSD/git/Work/Lynker/cs-image-system-3/test_folder/generated'']''
+    returned non-zero exit status 1.'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_08_31t14_48_03_972801
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: failed
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_08_31t16_11_54_932213
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: failed
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_08_31t16_49_05_073869
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: failed
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_08_31t17_12_10_469920
+- apply:
+    base-image: executed
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: no-script
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_08_31t17_42_40_359393
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: failed
+    storage: no-script
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_08_31t18_09_36_958800
+- apply:
+    base-image: no-script
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    storage: no-script
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  run: 2026_09_01t06_34_11_741252
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_01t06_53_39_338932
+- apply: {}
+  dry_run: false
+  error: 'LifecycleRunError: Validation failed with 3 error(s)'
+  ok: false
+  requested:
+  - storage
+  run: 2026_09_01t07_01_34_681606
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: no-script
+    release: no-script
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_01t07_02_35_567104
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: executed
+    release: no-script
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_01t07_42_05_281665
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_01t08_44_54_096488
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_01t10_38_19_322018
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_01t14_23_15_682645
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_02t05_39_49_602004
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_02t05_57_19_054082
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_02t06_21_48_752475
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_02t07_02_43_543733
+- apply:
+    base-image: no-script
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  run: 2026_09_02t08_10_48_728903
+- apply:
+    base-image: no-script
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_02t08_12_20_126816
+- apply: {}
+  dry_run: true
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/packer'', ''validate'',
+    ''.'']'' returned non-zero exit status 1.'
+  ok: false
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  run: 2026_09_02t20_06_23_876007
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  run: 2026_09_02t20_12_36_589465
+- apply:
+    identity: executed
+    storage: failed
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle storage'
+  ok: false
+  requested:
+  - storage
+  run: 2026_09_03t06_47_25_865262
+- apply:
+    identity: executed
+    storage: failed
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle storage'
+  ok: false
+  requested:
+  - storage
+  run: 2026_09_03t06_54_02_970395
+- apply:
+    base-image: failed
+    identity: executed
+    storage: executed
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - storage
+  run: 2026_09_03t07_26_18_484877
+- apply:
+    base-image: failed
+    identity: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_09_03t09_50_51_808500
+- apply:
+    base-image: failed
+    identity: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_09_03t09_57_42_457806
+- apply:
+    base-image: failed
+    identity: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_09_03t10_07_32_237052
+- apply:
+    base-image: failed
+    identity: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_09_03t10_45_17_829699
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_09_03t11_20_35_927707
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_03t12_31_47_588114
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_03t13_46_52_509214
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  run: 2026_09_04t10_13_25_631423
+- apply:
+    base-image: failed
+    identity: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_09_04t10_22_06_157233
+- apply:
+    base-image: failed
+    identity: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_09_04t10_26_30_948574
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_09_04t10_33_14_339710
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_04t10_38_48_223511
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_04t10_46_18_749389
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_09_04t10_55_39_064650
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_04t11_00_34_302565
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_04t11_06_00_841187
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_04t11_16_03_424538
+- apply:
+    base-image: stale-script-skipped
+    identity: dry-run
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  run: 2026_09_05t04_14_09_764416
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_05t04_18_52_219510
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_05t04_20_23_313394
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_05t04_27_35_457662
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_05t04_31_06_107429
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_05t04_45_07_341622
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_05t04_46_30_783486
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_05t04_52_30_158214
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_05t04_54_25_853888
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_05t05_00_18_752786
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: no-script
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_05t07_25_54_619514
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_05t07_37_48_640648
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_05t07_39_26_697830
+- apply:
+    base-image: stale-script-skipped
+    identity: dry-run
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  run: 2026_09_05t17_46_50_816038
+- apply:
+    base-image: stale-script-skipped
+    identity: executed
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - identity
+  run: 2026_09_05t17_51_35_399703
+- apply:
+    base-image: dry-run
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_05t19_56_07_446167
+- apply:
+    base-image: failed
+    identity: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_09_05t19_58_19_471607
+- apply:
+    base-image: failed
+    identity: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_09_05t20_06_47_225780
+- apply:
+    base-image: dry-run
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_09_05t20_15_21_531296
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: bake succeeded (basic-rh-10-gcloud-east1-20260906-033730, 10 GB, via IAP);
+    the run's own meta-state commit failed with git exit 128 because a peer session
+    switched the shared working tree mid-run; records committed manually as 41436a3
+  note: Bake succeeded (image basic-rh-10-gcloud-east1-20260906-033730). The run's
+    own meta-state commit failed with git exit 128 during a concurrent branch switch;
+    meta-state was committed afterwards as 41436a3. Record corrected 2026-09-06.
+  ok: true
+  requested:
+  - base-image
+  run: 2026_09_06t03_37_45_503179
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_06t03_43_57_516689
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_06t03_53_11_507950
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_06t03_54_47_298962
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_06t04_03_32_671650
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_06t04_05_14_727730
+- apply:
+    base-image: dry-run
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_09_07t07_41_14_037368
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_07t07_42_16_476014
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_07t07_50_30_729032
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_07t07_51_27_925601
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_07t08_00_29_608608
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_07t08_02_23_654061
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_09_07t08_39_47_843946
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_07t08_44_20_975507
+- apply: {}
+  dry_run: false
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''init'', ''-backend-config=open-tofu-instance-generation.tfbackend.hcl'']''
+    returned non-zero exit status 1.'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_07t08_53_55_240504
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_07t08_55_37_101017
+- apply: {}
+  dry_run: false
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''init'', ''-backend-config=tofu-gce-instance-generation.tfbackend.hcl'']''
+    returned non-zero exit status 1.'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_07t09_02_58_906581
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_07t09_05_17_312499
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_07t09_19_42_259473
+- apply:
+    identity: stale-script-skipped
+    storage: failed
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle storage'
+  ok: false
+  requested:
+  - storage
+  run: 2026_09_07t09_22_58_583722
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_07t09_30_49_890290
+- apply: {}
+  dry_run: false
+  error: 'LifecycleRunError: Validation failed with 2 error(s)'
+  ok: false
+  requested:
+  - base-image
+  run: 2026_09_08t05_47_06_064840
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_09_08t05_48_42_173579
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_08t05_53_23_117545
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: no-script
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_08t05_57_53_507481
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: no-script
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_08t06_02_50_625899
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_08t06_04_14_434946
+- apply:
+    base-image: dry-run
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_08t06_57_18_969884
+- apply: {}
+  dry_run: true
+  error: 'LifecycleRunError: Validation failed with 2 error(s)'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_08t07_16_36_032550
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: no-script
+    release: no-script
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_08t07_17_58_384450
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    retention: no-script
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  run: 2026_09_08t08_34_33_666814
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_08t08_40_31_900244
+- apply:
+    base-image: executed
+    identity: executed
+    instance-image: failed
+    storage: executed
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_08t09_07_42_833740
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_08t09_26_08_612110
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_08t09_39_41_228048
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    retention: executed
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_08t10_02_26_322752
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_08t12_42_04_911624
+- apply:
+    base-image: executed
+    identity: executed
+    instance-image: failed
+    storage: executed
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_08t12_48_23_888542
+- apply:
+    base-image: no-script
+    identity: executed
+    instance-image: executed
+    release: no-script
+    retention: executed
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_08t15_30_11_407356
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    retention: stale-script-skipped
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_08t15_41_31_144062
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_08t15_44_53_266829
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_08t15_50_02_024569
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_08t15_55_58_904431
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_08t16_06_26_662892
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    retention: executed
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  - retention
+  run: 2026_09_08t16_01_42_460505
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  - base-image
+  - instance-image
+  run: 2026_09_09t08_07_33_779160
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_09t09_14_26_955044
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_09t09_17_31_652580
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_09t09_22_31_108645
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_09t09_27_13_599604
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_09t09_30_44_074653
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_09t09_33_34_146884
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_09t09_36_37_995933
+- apply:
+    base-image: no-script
+    identity: executed
+    instance-image: executed
+    release: no-script
+    retention: executed
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_09t09_42_07_019533
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_09_09t10_09_09_788115
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_09t18_20_53_657849
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: no-script
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_09t18_24_12_411708
+- apply:
+    base-image: executed
+    identity: executed
+    instance-image: executed
+    release: no-script
+    retention: executed
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_09t18_28_02_288057
+- apply: {}
+  dry_run: true
+  error: 'ValueError: Unsupported RHEL version ''10'' in OS builder basic-rh-10'
+  ok: false
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_10t04_35_22_483011
+- apply:
+    base-image: dry-run
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_10t04_36_40_123791
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_10t04_56_11_777015
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_10t05_14_31_804350
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_10t05_22_29_411396
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_10t05_29_14_891769
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_10t05_30_50_644595
+- apply:
+    base-image: failed
+    identity: executed
+    storage: executed
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
+  ok: false
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_10t06_29_39_706402
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  run: 2026_09_10t06_36_35_242315
+- apply:
+    base-image: no-script
+    identity: executed
+    instance-image: failed
+    storage: executed
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_10t06_43_47_904321
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_10t06_53_53_496834
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: executed
+    release: no-script
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_10t06_55_46_460450
+- apply:
+    base-image: no-script
+    identity: executed
+    instance-image: failed
+    storage: executed
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_10t07_12_47_236687
+- apply:
+    base-image: no-script
+    identity: executed
+    instance-image: executed
+    release: no-script
+    retention: executed
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_10t07_20_29_528516
+- apply:
+    base-image: executed
+    identity: executed
+    instance-image: executed
+    release: executed
+    retention: executed
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_10t09_14_27_793542
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - storage
+  - instance-image
+  run: 2026_09_10t21_53_14_839889
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  - instance-image
+  run: 2026_09_10t21_56_37_991481
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_10t22_07_51_456403
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_10t22_14_17_161500
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_10t22_20_47_868408
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_10t22_27_18_450370
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_10t22_32_00_000139
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_10t22_34_25_679271
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_10t22_37_42_121148
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_10t22_41_29_385202
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_10t22_44_39_831629
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_13t07_43_07_933203
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_13t07_51_28_712665
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: dry-run
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_13t07_56_46_505801
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_13t11_56_28_611814
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_14t08_06_11_261653
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_15t12_48_10_019295
+- apply: {}
+  dry_run: true
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''init'', ''-backend=false'']''
+    returned non-zero exit status 1.'
+  ok: false
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_16t05_35_46_598480
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_16t05_46_23_683868
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_16t06_37_13_145054
+- apply:
+    base-image: stale-script-skipped
+    identity: dry-run
+    instance-image: stale-script-skipped
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  run: 2026_09_16t08_30_59_578216

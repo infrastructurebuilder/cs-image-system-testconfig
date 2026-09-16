@@ -1,0 +1,31 @@
+.envrc
+# Okta API-integration key material -- never commit
+.private_key.pem
+.private_key.json
+.public_key.json
+*.pem
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.venv/
+.DS_Store
+packages/**/*.code-workspace
+trial
+tfmodules/tftest
+YAML_DUMP.yaml
+.obsidian
+.tofu-plugin-cache/
+
+# Generated IaC IS committed here (a `--commit` run stages meta-state/ and
+# generated/); only the tool residue under it is not -- the same policy the
+# emitted per-directory .gitignore files carry, hoisted so it applies before
+# the first generation writes them (stage 28)
+**/.terraform/
+!**/.terraform.lock.hcl
+**/target/
+*.tfstate
+*.tfstate.backup
+tfplan

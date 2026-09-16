@@ -1,0 +1,52 @@
+builds:
+  imgfile-basic-dask-pckr-gce-ans-20260910-064332:
+    checks:
+    - detail: pass
+      name: test -e /var/lib/csis/launch-applied
+      ok: true
+    - detail: FAIL
+      name: ( python3 -c 'import dask' ) >/dev/null 2>&1; test $? -eq 0
+      ok: false
+    - detail: pass
+      name: mount /mnt/gce-data
+      ok: true
+    image: imgfile-basic-dask
+    instance: gce-test
+    ok: false
+    run: 2026_09_10t06_54_55_250042
+    runtime: gcloud-east1
+    time: '2026-09-10T11:55:03+00:00'
+  imgfile-basic-dask-pckr-gce-ans-20260910-072018:
+    checks:
+    - detail: pass
+      name: test -e /var/lib/csis/launch-applied
+      ok: true
+    - detail: pass
+      name: ( python3 -c 'import dask' ) >/dev/null 2>&1; test $? -eq 0
+      ok: true
+    - detail: pass
+      name: mount /mnt/gce-data
+      ok: true
+    image: imgfile-basic-dask
+    instance: gce-test
+    ok: true
+    run: 2026_09_10t07_29_09_333022
+    runtime: gcloud-east1
+    time: '2026-09-10T12:29:53+00:00'
+  imgfile-basic-dask-pckr-gce-ans-20260910-091415:
+    checks:
+    - detail: pass
+      name: test -e /var/lib/csis/launch-applied
+      ok: true
+    - detail: pass
+      name: ( python3 -c 'import dask' ) >/dev/null 2>&1; test $? -eq 0
+      ok: true
+    - detail: pass
+      name: mount /mnt/gce-data
+      ok: true
+    image: imgfile-basic-dask
+    instance: gce-test
+    ok: true
+    run: 2026_09_10t09_28_24_243720
+    runtime: gcloud-east1
+    time: '2026-09-10T14:29:30+00:00'

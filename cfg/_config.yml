@@ -1,0 +1,48 @@
+---
+id: cs-image-action-test
+generation_directory: ./generated/
+sleep_before_finalization: 30
+# stage 33: every ENC[age:...] value in this tree is encrypted to ALL of these
+# recipients (age public keys); the identity that opens them comes from
+# CSIS_CONFIG_IDENTITY (a GitHub secret for CI, .envrc for a person). Adding or
+# removing one: edit here, then `just cli reencrypt`.
+encryption:
+  recipients:
+    - age1qcwm8ltsjvyfx52e7c69jne50ddzgr9aylr8h33s8hhal6sjqa8qf6jw3z   # CI (GitHub Actions)
+    - age17mm3xw0pd6rgzkegjdddlrstne4z8hq8h50rf2wqde03xqlx7gxqhp6qu0   # Mykel Alvis (personal)
+    - age18z6sg8qpd3mk80r0hshz2hp43qqhtyn32j72hdnjcnyue55jf48s4ygwjj   # Mykel Alvis (Lynker)
+    - age140fednhc8nfz2a7u3skatdss0t75dwgeuyy46gnl7283zwmpxv2sprffc2   # Zach Wills (Lynker)
+# stage 35: what the public-safe gate may let through, by decision (the reason
+# beside each); everything else that looks like a secret or a person refuses the
+# commit. `just public-safe-live` scans this tree; .githooks/pre-commit gates it.
+public_safe:
+  allow:
+    - "@noaa.gov"                    # <username>@noaa.gov is DERIVED from the template: public by construction (stage 34 decision)
+    - ".iam.gserviceaccount.com"     # the runner service account's address is an identifier, not a person
+    - "mykelalvis@infrastructurebuilder.org"   # the copyright holder's address in every SPDX header and REUSE.toml: public by intent
+gitignore:
+  - ".*" # Ignore all dotfiles except for .gitignore and the tf lockfiles
+  - "!.terraform.lock.hcl"
+  - "!.gitignore"
+  - "**/target/" # Ignore all target directories
+dateformat : "%Y%m%d_%H%M%S"    
+config:
+  use_state_backends: true # emit backend/remote-state blocks (needs real state buckets)
+  apply_instances: false # FINALIZATION runs 'tofu apply' for instances only when true
+  apply_storage: false
+  apply_identity: false # FINALIZATION runs 'tofu apply' for identity roots only when true
+  # Relative to THIS configuration tree (test_folder/); every generated
+  # terraform root resolves it to the right relative path for its own depth.
+  # Absolute paths and git/registry URLs pass through unchanged.
+  module_source_base: ../cs-image-system-3/tfmodules
+  some_key: some_value
+  another_key: another_value
+  systemuser: "{{ ENV.USER }}"
+  okta_gateway_selector: "environment=staging"
+  # Mandatory local admin user on every base image (DESIGN Q2/N9/N12): a LIST
+  # of PUBLIC keys (rotation = add new, migrate, remove old); the schema refuses
+  # anything resembling private-key material. Per-base override: admin_public_keys
+  # on the OS builder. Placeholder key below -- replace with real operator keys.
+  admin_public_keys:
+    - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPlaceholderKeyReplaceMeReplaceMeReplaceMe csis-admin-placeholder"
+

@@ -1,0 +1,617 @@
+builds:
+- build_id: ami-0cff2526a93e3391d
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+  chain: []
+  input_fingerprint: 784fac210590f1b9aefc50d1e0257b7315ce01268807c89afe1f315e4e4b36cc
+  local_mods: false
+  mods: []
+  name: my-deb-11-aws-east2-runtime-20260831_144756
+  parent: vendor
+  run: 2026_08_31t14_48_03_972801
+  runtime: aws-east2-runtime
+  series: my-deb-11
+  tests:
+    assertions: 8
+    in_bake: true
+  update:
+    exclude: []
+    packages: []
+    pin: {}
+    policy: none
+- build_id: ami-015a9eb88d13c3236
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain: []
+  input_fingerprint: 4bb3abf99bc228b0e517473ea9f4182f42011ed6f6eea5c1b6378b6d9f2782db
+  local_mods: false
+  mods: []
+  name: basic-rhel-9-aws-east2-runtime-20260831_144756
+  parent: vendor
+  run: 2026_08_31t14_48_03_972801
+  runtime: aws-east2-runtime
+  series: basic-rhel-9
+  tests:
+    assertions: 10
+    in_bake: true
+  update:
+    exclude:
+    - kernel*
+    packages: []
+    pin: {}
+    policy: security
+- build_id: ami-08a52e8f7f287b40a
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+  chain: []
+  fingerprint_restamped:
+  - previous: 784fac210590f1b9aefc50d1e0257b7315ce01268807c89afe1f315e4e4b36cc
+    reason: fingerprint recipe change (TODO §9/§11.2)
+    run: 2026_09_08t10_55_12_352022
+  input_fingerprint: a6904302a527f9b8931fa7f07be17ca9e834c9654eeb13be9a92c4c27cafca2e
+  local_mods: false
+  mods: []
+  name: my-deb-11-aws-east2-runtime-20260831_174233
+  parent: vendor
+  run: 2026_08_31t17_42_40_359393
+  runtime: aws-east2-runtime
+  series: my-deb-11
+  tests:
+    assertions: 8
+    in_bake: true
+  update:
+    exclude: []
+    packages: []
+    pin: {}
+    policy: none
+- build_id: ami-0858fb1b0c424c585
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain: []
+  input_fingerprint: b0912c937c5ac92d76e12fd9f94848c255f7b2dfe538fc6749235aca6797c984
+  local_mods: false
+  mods: []
+  name: basic-rhel-8-aws-east2-runtime-20260831_174233
+  parent: vendor
+  run: 2026_08_31t17_42_40_359393
+  runtime: aws-east2-runtime
+  series: basic-rhel-8
+  tests:
+    assertions: 13
+    in_bake: true
+  update:
+    exclude:
+    - kernel*
+    packages:
+    - openssl
+    pin: {}
+    policy: security
+- build_id: ami-0fb6436f4a08260c4
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain: []
+  fingerprint_restamped:
+  - previous: 4bb3abf99bc228b0e517473ea9f4182f42011ed6f6eea5c1b6378b6d9f2782db
+    reason: fingerprint recipe change (TODO §9/§11.2)
+    run: 2026_09_08t10_55_12_352022
+  input_fingerprint: 4fa3f8488c39895142233999edf19ef624fd245afb8615f1904ecc4df480aa6a
+  local_mods: false
+  mods: []
+  name: basic-rhel-9-aws-east2-runtime-20260831_174233
+  parent: vendor
+  run: 2026_08_31t17_42_40_359393
+  runtime: aws-east2-runtime
+  series: basic-rhel-9
+  tests:
+    assertions: 10
+    in_bake: true
+  update:
+    exclude:
+    - kernel*
+    packages: []
+    pin: {}
+    policy: security
+- build_id: ami-0e6b4cd172fbe344c
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain:
+  - imgfile-basic-dask-two
+  input_fingerprint: e62c32fe2a5946826351c482a1a0b3a6d2acd390e067616948bb5e828484fa01
+  local_mods: true
+  mods:
+  - content_hash: cfa47ca0cf25ce2c05e0b071041001b36cfc8fcd380b289c7e1c7b99ed5b73a0
+    idempotent: unknown
+    name: dask-setup2
+    operation: ansible-default
+    run: 2026_08_31t18_09_36_958800
+    type: ansible-default
+  - content_hash: 1a40dbc7caf2de73397f92b077264a46b4982344df5b1406f763dad0da0b8ecf
+    idempotent: unknown
+    name: data-science-workstation-two
+    operation: ansible-default
+    run: 2026_08_31t18_09_36_958800
+    type: ansible-default
+  name: imgfile-basic-dask-two-pckr-ebs-ans-20260831_180930
+  parent: ami-015a9eb88d13c3236
+  run: 2026_08_31t18_09_36_958800
+  runtime: aws-east2-runtime
+  series: imgfile-basic-dask-two
+  tests:
+    assertions: 2
+    in_bake: true
+  update: null
+- build_id: ami-0078fada0a58dcf1c
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+  chain:
+  - imgfile-data-science
+  input_fingerprint: 6d1e26924c019b4a83726b5ef84662f50cf85bfb461862bea1b7796a2642f84f
+  local_mods: true
+  mods:
+  - content_hash: e835044f85def6722a70ad56bb710d52e6b1207c464addd60bf7bb879cf3213f
+    idempotent: ansible
+    name: data-science-setup
+    operation: ansible
+    run: 2026_08_31t18_09_36_958800
+    type: ansible-default
+  name: imgfile-data-science-pckr-ebs-ans-20260831_180930
+  parent: ami-08a52e8f7f287b40a
+  run: 2026_08_31t18_09_36_958800
+  runtime: aws-east2-runtime
+  series: imgfile-data-science
+  tests:
+    assertions: 2
+    in_bake: true
+  update: null
+- build_id: ami-0a30ed634af74138f
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain:
+  - imgfile-basic-cloudflow-two
+  input_fingerprint: 83869fc9fe09cc4d53568f6c2027924efe79e5033644833e3affd8f3d5e73ab1
+  local_mods: false
+  mods: []
+  name: imgfile-basic-cloudflow-two-pckr-ebs-ans-20260831_180930
+  parent: ami-015a9eb88d13c3236
+  run: 2026_08_31t18_09_36_958800
+  runtime: aws-east2-runtime
+  series: imgfile-basic-cloudflow-two
+  tests:
+    assertions: 2
+    in_bake: true
+  update: null
+- build_id: ami-073d81cd9b3eec54b
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain:
+  - imgfile-basic-dask
+  input_fingerprint: 1562477b88d839aaf75bb44981b1540c61301cea1d603a4fefb39e145e0adca7
+  local_mods: true
+  mods:
+  - content_hash: c670c6df3ddc710fb5d548320ca258a78f2d0af13dea4ac1bf559aede8f1993d
+    idempotent: ansible
+    name: dask-setup-jeffy
+    operation: ansible
+    run: 2026_08_31t18_09_36_958800
+    type: ansible-default
+  - content_hash: f7ab5cc06412b04910c5d56054d2ffcb602d6e4c01d2402f4cfd434412766b1e
+    idempotent: unknown
+    name: derivative-setup
+    operation: bash
+    run: 2026_08_31t18_09_36_958800
+    type: bash-remote
+  name: imgfile-basic-dask-pckr-ebs-ans-20260831_180930
+  parent: ami-0829ccceee6db194e
+  run: 2026_08_31t18_09_36_958800
+  runtime: aws-east2-runtime
+  series: imgfile-basic-dask
+  tests:
+    assertions: 5
+    in_bake: true
+  update: null
+- build_id: ami-0f6307532eb04338b
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain:
+  - imgfile-basic-cloudflow
+  - imgfile-basic-dask
+  input_fingerprint: 74c795369143bc82bf29b6592a2886c1f063f3802fbb29424c1931a043550f3e
+  local_mods: false
+  mods: []
+  name: imgfile-basic-cloudflow-some-other-builder-20260831_180930
+  parent: ami-073d81cd9b3eec54b
+  run: 2026_08_31t18_09_36_958800
+  runtime: aws-east2-runtime
+  series: imgfile-basic-cloudflow
+  tests:
+    assertions: 2
+    in_bake: true
+  update: null
+- build_id: ami-06c57cc98a1586710
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain:
+  - imgfile-basic-cloudflow-notdocker
+  input_fingerprint: 5fec414903122d3209e7e910d20182a289ce6caa4dc11312a4e273cf6a2b9c5e
+  local_mods: false
+  mods: []
+  name: imgfile-basic-cloudflow-notdocker-pckr-ebs-ans-20260831_180930
+  parent: ami-015a9eb88d13c3236
+  run: 2026_08_31t18_09_36_958800
+  runtime: aws-east2-runtime
+  series: imgfile-basic-cloudflow-notdocker
+  tests:
+    assertions: 2
+    in_bake: true
+  update: null
+- build_id: ami-0d5c2ff6dbe2cb3ad
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+  chain:
+  - imgfile-data-science
+  fingerprint_restamped:
+  - previous: 6d1e26924c019b4a83726b5ef84662f50cf85bfb461862bea1b7796a2642f84f
+    reason: fingerprint recipe change (TODO §9/§11.2)
+    run: 2026_09_08t10_55_12_352022
+  input_fingerprint: e7ae44e9763b5b284b698c7da03f9d62d0137aa7c237c4ff818de0c49733b67f
+  local_mods: true
+  mods:
+  - content_hash: e835044f85def6722a70ad56bb710d52e6b1207c464addd60bf7bb879cf3213f
+    idempotent: ansible
+    name: data-science-setup
+    operation: ansible
+    run: 2026_09_01t07_42_05_281665
+    type: ansible-default
+  name: imgfile-data-science-pckr-ebs-ans-20260901_074158
+  parent: ami-08a52e8f7f287b40a
+  run: 2026_09_01t07_42_05_281665
+  runtime: aws-east2-runtime
+  series: imgfile-data-science
+  tests:
+    assertions: 2
+    in_bake: true
+  update: null
+- build_id: ami-0ac87405590e4b3c4
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain:
+  - imgfile-basic-dask-two
+  fingerprint_restamped:
+  - previous: e62c32fe2a5946826351c482a1a0b3a6d2acd390e067616948bb5e828484fa01
+    reason: fingerprint recipe change (TODO §9/§11.2)
+    run: 2026_09_08t10_55_12_352022
+  input_fingerprint: 4bc5591bd262b4ea9a546fff58306bfe8671c33f28670113a9564a709ca157ad
+  local_mods: true
+  mods:
+  - content_hash: cfa47ca0cf25ce2c05e0b071041001b36cfc8fcd380b289c7e1c7b99ed5b73a0
+    idempotent: unknown
+    name: dask-setup2
+    operation: ansible-default
+    run: 2026_09_01t07_42_05_281665
+    type: ansible-default
+  - content_hash: 1a40dbc7caf2de73397f92b077264a46b4982344df5b1406f763dad0da0b8ecf
+    idempotent: unknown
+    name: data-science-workstation-two
+    operation: ansible-default
+    run: 2026_09_01t07_42_05_281665
+    type: ansible-default
+  name: imgfile-basic-dask-two-pckr-ebs-ans-20260901_074158
+  parent: ami-015a9eb88d13c3236
+  run: 2026_09_01t07_42_05_281665
+  runtime: aws-east2-runtime
+  series: imgfile-basic-dask-two
+  tests:
+    assertions: 2
+    in_bake: true
+  update: null
+- build_id: ami-050fa77170aadf309
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain:
+  - imgfile-basic-cloudflow-two
+  fingerprint_restamped:
+  - previous: 83869fc9fe09cc4d53568f6c2027924efe79e5033644833e3affd8f3d5e73ab1
+    reason: fingerprint recipe change (TODO §9/§11.2)
+    run: 2026_09_08t10_55_12_352022
+  input_fingerprint: 8e13c0753b3b5f6a13d4a10bd3df66a76f3b25e22c15ffc6d103b17f2ca688d3
+  local_mods: false
+  mods: []
+  name: imgfile-basic-cloudflow-two-pckr-ebs-ans-20260901_074158
+  parent: ami-015a9eb88d13c3236
+  run: 2026_09_01t07_42_05_281665
+  runtime: aws-east2-runtime
+  series: imgfile-basic-cloudflow-two
+  tests:
+    assertions: 2
+    in_bake: true
+  update: null
+- build_id: ami-09759842591f8e481
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain:
+  - imgfile-basic-dask
+  fingerprint_restamped:
+  - previous: 1562477b88d839aaf75bb44981b1540c61301cea1d603a4fefb39e145e0adca7
+    reason: fingerprint recipe change (TODO §9/§11.2)
+    run: 2026_09_08t10_55_12_352022
+  input_fingerprint: dbe307636cf31684915c61122088305bd1a7fbb16cbfa81726e192a64c3cd8ea
+  local_mods: true
+  mods:
+  - content_hash: c670c6df3ddc710fb5d548320ca258a78f2d0af13dea4ac1bf559aede8f1993d
+    idempotent: ansible
+    name: dask-setup-jeffy
+    operation: ansible
+    run: 2026_09_01t07_42_05_281665
+    type: ansible-default
+  - content_hash: f7ab5cc06412b04910c5d56054d2ffcb602d6e4c01d2402f4cfd434412766b1e
+    idempotent: unknown
+    name: derivative-setup
+    operation: bash
+    run: 2026_09_01t07_42_05_281665
+    type: bash-remote
+  name: imgfile-basic-dask-pckr-ebs-ans-20260901_074158
+  parent: ami-0829ccceee6db194e
+  run: 2026_09_01t07_42_05_281665
+  runtime: aws-east2-runtime
+  series: imgfile-basic-dask
+  tests:
+    assertions: 5
+    in_bake: true
+  update: null
+- build_id: ami-09eb9a0052c9eba93
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain:
+  - imgfile-basic-cloudflow
+  - imgfile-basic-dask
+  fingerprint_restamped:
+  - previous: 74c795369143bc82bf29b6592a2886c1f063f3802fbb29424c1931a043550f3e
+    reason: fingerprint recipe change (TODO §9/§11.2)
+    run: 2026_09_08t10_55_12_352022
+  input_fingerprint: 0718f820242a5d57f6282bb1174a4246a2eb0fbfd955f9a3cb2befed9354bd56
+  local_mods: false
+  mods: []
+  name: imgfile-basic-cloudflow-some-other-builder-20260901_074158
+  parent: ami-073d81cd9b3eec54b
+  run: 2026_09_01t07_42_05_281665
+  runtime: aws-east2-runtime
+  series: imgfile-basic-cloudflow
+  tests:
+    assertions: 2
+    in_bake: true
+  update: null
+- build_id: ami-0e9bc41e495dcf888
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain:
+  - imgfile-basic-cloudflow-notdocker
+  fingerprint_restamped:
+  - previous: 5fec414903122d3209e7e910d20182a289ce6caa4dc11312a4e273cf6a2b9c5e
+    reason: fingerprint recipe change (TODO §9/§11.2)
+    run: 2026_09_08t10_55_12_352022
+  input_fingerprint: 6ee78aaf59817f2eb3af944725cbfe5b726823b46939a64e79fd8675ba9b8425
+  local_mods: false
+  mods: []
+  name: imgfile-basic-cloudflow-notdocker-pckr-ebs-ans-20260901_074158
+  parent: ami-015a9eb88d13c3236
+  run: 2026_09_01t07_42_05_281665
+  runtime: aws-east2-runtime
+  series: imgfile-basic-cloudflow-notdocker
+  tests:
+    assertions: 2
+    in_bake: true
+  update: null
+- build_id: ami-01a9a00286f1631af
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  chain: []
+  input_fingerprint: 3776dee67f87c807376817bb3cd537ddf5010fa331f534f068378010c055026a
+  local_mods: false
+  mods: []
+  name: basic-rh-10-aws-east2-runtime-20260910_045558
+  parent: vendor
+  run: 2026_09_10t04_56_11_777015
+  runtime: aws-east2-runtime
+  series: basic-rh-10
+  tests:
+    assertions: 13
+    in_bake: true
+  update:
+    exclude:
+    - kernel*
+    packages:
+    - openssl
+    pin: {}
+    policy: security
+- build_id: ami-07519c62eb365d850
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  chain:
+  - imgfile-basic-dask
+  input_fingerprint: 231bb5c65d53d8188344c9e3920efc8855b55823f342ea34e4af473cf769960d
+  local_mods: true
+  mods:
+  - content_hash: c670c6df3ddc710fb5d548320ca258a78f2d0af13dea4ac1bf559aede8f1993d
+    idempotent: ansible
+    name: dask-setup-jeffy
+    operation: ansible
+    run: 2026_09_10t05_22_29_411396
+    type: ansible-default
+  - content_hash: 7efcd1a4fa07925eb1b11398f175aa61b5c77dff355050cc6871b50ffbe697cb
+    idempotent: unknown
+    name: derivative-setup
+    operation: bash
+    run: 2026_09_10t05_22_29_411396
+    type: bash-remote
+  name: imgfile-basic-dask-pckr-ebs-ans-20260910_052217
+  parent: ami-01a9a00286f1631af
+  run: 2026_09_10t05_22_29_411396
+  runtime: aws-east2-runtime
+  series: imgfile-basic-dask
+  tests:
+    assertions: 5
+    in_bake: true
+  update: null
+- build_id: imgfile-basic-dask-pckr-gce-ans-20260910-091415
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  chain:
+  - imgfile-basic-dask
+  input_fingerprint: de18cb2753d43b868dcf566602de3c7865f94334a785a3f6a1fc59602523cc94
+  local_mods: true
+  mods:
+  - content_hash: f69207b82321c53a4944d6cba1940d6a4b8e051fa26c8c30c733c7f7c0faea3d
+    idempotent: ansible
+    name: dask-setup-jeffy
+    operation: ansible
+    run: 2026_09_10t09_14_27_793542
+    type: ansible-default
+  - content_hash: 7efcd1a4fa07925eb1b11398f175aa61b5c77dff355050cc6871b50ffbe697cb
+    idempotent: unknown
+    name: derivative-setup
+    operation: bash
+    run: 2026_09_10t09_14_27_793542
+    type: bash-remote
+  name: imgfile-basic-dask-pckr-gce-ans-20260910_091415
+  parent: basic-rh-10-gcloud-east1-20260910-091415
+  run: 2026_09_10t09_14_27_793542
+  runtime: gcloud-east1
+  series: imgfile-basic-dask
+  tests:
+    assertions: 5
+    in_bake: true
+  update: null
+- build_id: ami-0bac0b93422c22661
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  chain:
+  - imgfile-basic-dask
+  input_fingerprint: daeff9640001c2fc4494b13c65ea3b27b558407f1408dd5819a7ff4a47a568e8
+  local_mods: true
+  mods:
+  - content_hash: f69207b82321c53a4944d6cba1940d6a4b8e051fa26c8c30c733c7f7c0faea3d
+    idempotent: ansible
+    name: dask-setup-jeffy
+    operation: ansible
+    run: 2026_09_10t21_56_37_991481
+    type: ansible-default
+  - content_hash: 7efcd1a4fa07925eb1b11398f175aa61b5c77dff355050cc6871b50ffbe697cb
+    idempotent: unknown
+    name: derivative-setup
+    operation: bash
+    run: 2026_09_10t21_56_37_991481
+    type: bash-remote
+  name: imgfile-basic-dask-pckr-ebs-ans-20260910_215625
+  parent: ami-01a9a00286f1631af
+  run: 2026_09_10t21_56_37_991481
+  runtime: aws-east2-runtime
+  series: imgfile-basic-dask
+  tests:
+    assertions: 5
+    in_bake: true
+  update: null

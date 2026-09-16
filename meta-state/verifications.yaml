@@ -1,0 +1,547 @@
+verifications:
+- build: unbound
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260908-093923, expected unbound
+    name: booted image
+    ok: false
+  - detail: 3 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  ephemeral: true
+  evidence:
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Found startup-script
+    in metadata'
+  - '[   61.085665] XFS (sda): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - '[   61.128436] XFS (sda): Ending clean mount'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): meta-data=/dev/disk/by-id/google-gce-data isize=512    agcount=4,
+    agsize=1966080 blks'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       sectsz=4096  attr=2, projid32bit=1'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       crc=1        finobt=1,
+    sparse=1, rmapbt=1'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       reflink=1    bigtime=1
+    inobtcount=1 nrext64=1'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       exchange=0   metadir=0'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): data     =                       bsize=4096   blocks=7864320,
+    imaxpct=25'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       sunit=0      swidth=0 blks'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): naming   =version 2              bsize=4096   ascii-ci=0,
+    ftype=1, parent=0'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): log      =internal log           bsize=4096   blocks=16384,
+    version=2'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       sectsz=4096  sunit=1 blks,
+    lazy-count=1'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): realtime =none                   extsz=4096   blocks=0,
+    rtextents=0'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       rgcount=0    rgsize=0 extents'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       zoned=0      start=0 reserved=0'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): Discarding blocks...Done.'
+  - 'Sep  8 14:50:44 gce-test kernel: XFS (sda): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep  8 14:50:44 gce-test kernel: XFS (sda): Ending clean mount'
+  - 'Sep  8 14:50:45 gce-test google_metadata_script_runner[1243]: Finished running
+    startup scripts'
+  instance: gce-test
+  ok: false
+  run: 2026_09_08t09_49_50_729434
+  runtime: gcloud-east1
+  time: '2026-09-08T14:50:50+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260908-093923
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260908-093923, expected imgfile-basic-dask-pckr-gce-ans-20260908-093923
+    name: booted image
+    ok: true
+  - detail: 3 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  ephemeral: true
+  evidence:
+  - '[   61.128436] XFS (sda): Ending clean mount'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): meta-data=/dev/disk/by-id/google-gce-data isize=512    agcount=4,
+    agsize=1966080 blks'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       sectsz=4096  attr=2, projid32bit=1'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       crc=1        finobt=1,
+    sparse=1, rmapbt=1'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       reflink=1    bigtime=1
+    inobtcount=1 nrext64=1'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       exchange=0   metadir=0'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): data     =                       bsize=4096   blocks=7864320,
+    imaxpct=25'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       sunit=0      swidth=0 blks'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): naming   =version 2              bsize=4096   ascii-ci=0,
+    ftype=1, parent=0'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): log      =internal log           bsize=4096   blocks=16384,
+    version=2'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       sectsz=4096  sunit=1 blks,
+    lazy-count=1'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): realtime =none                   extsz=4096   blocks=0,
+    rtextents=0'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       rgcount=0    rgsize=0 extents'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       zoned=0      start=0 reserved=0'
+  - 'Sep  8 14:50:44 gce-test google_metadata_script_runner[1243]: Metadata key("startup-script"),
+    command("/bin/bash"): Discarding blocks...Done.'
+  - 'Sep  8 14:50:44 gce-test kernel: XFS (sda): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep  8 14:50:44 gce-test kernel: XFS (sda): Ending clean mount'
+  - 'Sep  8 14:50:45 gce-test google_metadata_script_runner[1243]: Finished running
+    startup scripts'
+  - 'Sep  8 14:50:46 gce-test systemd[1]: google-startup-scripts.service: Deactivated
+    successfully.'
+  - 'Sep  8 14:50:46 gce-test systemd[1]: Finished google-startup-scripts.service
+    - Google Compute Engine Startup Scripts.'
+  instance: gce-test
+  ok: true
+  run: 2026_09_08t10_03_45_916992
+  runtime: gcloud-east1
+  time: '2026-09-08T15:03:51+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260908-124809
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260908-124809, expected imgfile-basic-dask-pckr-gce-ans-20260908-124809
+    name: booted image
+    ok: true
+  - detail: 3 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  ephemeral: true
+  evidence:
+  - '[    7.076937] SGI XFS with ACLs, security attributes, scrub, quota, no debug
+    enabled'
+  - '[    7.086785] XFS (sda2): Mounting V5 Filesystem 528af818-a957-4484-bf87-b831a0288eb4'
+  - '[    7.518498] XFS (sda2): Ending clean mount'
+  - 'Sep  8 20:36:24 gce-test systemd[1]: Starting google-startup-scripts.service
+    - Google Compute Engine Startup Scripts...'
+  - 'Sep  8 20:36:28 gce-test google_compat_metadata_script_runner[1230]: Enable core
+    plugin set to: [true], launching script runner for event "startup" from "/usr/bin/gce_metadata_script_runner"'
+  - 'gce-test login: Sep  8 20:36:29 gce-test google_metadata_script_runner[1237]:
+    Running metadata script runner (version 20260715.00) for "startup" event'
+  - 'Sep  8 20:36:29 gce-test google_metadata_script_runner[1237]: Found startup-script
+    in metadata'
+  - '[   59.344174] XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - '[   59.478722] XFS (sdb): Ending clean mount'
+  - 'Sep  8 20:36:29 gce-test kernel: XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep  8 20:36:29 gce-test kernel: XFS (sdb): Ending clean mount'
+  - 'Sep  8 20:36:30 gce-test google_metadata_script_runner[1237]: Finished running
+    startup scripts'
+  - 'Sep  8 20:36:31 gce-test systemd[1]: google-startup-scripts.service: Deactivated
+    successfully.'
+  - 'Sep  8 20:36:31 gce-test systemd[1]: Finished google-startup-scripts.service
+    - Google Compute Engine Startup Scripts.'
+  instance: gce-test
+  ok: true
+  run: 2026_09_08t15_35_37_834457
+  runtime: gcloud-east1
+  time: '2026-09-08T20:36:49+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260909-080716
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260909-080716, expected imgfile-basic-dask-pckr-gce-ans-20260909-080716
+    name: booted image
+    ok: true
+  - detail: 5 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  ephemeral: true
+  evidence:
+  - '[   80.209052] XFS (sdc): Ending clean mount'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"): meta-data=/dev/disk/by-id/google-scratch isize=512    agcount=4,
+    agsize=1966080 blks'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       sectsz=4096  attr=2, projid32bit=1'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       crc=1        finobt=1,
+    sparse=1, rmapbt=1'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       reflink=1    bigtime=1
+    inobtcount=1 nrext64=1'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       exchange=0   metadir=0'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"): data     =                       bsize=4096   blocks=7864320,
+    imaxpct=25'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       sunit=0      swidth=0 blks'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"): naming   =version 2              bsize=4096   ascii-ci=0,
+    ftype=1, parent=0'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"): log      =internal log           bsize=4096   blocks=16384,
+    version=2'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       sectsz=4096  sunit=1 blks,
+    lazy-count=1'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"): realtime =none                   extsz=4096   blocks=0,
+    rtextents=0'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       rgcount=0    rgsize=0 extents'
+  - 'Sep  9 13:50:08 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"):          =                       zoned=0      start=0 reserved=0'
+  - 'Sep  9 13:50:09 gce-test google_metadata_script_runner[1264]: Metadata key("startup-script"),
+    command("/bin/bash"): Discarding blocks...Done.'
+  - 'Sep  9 13:50:09 gce-test kernel: XFS (sdc): Mounting V5 Filesystem 6e4e0022-9eaf-44b2-80e2-7fd7257ba751'
+  - 'Sep  9 13:50:09 gce-test kernel: XFS (sdc): Ending clean mount'
+  - 'Sep  9 13:50:09 gce-test google_metadata_script_runner[1264]: Finished running
+    startup scripts'
+  - 'Sep  9 13:50:10 gce-test systemd[1]: google-startup-scripts.service: Deactivated
+    successfully.'
+  - 'Sep  9 13:50:10 gce-test systemd[1]: Finished google-startup-scripts.service
+    - Google Compute Engine Startup Scripts.'
+  instance: gce-test
+  ok: true
+  run: 2026_09_09t08_49_31_296400
+  runtime: gcloud-east1
+  time: '2026-09-09T13:50:24+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260909-080716
+  checks:
+  - detail: an explicit failure line
+    name: startup scripts
+    ok: false
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260909-080716, expected imgfile-basic-dask-pckr-gce-ans-20260909-080716
+    name: booted image
+    ok: true
+  - detail: 3 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  ephemeral: true
+  evidence:
+  - '[    6.122934] SGI XFS with ACLs, security attributes, scrub, quota, no debug
+    enabled'
+  - '[    6.130231] XFS (sda2): Mounting V5 Filesystem 528af818-a957-4484-bf87-b831a0288eb4'
+  - '[    6.513373] XFS (sda2): Ending clean mount'
+  - 'Sep  9 14:38:25 gce-test systemd[1]: Starting google-startup-scripts.service
+    - Google Compute Engine Startup Scripts...'
+  - 'Sep  9 14:38:28 gce-test google_compat_metadata_script_runner[1230]: Enable core
+    plugin set to: [true], launching script runner for event "startup" from "/usr/bin/gce_metadata_script_runner"'
+  - 'Sep  9 14:38:29 gce-test google_metadata_script_runner[1237]: Running metadata
+    script runner (version 20260715.00) for "startup" event'
+  - 'Sep  9 14:38:29 gce-test google_metadata_script_runner[1237]: Found startup-script
+    in metadata'
+  - '[   43.423209] XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep  9 14:38:30 gce-test kernel: XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - '[   43.647254] XFS (sdb): Ending clean mount'
+  - 'Sep  9 14:38:30 gce-test kernel: XFS (sdb): Ending clean mount'
+  - 'Sep  9 14:38:30 gce-test google_metadata_script_runner[1237]: Script "startup-script"
+    failed with error: exit status 1'
+  - 'Sep  9 14:38:30 gce-test google_metadata_script_runner[1237]: Finished running
+    startup scripts'
+  - 'Sep  9 14:38:31 gce-test systemd[1]: google-startup-scripts.service: Deactivated
+    successfully.'
+  - 'Sep  9 14:38:31 gce-test systemd[1]: Finished google-startup-scripts.service
+    - Google Compute Engine Startup Scripts.'
+  instance: gce-test
+  ok: false
+  run: 2026_09_09t09_37_44_510174
+  runtime: gcloud-east1
+  time: '2026-09-09T14:38:37+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260909-080716
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260909-080716, expected imgfile-basic-dask-pckr-gce-ans-20260909-080716
+    name: booted image
+    ok: true
+  - detail: 3 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  ephemeral: true
+  evidence:
+  - '[    7.119469] SGI XFS with ACLs, security attributes, scrub, quota, no debug
+    enabled'
+  - '[    7.129289] XFS (sda2): Mounting V5 Filesystem 528af818-a957-4484-bf87-b831a0288eb4'
+  - '[    7.521051] XFS (sda2): Ending clean mount'
+  - 'Sep  9 14:47:18 gce-test systemd[1]: Starting google-startup-scripts.service
+    - Google Compute Engine Startup Scripts...'
+  - 'Sep  9 14:47:22 gce-test google_compat_metadata_script_runner[1231]: Enable core
+    plugin set to: [true], launching script runner for event "startup" from "/usr/bin/gce_metadata_script_runner"'
+  - 'gce-test login: Sep  9 14:47:23 gce-test google_metadata_script_runner[1238]:
+    Running metadata script runner (version 20260715.00) for "startup" event'
+  - 'Sep  9 14:47:23 gce-test google_metadata_script_runner[1238]: Found startup-script
+    in metadata'
+  - '[   53.958632] XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep  9 14:47:24 gce-test kernel: XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - '[   54.143979] XFS (sdb): Ending clean mount'
+  - 'Sep  9 14:47:24 gce-test kernel: XFS (sdb): Ending clean mount'
+  - 'Sep  9 14:47:24 gce-test google_metadata_script_runner[1238]: Finished running
+    startup scripts'
+  - 'Sep  9 14:47:25 gce-test systemd[1]: google-startup-scripts.service: Deactivated
+    successfully.'
+  - 'Sep  9 14:47:25 gce-test systemd[1]: Finished google-startup-scripts.service
+    - Google Compute Engine Startup Scripts.'
+  instance: gce-test
+  ok: true
+  run: 2026_09_09t09_46_28_111273
+  runtime: gcloud-east1
+  time: '2026-09-09T14:47:36+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260909-182751
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260909-182751, a recorded build
+      of imgfile-basic-dask on gcloud-east1
+    name: booted image
+    ok: true
+  - detail: 3 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  ephemeral: true
+  evidence:
+  - '[    6.389917] SGI XFS with ACLs, security attributes, scrub, quota, no debug
+    enabled'
+  - '[    6.399084] XFS (sda2): Mounting V5 Filesystem 528af818-a957-4484-bf87-b831a0288eb4'
+  - '[    6.764908] XFS (sda2): Ending clean mount'
+  - 'Sep  9 23:43:47 gce-test systemd[1]: Starting google-startup-scripts.service
+    - Google Compute Engine Startup Scripts...'
+  - 'Sep  9 23:43:51 gce-test google_compat_metadata_script_runner[1173]: Enable core
+    plugin set to: [true], launching script runner for event "startup" from "/usr/bin/gce_metadata_script_runner"'
+  - '[   34.364279] XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep  9 23:43:52 gce-test google_metadata_script_runner[1222]: Running metadata
+    script runner (version 20260715.00) for "startup" event'
+  - 'Sep  9 23:43:52 gce-test google_metadata_script_runner[1222]: Found startup-script
+    in metadata'
+  - 'Sep  9 23:43:53 gce-test kernel: XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - '[   34.472182] XFS (sdb): Ending clean mount'
+  - 'Sep  9 23:43:53 gce-test kernel: XFS (sdb): Ending clean mount'
+  - 'Sep  9 23:43:53 gce-test google_metadata_script_runner[1222]: Finished running
+    startup scripts'
+  - 'Sep  9 23:43:54 gce-test systemd[1]: google-startup-scripts.service: Deactivated
+    successfully.'
+  - 'Sep  9 23:43:54 gce-test systemd[1]: Finished google-startup-scripts.service
+    - Google Compute Engine Startup Scripts.'
+  instance: gce-test
+  ok: true
+  run: 2026_09_09t18_43_20_219679
+  runtime: gcloud-east1
+  time: '2026-09-09T23:43:58+00:00'
+- build: ami-07519c62eb365d850
+  checks:
+  - detail: launch parameters applied
+    name: startup scripts
+    ok: true
+  - detail: booted ami-07519c62eb365d850, expected ami-07519c62eb365d850
+    name: booted image
+    ok: true
+  ephemeral: true
+  evidence:
+  - LAUNCH_APPLIED
+  - '0'
+  instance: test2
+  ok: true
+  run: 2026_09_10t05_32_52_922869
+  runtime: aws-east2-runtime
+  time: '2026-09-10T10:34:27+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260910-064332
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260910-064332, a recorded build
+      of imgfile-basic-dask on gcloud-east1
+    name: booted image
+    ok: true
+  - detail: 3 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  - detail: '1 of 3 failed: ( python3 -c ''import dask'' ) >/dev/null 2>&1; test $?
+      -eq 0'
+    name: declared tests
+    ok: false
+  ephemeral: true
+  evidence:
+  - '[    6.629139] SGI XFS with ACLs, security attributes, scrub, quota, no debug
+    enabled'
+  - '[    6.638042] XFS (sda2): Mounting V5 Filesystem 528af818-a957-4484-bf87-b831a0288eb4'
+  - '[    7.061805] XFS (sda2): Ending clean mount'
+  - 'Sep 10 11:52:38 gce-test systemd[1]: Starting google-startup-scripts.service
+    - Google Compute Engine Startup Scripts...'
+  - 'Sep 10 11:52:46 gce-test google_compat_metadata_script_runner[1224]: Enable core
+    plugin set to: [true], launching script runner for event "startup" from "/usr/bin/gce_metadata_script_runner"'
+  - 'gce-test login: Sep 10 11:52:47 gce-test google_metadata_script_runner[1231]:
+    Running metadata script runner (version 20260715.00) for "startup" event'
+  - 'Sep 10 11:52:47 gce-test google_metadata_script_runner[1231]: Found startup-script
+    in metadata'
+  - '[   51.098104] XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - '[   51.510155] XFS (sdb): Ending clean mount'
+  - 'Sep 10 11:52:47 gce-test kernel: XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep 10 11:52:47 gce-test kernel: XFS (sdb): Ending clean mount'
+  - 'Sep 10 11:52:48 gce-test google_metadata_script_runner[1231]: Finished running
+    startup scripts'
+  instance: gce-test
+  ok: false
+  run: 2026_09_10t06_51_56_469708
+  runtime: gcloud-east1
+  time: '2026-09-10T11:52:56+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260910-064332
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260910-064332, expected imgfile-basic-dask-pckr-gce-ans-20260910-064332
+    name: booted image
+    ok: true
+  - detail: 3 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  - detail: '1 of 3 failed: ( python3 -c ''import dask'' ) >/dev/null 2>&1; test $?
+      -eq 0'
+    name: declared tests
+    ok: false
+  ephemeral: true
+  evidence:
+  - '[    6.629139] SGI XFS with ACLs, security attributes, scrub, quota, no debug
+    enabled'
+  - '[    6.638042] XFS (sda2): Mounting V5 Filesystem 528af818-a957-4484-bf87-b831a0288eb4'
+  - '[    7.061805] XFS (sda2): Ending clean mount'
+  - 'Sep 10 11:52:38 gce-test systemd[1]: Starting google-startup-scripts.service
+    - Google Compute Engine Startup Scripts...'
+  - 'Sep 10 11:52:46 gce-test google_compat_metadata_script_runner[1224]: Enable core
+    plugin set to: [true], launching script runner for event "startup" from "/usr/bin/gce_metadata_script_runner"'
+  - 'gce-test login: Sep 10 11:52:47 gce-test google_metadata_script_runner[1231]:
+    Running metadata script runner (version 20260715.00) for "startup" event'
+  - 'Sep 10 11:52:47 gce-test google_metadata_script_runner[1231]: Found startup-script
+    in metadata'
+  - '[   51.098104] XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - '[   51.510155] XFS (sdb): Ending clean mount'
+  - 'Sep 10 11:52:47 gce-test kernel: XFS (sdb): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep 10 11:52:47 gce-test kernel: XFS (sdb): Ending clean mount'
+  - 'Sep 10 11:52:48 gce-test google_metadata_script_runner[1231]: Finished running
+    startup scripts'
+  - 'Sep 10 11:52:49 gce-test systemd[1]: google-startup-scripts.service: Deactivated
+    successfully.'
+  - 'Sep 10 11:52:49 gce-test systemd[1]: Finished google-startup-scripts.service
+    - Google Compute Engine Startup Scripts.'
+  instance: gce-test
+  ok: false
+  run: 2026_09_10t06_54_55_250042
+  runtime: gcloud-east1
+  time: '2026-09-10T11:55:03+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260910-072018
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260910-072018, a recorded build
+      of imgfile-basic-dask on gcloud-east1
+    name: booted image
+    ok: true
+  - detail: 4 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  - detail: 3 assertion(s) passed
+    name: declared tests
+    ok: true
+  ephemeral: true
+  evidence:
+  - '[    6.629491] SGI XFS with ACLs, security attributes, scrub, quota, no debug
+    enabled'
+  - '[    6.638493] XFS (sdb2): Mounting V5 Filesystem 528af818-a957-4484-bf87-b831a0288eb4'
+  - '[    6.893767] XFS (sdb2): Ending clean mount'
+  - 'Sep 10 12:29:01 gce-test systemd-fsck[504]: /usr/sbin/fsck.xfs: XFS file system.'
+  - 'Sep 10 12:29:02 gce-test kernel: SGI XFS with ACLs, security attributes, scrub,
+    quota, no debug enabled'
+  - 'Sep 10 12:29:02 gce-test kernel: XFS (sdb2): Mounting V5 Filesystem 528af818-a957-4484-bf87-b831a0288eb4'
+  - 'Sep 10 12:29:02 gce-test kernel: XFS (sdb2): Ending clean mount'
+  - 'Sep 10 12:29:24 gce-test systemd[1]: Starting google-startup-scripts.service
+    - Google Compute Engine Startup Scripts...'
+  - 'Sep 10 12:29:26 gce-test google_compat_metadata_script_runner[1211]: Enable core
+    plugin set to: [true], launching script runner for event "startup" from "/usr/bin/gce_metadata_script_runner"'
+  - '[   32.482465] XFS (sda): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep 10 12:29:27 gce-test google_metadata_script_runner[1225]: Running metadata
+    script runner (version 20260715.00) for "startup" event'
+  - 'Sep 10 12:29:27 gce-test google_metadata_script_runner[1225]: Found startup-script
+    in metadata'
+  - 'Sep 10 12:29:27 gce-test kernel: XFS (sda): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - '[   32.681094] XFS (sda): Ending clean mount'
+  - 'Sep 10 12:29:27 gce-test kernel: XFS (sda): Ending clean mount'
+  - 'Sep 10 12:29:27 gce-test google_metadata_script_runner[1225]: Finished running
+    startup scripts'
+  - 'Sep 10 12:29:28 gce-test systemd[1]: google-startup-scripts.service: Deactivated
+    successfully.'
+  - 'Sep 10 12:29:28 gce-test systemd[1]: Finished google-startup-scripts.service
+    - Google Compute Engine Startup Scripts.'
+  instance: gce-test
+  ok: true
+  run: 2026_09_10t07_29_09_333022
+  runtime: gcloud-east1
+  time: '2026-09-10T12:29:53+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260910-091415
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260910-091415, a recorded build
+      of imgfile-basic-dask on gcloud-east1
+    name: booted image
+    ok: true
+  - detail: 3 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  - detail: 3 assertion(s) passed
+    name: declared tests
+    ok: true
+  ephemeral: true
+  evidence:
+  - '[    6.552023] SGI XFS with ACLs, security attributes, scrub, quota, no debug
+    enabled'
+  - '[    6.560701] XFS (sdb2): Mounting V5 Filesystem 528af818-a957-4484-bf87-b831a0288eb4'
+  - '[    6.980961] XFS (sdb2): Ending clean mount'
+  - 'Sep 10 14:28:55 gce-test systemd[1]: Starting google-startup-scripts.service
+    - Google Compute Engine Startup Scripts...'
+  - 'Sep 10 14:29:02 gce-test google_compat_metadata_script_runner[1133]: Enable core
+    plugin set to: [true], launching script runner for event "startup" from "/usr/bin/gce_metadata_script_runner"'
+  - '[   44.675381] XFS (sda): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep 10 14:29:03 gce-test google_metadata_script_runner[1239]: Running metadata
+    script runner (version 20260715.00) for "startup" event'
+  - 'Sep 10 14:29:03 gce-test google_metadata_script_runner[1239]: Found startup-script
+    in metadata'
+  - 'Sep 10 14:29:04 gce-test kernel: XFS (sda): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - '[   44.792992] XFS (sda): Ending clean mount'
+  - 'Sep 10 14:29:04 gce-test kernel: XFS (sda): Ending clean mount'
+  - 'Sep 10 14:29:04 gce-test google_metadata_script_runner[1239]: Finished running
+    startup scripts'
+  - 'Sep 10 14:29:05 gce-test systemd[1]: google-startup-scripts.service: Deactivated
+    successfully.'
+  - 'Sep 10 14:29:05 gce-test systemd[1]: Finished google-startup-scripts.service
+    - Google Compute Engine Startup Scripts.'
+  instance: gce-test
+  ok: true
+  run: 2026_09_10t09_28_24_243720
+  runtime: gcloud-east1
+  time: '2026-09-10T14:29:30+00:00'

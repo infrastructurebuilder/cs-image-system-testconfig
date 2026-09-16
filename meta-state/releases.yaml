@@ -1,0 +1,33 @@
+current:
+  default:
+    imgfile-basic-dask: imgfile-basic-dask-pckr-gce-ans-20260910-091415
+releases:
+- build_id: ami-09759842591f8e481
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  image: imgfile-basic-dask
+  model: default
+  name: imgfile-basic-dask-pckr-ebs-ans-20260901_074158
+  note: 'Stage 1 step 6.4: gate 5 verified live 2026-09-02 (sft login, mods, storage,
+    gid chain)'
+  run: 2026_09_02t07_22_19_175108
+- build_id: imgfile-basic-dask-pckr-gce-ans-20260910-091415
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  image: imgfile-basic-dask
+  model: default
+  name: imgfile-basic-dask-pckr-gce-ans-20260910_091415
+  note: declared release (gcloud-east1)
+  run: 2026_09_10t09_31_50_638470

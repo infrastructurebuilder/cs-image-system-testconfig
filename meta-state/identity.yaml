@@ -1,0 +1,85 @@
+groups:
+  basic:
+    admins:
+    - mykel.alvis
+    builder: oktagroups
+    gid_policy: creation-only
+    identity_type: okta
+    is_root: true
+    managed: true
+    members: []
+  coops:
+    admins:
+    - mykel.alvis
+    - zachary.wills
+    builder: oktagroups
+    gid_policy: creation-only
+    identity_type: okta
+    is_root: false
+    managed: true
+    members:
+    - mykel.alvis
+    - zachary.wills
+  secofs:
+    admins:
+    - jason.ducker
+    - mykel.alvis
+    - yjzhang
+    builder: oktagroups
+    gid_policy: creation-only
+    identity_type: okta
+    is_root: false
+    managed: true
+    members:
+    - danishyo
+    - hjyoo
+    - jason.ducker
+  stofs:
+    admins:
+    - mykel.alvis
+    builder: oktagroups
+    gid_policy: creation-only
+    identity_type: okta
+    is_root: false
+    managed: true
+    members:
+    - james.brown
+    - mykel.alvis
+  tcmet:
+    admins:
+    - jason.ducker
+    - mykel.alvis
+    - porton
+    builder: oktagroups
+    gid_policy: creation-only
+    identity_type: okta
+    is_root: false
+    managed: true
+    members:
+    - nnwogwu
+    - rick_luettich
+    - rmarsool
+note: structural facts only; gids flow by terraform remote-state reference (N7)
+run: 2026_09_16t08_30_59_578216
+user_builders:
+  okta-tf-users: okta-tf-ro
+users:
+- breanna.vanderplow
+- danishyo
+- hjyoo
+- james.brown
+- jason.ducker
+- joshua.franklin
+- katherine.powell
+- matthew.austin
+- michael.lalime
+- mykel.alvis
+- nnwogwu
+- p.maccready
+- patrick.tripp
+- porton
+- rick_luettich
+- rmarsool
+- william.mchale
+- yjzhang
+- zachary.wills

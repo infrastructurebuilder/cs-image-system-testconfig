@@ -1,0 +1,55 @@
+---
+# V2 (DESIGN §3F2, rev 12): instances no longer declare groups -- the owning
+# group lives on the instance IMAGE and every instance of that image shares it.
+# Storage attachment stays per instance (N16); an attachment is legal only if
+# the image's group is on the storage's allowed list (or the storage is
+# public_read).
+instances:
+  # Declared ephemerality (stage 10.8, operator decision 2026-09-07): gce-test
+  # is a REAL declaration that never persists -- every run that may apply the
+  # GCE root launches it, verifies it (serial console + booted image + the pd
+  # mount), and tears it down in the same run. A failed verification leaves
+  # it standing for inspection and fails the run.
+  - name: gce-test
+    image: imgfile-basic-dask
+    runtime: gcloud-east1
+    type: tofu-gce
+    description: "GCE verification instance (free-tier e2-micro); ephemeral"
+    ephemeral: true
+    storages:
+      - name: gce_data
+        mount_point: /mnt/gce-data
+  # test/test2 (the stage-1 AWS t3.medium instances) commented out for now
+  # (user decision 2026-09-05): they were torn down at the stage-1 close-out,
+  # and a dormant declaration would relaunch both the next time
+  # apply_instances flips. The test suite re-declares them for its own
+  # config copies (tests/fixtures/test_instances.yaml via copy_config),
+  # so the fixture-driven tests keep their AWS instance subjects.
+  #  - name: test
+  #    machine_type: t3.medium # 1 GB t2.micro OOM-kills the agents (stage 1 step 6)
+  #    image: imgfile-basic-cloudflow
+  #    description: "Test deploy of CSB Base Image RHEL 8.8 - Snapshot"
+  #    tags:
+  #      stype: test
+  #  - name: test2
+  #    machine_type: t3.medium # 1 GB t2.micro OOM-kills the agents (stage 1 step 6)
+  #    image: imgfile-basic-dask
+  #    description: "Test deploy of CSB Base Image AlmaLinux 9 - Snapshot"
+  #    tags:
+  #      hype: test
+  #    storages:
+  #      - name: mnt_data
+  #        mount_point: /mnt/data
+  # gce-test commented out too (user decision 2026-09-05): torn down through
+  # the gate the same day; a dormant declaration would relaunch it (and its
+  # 200 GB boot disk, ledger 51) the next time apply_instances flips. The
+  # test suite re-declares all three subjects from
+  # tests/fixtures/test_instances.yaml via copy_config.
+  #  - name: gce-test
+  #    image: imgfile-basic-dask
+  #    runtime: gcloud-east1
+  #    type: tofu-gce
+  #    description: "First GCE instance (GCP readiness); free-tier e2-micro"
+  #    storages:
+  #    - name: gce_data
+  #      mount_point: /mnt/gce-data

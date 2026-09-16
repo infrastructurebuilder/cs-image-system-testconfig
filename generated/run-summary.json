@@ -1,0 +1,39 @@
+{
+  "apply": {
+    "base-image": "stale-script-skipped",
+    "identity": "dry-run",
+    "instance-image": "stale-script-skipped",
+    "release": "stale-script-skipped",
+    "retention": "stale-script-skipped",
+    "storage": "stale-script-skipped"
+  },
+  "bake_plan": {},
+  "dry_run": true,
+  "error": null,
+  "lifecycles": [
+    {
+      "deferred_commands": 4,
+      "error": null,
+      "lifecycle": "identity",
+      "runner_script": "/Volumes/MiniSSD/git/Work/Lynker/cs-image-system-testconfig/generated/identity/run-identity.sh",
+      "status": "generated"
+    }
+  ],
+  "meta_state_commit": null,
+  "ok": true,
+  "overlays": [],
+  "requested": [
+    "identity"
+  ],
+  "run_id": "2026_09_16t08_30_59_578216",
+  "state": {
+    "changed": 0,
+    "foreign": 0,
+    "hard": 0,
+    "missing": 0,
+    "stale": 4,
+    "unavailable": 0
+  },
+  "undeclared": [],
+  "validation_errors": []
+}

@@ -1,0 +1,92 @@
+results:
+  1a40dbc7caf2de73397f92b077264a46b4982344df5b1406f763dad0da0b8ecf:
+    changes_on_rerun: []
+    content_hash: 1a40dbc7caf2de73397f92b077264a46b4982344df5b1406f763dad0da0b8ecf
+    detail: ''
+    first_run_rc: 0
+    idempotent: true
+    image: imgfile-basic-dask-two
+    mod: data-science-workstation-two
+    run: 2026_08_31t09_20_45_403048
+    second_run_rc: 0
+    status: pass
+    target: b31bc440aae3c07fdea9e71a388535754ee032fd6e00cad8c1998cf52cdf8aa1
+    type: ansible-default
+  7efcd1a4fa07925eb1b11398f175aa61b5c77dff355050cc6871b50ffbe697cb:
+    changes_on_rerun: []
+    content_hash: 7efcd1a4fa07925eb1b11398f175aa61b5c77dff355050cc6871b50ffbe697cb
+    detail: ''
+    first_run_rc: 0
+    idempotent: true
+    image: imgfile-basic-dask
+    mod: derivative-setup
+    run: 2026_09_10t23_30_30_978573
+    second_run_rc: 0
+    status: pass
+    target: b8246236ab390ab5fa3bdc76396ba91f59e0cddfb8e0626ac5640971fb5d9756
+    type: bash-remote
+  c670c6df3ddc710fb5d548320ca258a78f2d0af13dea4ac1bf559aede8f1993d:
+    changes_on_rerun: []
+    content_hash: c670c6df3ddc710fb5d548320ca258a78f2d0af13dea4ac1bf559aede8f1993d
+    detail: ''
+    first_run_rc: 0
+    idempotent: true
+    image: imgfile-basic-dask
+    mod: dask-setup-jeffy
+    run: 2026_08_31t09_20_45_403048
+    second_run_rc: 0
+    status: pass
+    target: 6bbdc47097b7923889b9344cca5aa61e50e9d5908b8fce68784e85b8974b80c6
+    type: ansible-default
+  cfa47ca0cf25ce2c05e0b071041001b36cfc8fcd380b289c7e1c7b99ed5b73a0:
+    changes_on_rerun: []
+    content_hash: cfa47ca0cf25ce2c05e0b071041001b36cfc8fcd380b289c7e1c7b99ed5b73a0
+    detail: ''
+    first_run_rc: 0
+    idempotent: true
+    image: imgfile-basic-dask-two
+    mod: dask-setup2
+    run: 2026_08_31t09_20_45_403048
+    second_run_rc: 0
+    status: pass
+    target: b31bc440aae3c07fdea9e71a388535754ee032fd6e00cad8c1998cf52cdf8aa1
+    type: ansible-default
+  e835044f85def6722a70ad56bb710d52e6b1207c464addd60bf7bb879cf3213f:
+    changes_on_rerun: []
+    content_hash: e835044f85def6722a70ad56bb710d52e6b1207c464addd60bf7bb879cf3213f
+    detail: ''
+    first_run_rc: 0
+    idempotent: true
+    image: imgfile-data-science
+    mod: data-science-setup
+    run: 2026_08_31t09_20_45_403048
+    second_run_rc: 0
+    status: pass
+    target: a764fbd87418f569fccd08891f6d7253d992aaa930659779abdd831e3d1cbf41
+    type: ansible-default
+  f69207b82321c53a4944d6cba1940d6a4b8e051fa26c8c30c733c7f7c0faea3d:
+    changes_on_rerun: []
+    content_hash: f69207b82321c53a4944d6cba1940d6a4b8e051fa26c8c30c733c7f7c0faea3d
+    detail: ''
+    first_run_rc: 0
+    idempotent: true
+    image: imgfile-basic-dask
+    mod: dask-setup-jeffy
+    run: 2026_09_10t23_30_30_978573
+    second_run_rc: 0
+    status: pass
+    target: b8246236ab390ab5fa3bdc76396ba91f59e0cddfb8e0626ac5640971fb5d9756
+    type: ansible-default
+  f7ab5cc06412b04910c5d56054d2ffcb602d6e4c01d2402f4cfd434412766b1e:
+    changes_on_rerun: []
+    content_hash: f7ab5cc06412b04910c5d56054d2ffcb602d6e4c01d2402f4cfd434412766b1e
+    detail: ''
+    first_run_rc: 0
+    idempotent: true
+    image: imgfile-basic-dask
+    mod: derivative-setup
+    run: 2026_08_31t09_20_45_403048
+    second_run_rc: 0
+    status: pass
+    target: 6bbdc47097b7923889b9344cca5aa61e50e9d5908b8fce68784e85b8974b80c6
+    type: bash-remote

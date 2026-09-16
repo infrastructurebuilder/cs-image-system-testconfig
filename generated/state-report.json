@@ -1,0 +1,502 @@
+{
+  "drift": [
+    {
+      "detail": "parent pin ami-015a9eb88d13c3236 is behind series head ami-0fb6436f4a08260c4 (upgrade image, or parent_policy: follow)",
+      "drift": "stale",
+      "hard": false,
+      "kind": "image",
+      "name": "imgfile-basic-cloudflow-notdocker@aws-east2-runtime"
+    },
+    {
+      "detail": "parent pin ami-015a9eb88d13c3236 is behind series head ami-0fb6436f4a08260c4 (upgrade image, or parent_policy: follow)",
+      "drift": "stale",
+      "hard": false,
+      "kind": "image",
+      "name": "imgfile-basic-cloudflow-two@aws-east2-runtime"
+    },
+    {
+      "detail": "parent pin ami-073d81cd9b3eec54b is behind series head ami-0bac0b93422c22661 (upgrade image, or parent_policy: follow)",
+      "drift": "stale",
+      "hard": false,
+      "kind": "image",
+      "name": "imgfile-basic-cloudflow@aws-east2-runtime"
+    },
+    {
+      "detail": "parent pin ami-015a9eb88d13c3236 is behind series head ami-0fb6436f4a08260c4 (upgrade image, or parent_policy: follow)",
+      "drift": "stale",
+      "hard": false,
+      "kind": "image",
+      "name": "imgfile-basic-dask-two@aws-east2-runtime"
+    }
+  ],
+  "reality": {
+    "groups": {
+      "basic": {
+        "admins": [
+          "mykel.alvis"
+        ],
+        "enrollment_token": true,
+        "gid": 180045,
+        "local_name": "sft_basic_user2",
+        "members": [],
+        "present": true
+      },
+      "coops": {
+        "admins": [
+          "mykel.alvis",
+          "zachary.wills"
+        ],
+        "enrollment_token": true,
+        "gid": 180007,
+        "local_name": "sft_coops_user",
+        "members": [
+          "mykel.alvis",
+          "zachary.wills"
+        ],
+        "present": true
+      },
+      "secofs": {
+        "admins": [
+          "jason.ducker",
+          "mykel.alvis",
+          "yjzhang"
+        ],
+        "enrollment_token": true,
+        "gid": 180044,
+        "local_name": "sft_secofs_user",
+        "members": [
+          "danishyo",
+          "hjyoo",
+          "jason.ducker"
+        ],
+        "present": true
+      },
+      "stofs": {
+        "admins": [
+          "mykel.alvis"
+        ],
+        "enrollment_token": true,
+        "gid": 180010,
+        "local_name": "sft_stofs_user",
+        "members": [
+          "james.brown",
+          "mykel.alvis"
+        ],
+        "present": true
+      },
+      "tcmet": {
+        "admins": [
+          "jason.ducker",
+          "mykel.alvis",
+          "porton"
+        ],
+        "enrollment_token": true,
+        "gid": 180047,
+        "local_name": "sft_tcmet_user",
+        "members": [
+          "nnwogwu",
+          "rick_luettich",
+          "rmarsool"
+        ],
+        "present": true
+      }
+    },
+    "images": {
+      "aws-east1": [],
+      "aws-east2-runtime": [
+        {
+          "created": "2026-08-31T23:12:54.000Z",
+          "image_id": "ami-0078fada0a58dcf1c",
+          "name": "imgfile-data-science-pckr-ebs-ans-20260831_180930",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "6d1e26924c019b4a",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-08a52e8f7f287b40a",
+            "csis_run": "2026_08_31t18_09_36_958800",
+            "csis_series": "imgfile-data-science",
+            "csis_storage_types": "ebs",
+            "data_science": "true"
+          }
+        },
+        {
+          "created": "2026-08-31T20:07:23.000Z",
+          "image_id": "ami-015a9eb88d13c3236",
+          "name": "basic-rhel-9-aws-east2-runtime-20260831_144756",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "4bb3abf99bc228b0",
+            "csis_identity_types": "okta",
+            "csis_parent": "vendor",
+            "csis_run": "2026_08_31t14_48_03_972801",
+            "csis_series": "basic-rhel-9",
+            "csis_storage_types": "ebs,efs,s3"
+          }
+        },
+        {
+          "created": "2026-09-10T10:00:45.000Z",
+          "image_id": "ami-01a9a00286f1631af",
+          "name": "basic-rh-10-aws-east2-runtime-20260910_045558",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "3776dee67f87c807",
+            "csis_identity_types": "okta",
+            "csis_parent": "vendor",
+            "csis_run": "2026_09_10t04_56_11_777015",
+            "csis_series": "basic-rh-10",
+            "csis_storage_types": "ebs,efs,gcs,pd,s3"
+          }
+        },
+        {
+          "created": "2026-09-01T12:46:48.000Z",
+          "image_id": "ami-050fa77170aadf309",
+          "name": "imgfile-basic-cloudflow-two-pckr-ebs-ans-20260901_074158",
+          "state": "available",
+          "tags": {
+            "cloudflow": "true",
+            "csis_fingerprint": "8e13c0753b3b5f6a",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-015a9eb88d13c3236",
+            "csis_run": "2026_09_01t07_42_05_281665",
+            "csis_series": "imgfile-basic-cloudflow-two",
+            "csis_storage_types": "ebs,efs,s3"
+          }
+        },
+        {
+          "created": "2026-08-31T23:20:27.000Z",
+          "image_id": "ami-06c57cc98a1586710",
+          "name": "imgfile-basic-cloudflow-notdocker-pckr-ebs-ans-20260831_180930",
+          "state": "available",
+          "tags": {
+            "cloudflow": "true",
+            "csis_fingerprint": "5fec414903122d32",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-015a9eb88d13c3236",
+            "csis_run": "2026_08_31t18_09_36_958800",
+            "csis_series": "imgfile-basic-cloudflow-notdocker",
+            "csis_storage_types": "ebs,efs,s3"
+          }
+        },
+        {
+          "created": "2026-08-31T23:13:45.000Z",
+          "image_id": "ami-073d81cd9b3eec54b",
+          "name": "imgfile-basic-dask-pckr-ebs-ans-20260831_180930",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "1562477b88d839aa",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-0829ccceee6db194e",
+            "csis_run": "2026_08_31t18_09_36_958800",
+            "csis_series": "imgfile-basic-dask",
+            "csis_storage_types": "ebs,efs,s3",
+            "dask": "true"
+          }
+        },
+        {
+          "created": "2026-09-10T10:25:06.000Z",
+          "image_id": "ami-07519c62eb365d850",
+          "name": "imgfile-basic-dask-pckr-ebs-ans-20260910_052217",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "231bb5c65d53d818",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-01a9a00286f1631af",
+            "csis_run": "2026_09_10t05_22_29_411396",
+            "csis_series": "imgfile-basic-dask",
+            "csis_storage_types": "ebs,efs,gcs,pd,s3",
+            "dask": "true"
+          }
+        },
+        {
+          "created": "2026-08-31T22:55:33.000Z",
+          "image_id": "ami-0858fb1b0c424c585",
+          "name": "basic-rhel-8-aws-east2-runtime-20260831_174233",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "b0912c937c5ac92d",
+            "csis_identity_types": "okta",
+            "csis_parent": "vendor",
+            "csis_run": "2026_08_31t17_42_40_359393",
+            "csis_series": "basic-rhel-8",
+            "csis_storage_types": "ebs,efs,s3"
+          }
+        },
+        {
+          "created": "2026-08-31T22:45:23.000Z",
+          "image_id": "ami-08a52e8f7f287b40a",
+          "name": "my-deb-11-aws-east2-runtime-20260831_174233",
+          "state": "available",
+          "tags": {
+            "Environment": "Development",
+            "OS": "debian",
+            "Project": "MyDebianProject",
+            "Version": "11",
+            "csis_fingerprint": "a6904302a527f9b8",
+            "csis_identity_types": "okta",
+            "csis_parent": "vendor",
+            "csis_run": "2026_08_31t17_42_40_359393",
+            "csis_series": "my-deb-11",
+            "csis_storage_types": "ebs"
+          }
+        },
+        {
+          "created": "2026-09-01T12:47:36.000Z",
+          "image_id": "ami-09759842591f8e481",
+          "name": "imgfile-basic-dask-pckr-ebs-ans-20260901_074158",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "dbe307636cf31684",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-0829ccceee6db194e",
+            "csis_run": "2026_09_01t07_42_05_281665",
+            "csis_series": "imgfile-basic-dask",
+            "csis_storage_types": "ebs,efs,s3",
+            "dask": "true"
+          }
+        },
+        {
+          "created": "2026-09-01T12:51:37.000Z",
+          "image_id": "ami-09eb9a0052c9eba93",
+          "name": "imgfile-basic-cloudflow-some-other-builder-20260901_074158",
+          "state": "available",
+          "tags": {
+            "cloudflow": "true",
+            "csis_fingerprint": "0718f820242a5d57",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-073d81cd9b3eec54b",
+            "csis_run": "2026_09_01t07_42_05_281665",
+            "csis_series": "imgfile-basic-cloudflow",
+            "csis_storage_types": "ebs,efs,s3"
+          }
+        },
+        {
+          "created": "2026-08-31T23:13:00.000Z",
+          "image_id": "ami-0a30ed634af74138f",
+          "name": "imgfile-basic-cloudflow-two-pckr-ebs-ans-20260831_180930",
+          "state": "available",
+          "tags": {
+            "cloudflow": "true",
+            "csis_fingerprint": "83869fc9fe09cc4d",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-015a9eb88d13c3236",
+            "csis_run": "2026_08_31t18_09_36_958800",
+            "csis_series": "imgfile-basic-cloudflow-two",
+            "csis_storage_types": "ebs,efs,s3"
+          }
+        },
+        {
+          "created": "2026-09-01T12:46:35.000Z",
+          "image_id": "ami-0ac87405590e4b3c4",
+          "name": "imgfile-basic-dask-two-pckr-ebs-ans-20260901_074158",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "4bc5591bd262b4ea",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-015a9eb88d13c3236",
+            "csis_run": "2026_09_01t07_42_05_281665",
+            "csis_series": "imgfile-basic-dask-two",
+            "csis_storage_types": "ebs,efs,s3",
+            "dask": "true"
+          }
+        },
+        {
+          "created": "2026-09-11T03:03:55.000Z",
+          "image_id": "ami-0bac0b93422c22661",
+          "name": "imgfile-basic-dask-pckr-ebs-ans-20260910_215625",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "daeff9640001c2fc",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-01a9a00286f1631af",
+            "csis_run": "2026_09_10t21_56_37_991481",
+            "csis_series": "imgfile-basic-dask",
+            "csis_storage_types": "ebs,efs,gcs,pd,s3",
+            "dask": "true"
+          }
+        },
+        {
+          "created": "2026-08-31T19:51:06.000Z",
+          "image_id": "ami-0cff2526a93e3391d",
+          "name": "my-deb-11-aws-east2-runtime-20260831_144756",
+          "state": "available",
+          "tags": {
+            "Environment": "Development",
+            "OS": "debian",
+            "Project": "MyDebianProject",
+            "Version": "11",
+            "csis_fingerprint": "784fac210590f1b9",
+            "csis_identity_types": "okta",
+            "csis_parent": "vendor",
+            "csis_run": "2026_08_31t14_48_03_972801",
+            "csis_series": "my-deb-11",
+            "csis_storage_types": "ebs"
+          }
+        },
+        {
+          "created": "2026-09-01T12:46:32.000Z",
+          "image_id": "ami-0d5c2ff6dbe2cb3ad",
+          "name": "imgfile-data-science-pckr-ebs-ans-20260901_074158",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "e7ae44e9763b5b28",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-08a52e8f7f287b40a",
+            "csis_run": "2026_09_01t07_42_05_281665",
+            "csis_series": "imgfile-data-science",
+            "csis_storage_types": "ebs",
+            "data_science": "true"
+          }
+        },
+        {
+          "created": "2026-08-31T23:12:33.000Z",
+          "image_id": "ami-0e6b4cd172fbe344c",
+          "name": "imgfile-basic-dask-two-pckr-ebs-ans-20260831_180930",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "e62c32fe2a594682",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-015a9eb88d13c3236",
+            "csis_run": "2026_08_31t18_09_36_958800",
+            "csis_series": "imgfile-basic-dask-two",
+            "csis_storage_types": "ebs,efs,s3",
+            "dask": "true"
+          }
+        },
+        {
+          "created": "2026-09-01T12:55:06.000Z",
+          "image_id": "ami-0e9bc41e495dcf888",
+          "name": "imgfile-basic-cloudflow-notdocker-pckr-ebs-ans-20260901_074158",
+          "state": "available",
+          "tags": {
+            "cloudflow": "true",
+            "csis_fingerprint": "6ee78aaf59817f2e",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-015a9eb88d13c3236",
+            "csis_run": "2026_09_01t07_42_05_281665",
+            "csis_series": "imgfile-basic-cloudflow-notdocker",
+            "csis_storage_types": "ebs,efs,s3"
+          }
+        },
+        {
+          "created": "2026-08-31T23:17:14.000Z",
+          "image_id": "ami-0f6307532eb04338b",
+          "name": "imgfile-basic-cloudflow-some-other-builder-20260831_180930",
+          "state": "available",
+          "tags": {
+            "cloudflow": "true",
+            "csis_fingerprint": "74c795369143bc82",
+            "csis_identity_types": "okta",
+            "csis_parent": "ami-073d81cd9b3eec54b",
+            "csis_run": "2026_08_31t18_09_36_958800",
+            "csis_series": "imgfile-basic-cloudflow",
+            "csis_storage_types": "ebs,efs,s3"
+          }
+        },
+        {
+          "created": "2026-08-31T23:02:23.000Z",
+          "image_id": "ami-0fb6436f4a08260c4",
+          "name": "basic-rhel-9-aws-east2-runtime-20260831_174233",
+          "state": "available",
+          "tags": {
+            "csis_fingerprint": "4fa3f8488c398951",
+            "csis_identity_types": "okta",
+            "csis_parent": "vendor",
+            "csis_run": "2026_08_31t17_42_40_359393",
+            "csis_series": "basic-rhel-9",
+            "csis_storage_types": "ebs,efs,s3"
+          }
+        }
+      ],
+      "gcloud-east1": [
+        {
+          "created": "2026-09-10T07:26:06.353-07:00",
+          "image_id": "imgfile-basic-dask-pckr-gce-ans-20260910-091415",
+          "name": "imgfile-basic-dask-pckr-gce-ans-20260910-091415",
+          "state": "READY",
+          "tags": {
+            "csis_fingerprint": "de18cb2753d43b86",
+            "csis_identity_types": "okta",
+            "csis_parent": "basic-rh-10-gcloud-east1-20260910-091415",
+            "csis_run": "2026_09_10t09_14_27_793542",
+            "csis_series": "imgfile-basic-dask",
+            "csis_storage_types": "ebs-efs-gcs-pd-s3",
+            "dask": "true"
+          }
+        }
+      ],
+      "west1": []
+    },
+    "storages": {
+      "default-bucket": {
+        "id": "noscsb-csis-test-514190660293-default-bucket",
+        "lifecycle": {
+          "rules": [
+            "csis"
+          ]
+        },
+        "present": true,
+        "state": "active",
+        "tags": {
+          "Name": "noscsb-csis-test-514190660293-default-bucket",
+          "env": "production",
+          "team": "devops"
+        },
+        "type": "s3"
+      },
+      "efs-storage": {
+        "id": "fs-02d658f1561aab44b",
+        "lifecycle": {
+          "TransitionToIA": "AFTER_30_DAYS"
+        },
+        "present": true,
+        "state": "available",
+        "tags": {
+          "Name": "efs-storage"
+        },
+        "type": "efs"
+      },
+      "gce_bucket": {
+        "id": "csis-sandbox-86233086783-default-bucket",
+        "location": "US-EAST1",
+        "present": true,
+        "state": "active",
+        "storage_class": null,
+        "tags": {
+          "csis_storage": "gce_bucket",
+          "goog-terraform-provisioned": "true"
+        },
+        "type": "gcs"
+      },
+      "gce_data": {
+        "id": "gce-data",
+        "present": true,
+        "size": 30,
+        "state": "READY",
+        "tags": {
+          "csis_group_coops": "true",
+          "csis_storage": "gce_data",
+          "goog-terraform-provisioned": "true"
+        },
+        "type": "pd"
+      },
+      "mnt_data": {
+        "id": "vol-0fe1e27716f86c2f2",
+        "present": true,
+        "size": 100,
+        "state": "available",
+        "tags": {
+          "Name": "mnt_data"
+        },
+        "type": "ebs"
+      }
+    }
+  },
+  "run": "2026_09_16t08_30_59_578216",
+  "summary": {
+    "changed": 0,
+    "foreign": 0,
+    "missing": 0,
+    "stale": 4
+  },
+  "unavailable": []
+}
