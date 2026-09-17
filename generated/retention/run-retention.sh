@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # cs-image-system lifecycle runner: retention
-# run id: 2026_09_17t14_24_25_178103
+# run id: 2026_09_17t14_25_07_696467
 # Deferred commands accumulated while generating this lifecycle,
 # in phase order. Paths are relative to this lifecycle's directory.
 # NOTE: builders' pre/post finalize hooks are NOT part of this
@@ -10,4 +10,4 @@ cd "$(dirname "$0")"
 CSIS_ROOT="$(cd "../.." && pwd)"   # the configuration root, relative to this script
 
 # --- phase: instance-generation ---
-( cd "retention" && cs-image-system --root-dir "$CSIS_ROOT" --no-dry-run dispose image --retention --runtime aws-east2-runtime )
+( cd "retention" && cs-image-system --root-dir "$CSIS_ROOT" --no-dry-run dispose image --retention )
