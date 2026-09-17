@@ -615,3 +615,25 @@ builds:
     assertions: 5
     in_bake: true
   update: null
+- build_id: ami-00cffeffeb58c7183
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - s3
+  chain:
+  - imgfile-basic-dask-two
+  input_fingerprint: 8758cea5256bf648bd6b1fc8ed88829bcee416a7c739310817f71bd9bc0876f1
+  local_mods: false
+  mods: []
+  name: imgfile-basic-dask-two-pckr-ebs-ans-20260917_140549
+  parent: ami-015a9eb88d13c3236
+  run: 2026_09_17t14_05_56_909248
+  runtime: aws-east2-runtime
+  series: imgfile-basic-dask-two
+  tests:
+    assertions: 2
+    in_bake: true
+  update: null
