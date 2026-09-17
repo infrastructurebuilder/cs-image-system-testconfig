@@ -1,0 +1,89 @@
+workspaces:
+  aws-ebs:
+    backend: s3-east2
+    bucket: noaa-ioos-cloud-sandbox-tfstate
+    encrypt: true
+    key: statefiles/csia-image-system-test/aws_ebs.tfstate
+    location: s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/aws_ebs.tfstate
+    profile: noaa
+    region: us-east-2
+    run: 2026_09_17t16_50_31_612963
+    type: s3
+    use_lockfile: true
+  aws-efs:
+    backend: s3-east2
+    bucket: noaa-ioos-cloud-sandbox-tfstate
+    encrypt: true
+    key: statefiles/csia-image-system-test/aws_efs.tfstate
+    location: s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/aws_efs.tfstate
+    profile: noaa
+    region: us-east-2
+    run: 2026_09_17t16_50_31_612963
+    type: s3
+    use_lockfile: true
+  aws-s3:
+    backend: s3-east2
+    bucket: noaa-ioos-cloud-sandbox-tfstate
+    encrypt: true
+    key: statefiles/csia-image-system-test/aws_s3.tfstate
+    location: s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/aws_s3.tfstate
+    profile: noaa
+    region: us-east-2
+    run: 2026_09_17t16_50_31_612963
+    type: s3
+    use_lockfile: true
+  gcp-gcs:
+    backend: s3-east2
+    bucket: noaa-ioos-cloud-sandbox-tfstate
+    encrypt: true
+    key: statefiles/csia-image-system-test/gcp_gcs.tfstate
+    location: s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/gcp_gcs.tfstate
+    profile: noaa
+    region: us-east-2
+    run: 2026_09_17t16_50_31_612963
+    type: s3
+    use_lockfile: true
+  gcp-pd:
+    backend: s3-east2
+    bucket: noaa-ioos-cloud-sandbox-tfstate
+    encrypt: true
+    key: statefiles/csia-image-system-test/gcp_pd.tfstate
+    location: s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/gcp_pd.tfstate
+    profile: noaa
+    region: us-east-2
+    run: 2026_09_17t16_50_31_612963
+    type: s3
+    use_lockfile: true
+  okta-tf-users:
+    backend: s3-east2
+    bucket: noaa-ioos-cloud-sandbox-tfstate
+    encrypt: true
+    key: statefiles/csia-image-system-test/okta_tf_users.tfstate
+    location: s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/okta_tf_users.tfstate
+    profile: noaa
+    region: us-east-2
+    run: 2026_09_17t16_50_31_612963
+    type: s3
+    use_lockfile: true
+  oktagroups:
+    backend: s3-east2
+    bucket: noaa-ioos-cloud-sandbox-tfstate
+    encrypt: true
+    key: statefiles/csia-image-system-test/oktagroups.tfstate
+    location: s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/oktagroups.tfstate
+    profile: noaa
+    region: us-east-2
+    run: 2026_09_17t16_50_31_612963
+    type: s3
+    use_lockfile: true
+  tofu-gce:
+    backend: s3-east2
+    bucket: noaa-ioos-cloud-sandbox-tfstate
+    encrypt: true
+    key: statefiles/csia-image-system-test/tofu_gce.tfstate
+    location: s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/tofu_gce.tfstate
+    profile: noaa
+    region: us-east-2
+    run: 2026_09_17t16_50_31_612963
+    type: s3
+    use_lockfile: true
