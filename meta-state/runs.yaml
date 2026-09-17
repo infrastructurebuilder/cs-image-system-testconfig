@@ -2467,3 +2467,19 @@ runs:
   - release
   - retention
   run: 2026_09_17t14_22_13_877883
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: no-script
+    release: executed
+    retention: executed
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_17t14_24_25_178103
