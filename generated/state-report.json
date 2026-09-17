@@ -455,18 +455,6 @@
         },
         "type": "efs"
       },
-      "gce_bucket": {
-        "id": "csis-sandbox-86233086783-default-bucket",
-        "location": "US-EAST1",
-        "present": true,
-        "state": "active",
-        "storage_class": null,
-        "tags": {
-          "csis_storage": "gce_bucket",
-          "goog-terraform-provisioned": "true"
-        },
-        "type": "gcs"
-      },
       "gce_data": {
         "id": "gce-data",
         "present": true,
@@ -491,12 +479,14 @@
       }
     }
   },
-  "run": "2026_09_16t08_30_59_578216",
+  "run": "2026_09_17t03_49_22_768822",
   "summary": {
     "changed": 0,
     "foreign": 0,
     "missing": 0,
     "stale": 4
   },
-  "unavailable": []
+  "unavailable": [
+    "storages/gcp-gcs: gcloud storage buckets describe gs://csis-sandbox-86233086783-default-bucket: default-bucket' (or it may not exist). This command is authenticated as csis-github-readonly@csis-sandbox.iam.gserviceaccount.com using the credentials in /home/runner/work/cs-image-system-3/cs-image-system-3/gha-creds-04abe8e87eb8f9e2.json, specified by the [auth/credential_file_override] property."
+  ]
 }

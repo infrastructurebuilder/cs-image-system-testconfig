@@ -1,13 +1,25 @@
 {
   "apply": {
-    "base-image": "stale-script-skipped",
+    "base-image": "dry-run",
     "identity": "dry-run",
-    "instance-image": "stale-script-skipped",
-    "release": "stale-script-skipped",
-    "retention": "stale-script-skipped",
-    "storage": "stale-script-skipped"
+    "instance-image": "dry-run",
+    "release": "dry-run",
+    "retention": "dry-run",
+    "storage": "dry-run"
   },
-  "bake_plan": {},
+  "bake_plan": {
+    "basic-rh-10@aws-east2-runtime": "skip: current (build ami-01a9a00286f1631af)",
+    "basic-rh-10@gcloud-east1": "bake: no build of basic-rh-10 on gcloud-east1 yet",
+    "basic-rhel-9@aws-east2-runtime": "skip: current (build ami-0fb6436f4a08260c4)",
+    "imgfile-basic-cloudflow-notdocker@aws-east2-runtime": "skip: current (build ami-0e9bc41e495dcf888)",
+    "imgfile-basic-cloudflow-two@aws-east2-runtime": "skip: current (build ami-050fa77170aadf309)",
+    "imgfile-basic-cloudflow@aws-east2-runtime": "skip: current (build ami-09eb9a0052c9eba93)",
+    "imgfile-basic-dask-two@aws-east2-runtime": "skip: current (build ami-0ac87405590e4b3c4)",
+    "imgfile-basic-dask@aws-east2-runtime": "skip: current (build ami-0bac0b93422c22661)",
+    "imgfile-basic-dask@gcloud-east1": "bake: inputs changed (de18cb2753d4 -> 9a6b114a7224)",
+    "imgfile-data-science@aws-east2-runtime": "skip: current (build ami-0d5c2ff6dbe2cb3ad)",
+    "my-deb-11@aws-east2-runtime": "skip: current (build ami-08a52e8f7f287b40a)"
+  },
   "dry_run": true,
   "error": null,
   "lifecycles": [
@@ -15,7 +27,42 @@
       "deferred_commands": 4,
       "error": null,
       "lifecycle": "identity",
-      "runner_script": "/Volumes/MiniSSD/git/Work/Lynker/cs-image-system-testconfig/generated/identity/run-identity.sh",
+      "runner_script": "/home/runner/work/cs-image-system-3/cs-image-system-3/cs-image-system-testconfig/generated/identity/run-identity.sh",
+      "status": "generated"
+    },
+    {
+      "deferred_commands": 20,
+      "error": null,
+      "lifecycle": "storage",
+      "runner_script": "/home/runner/work/cs-image-system-3/cs-image-system-3/cs-image-system-testconfig/generated/storage/run-storage.sh",
+      "status": "generated"
+    },
+    {
+      "deferred_commands": 1,
+      "error": null,
+      "lifecycle": "base-image",
+      "runner_script": "/home/runner/work/cs-image-system-3/cs-image-system-3/cs-image-system-testconfig/generated/base-image/run-base-image.sh",
+      "status": "generated"
+    },
+    {
+      "deferred_commands": 5,
+      "error": null,
+      "lifecycle": "instance-image",
+      "runner_script": "/home/runner/work/cs-image-system-3/cs-image-system-3/cs-image-system-testconfig/generated/instance-image/run-instance-image.sh",
+      "status": "generated"
+    },
+    {
+      "deferred_commands": 1,
+      "error": null,
+      "lifecycle": "release",
+      "runner_script": "/home/runner/work/cs-image-system-3/cs-image-system-3/cs-image-system-testconfig/generated/release/run-release.sh",
+      "status": "generated"
+    },
+    {
+      "deferred_commands": 1,
+      "error": null,
+      "lifecycle": "retention",
+      "runner_script": "/home/runner/work/cs-image-system-3/cs-image-system-3/cs-image-system-testconfig/generated/retention/run-retention.sh",
       "status": "generated"
     }
   ],
@@ -23,16 +70,21 @@
   "ok": true,
   "overlays": [],
   "requested": [
-    "identity"
+    "identity",
+    "storage",
+    "base-image",
+    "instance-image",
+    "release",
+    "retention"
   ],
-  "run_id": "2026_09_16t08_30_59_578216",
+  "run_id": "2026_09_17t03_49_22_768822",
   "state": {
     "changed": 0,
     "foreign": 0,
     "hard": 0,
     "missing": 0,
     "stale": 4,
-    "unavailable": 0
+    "unavailable": 1
   },
   "undeclared": [],
   "validation_errors": []

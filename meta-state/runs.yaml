@@ -2325,3 +2325,21 @@ runs:
   requested:
   - identity
   run: 2026_09_16t08_30_59_578216
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_17t03_49_22_768822
