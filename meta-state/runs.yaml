@@ -1,15 +1,4 @@
 runs:
-- apply:
-    base-image: not-attempted
-    identity: not-attempted
-    instance-image: not-attempted
-    storage: not-attempted
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - identity
-  run: 2026_08_26t16_54_19_896782
 - apply: {}
   dry_run: true
   error: 'CalledProcessError: Command ''[''/usr/local/bin/packer'', ''validate'',
@@ -2541,3 +2530,21 @@ runs:
   - release
   - retention
   run: 2026_09_18t10_34_13_522187
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_18t11_26_51_075869

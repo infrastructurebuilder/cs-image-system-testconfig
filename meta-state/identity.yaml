@@ -11,14 +11,12 @@ groups:
   coops:
     admins:
     - mykel.alvis
-    - zachary.wills
     builder: oktagroups
     gid_policy: creation-only
     identity_type: okta
     is_root: false
     managed: true
     members:
-    - mykel.alvis
     - zachary.wills
   secofs:
     admins:
@@ -60,7 +58,7 @@ groups:
     - rick_luettich
     - rmarsool
 note: structural facts only; gids flow by terraform remote-state reference (N7)
-run: 2026_09_18t10_34_13_522187
+run: 2026_09_18t11_26_51_075869
 user_builders:
   okta-tf-users: okta-tf-ro
 users:

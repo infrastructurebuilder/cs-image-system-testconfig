@@ -3,8 +3,8 @@ module "group_coops" {
   source                    = "../../../../../cs-image-system-3/tfmodules/okta_opa_module"
   providers                 = { oktapam = oktapam.oktagroups }
   group_id                  = "coops"
-  members                   = ["mykel.alvis", "zachary.wills"]
-  admins                    = ["mykel.alvis", "zachary.wills"]
+  members                   = ["zachary.wills"]
+  admins                    = ["mykel.alvis"]
   delegated_admin_group_ids = []
   account_discovery         = true
   gateway_selector          = "environment=staging"
