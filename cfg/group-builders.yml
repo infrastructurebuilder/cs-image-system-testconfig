@@ -15,7 +15,7 @@ group_builders:
     # key: "test-key"
     # secret: "test-secret"
     # stage 22.5 REMOVED -- a field on the USER builder, not the group builder; group-builders.yml uses it correctly further down under user_builders
-    # default_user_email_template: "{{ this.name }}@noaa.gov"
+    # default_user_email_template: "{{ this.name }}@{{ builder.email_domain }}"
     required_providers:
       - name: oktapam
         source: okta/oktapam
@@ -34,7 +34,11 @@ user_builders:
     # user.name is the bare OPA username; email (explicit, or derived by this
     # template) is used ONLY for the org lookup (PLAN.md local-migration Q3).
     email_as_username: false
-    default_user_email_template: "{{ user.name }}@noaa.gov"
+    # stage 51: the domain is its own value so it can be declared encrypted;
+    # a derived address inherits it and reaches the emission as ciphertext,
+    # which is what encrypting the names was meant to achieve and did not
+    email_domain: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA3Nm05MStYVHFMSFZKMWt5L2V5Z09kVGdFa0NYek1FVitmU2lWWXhrd2lBCnBrRFBCSWdZZGZwblU0cXFRTlBtdk0yWE1FSnN4amVGTnRnOXdKWTQ0V2sKLT4gWDI1NTE5IG9rMldSZTRUZE5zWVJ3QWhqRnBjdWN1SW1NOHE0NytyMU5Ca3BIMG5XR1UKWFFhZ08zbEFFMFVPNXEwaVZnM3poRmVPOVlBS21TNVcvTXNrY1VOQTQ0RQotPiBYMjU1MTkgKzM5bVFGUFpobkFTaTAyclEraGlkSVBOVk8xOGlabmdGS0lmUWhZMWpubwpUQkVzMzV5azRUZEdhOHFuS1lQZ2Rwd0N1d3ZWNTlQOHFhcGZFTnRTQ2ZVCi0+IFgyNTUxOSBVTHVCeFVOYy9uVU54bERuQmEwMHE3U1FQUHhORTNuZlI2OURPN0hVbHlzCmdONVJqRWhDMzY4STZQb3d4THJjbHVuWUcrYzh0K1hlM3RjVTQ1a3lDb00KLS0tIGpFbVhTdWhGZHVGeWJ2c3I3TnZzY2tTSUxxUk1IaXlEYXRMMWsyK3hyK1kKEbmGJrSpfPdfrfI1gvei0vtMjhFfvaRTO2aCvwDc0gW+HhnmjvxOYg==]
+    default_user_email_template: "{{ user.name }}@{{ builder.email_domain }}"
     # Lookup credentials come from OKTA_API_* env vars (see the credentials
     # runbook in PLAN.md), so no key/secret here.
     required_providers:

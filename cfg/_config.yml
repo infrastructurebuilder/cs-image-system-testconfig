@@ -17,7 +17,6 @@ encryption:
 # commit. `just public-safe-live` scans this tree; .githooks/pre-commit gates it.
 public_safe:
   allow:
-    - "@noaa.gov"                    # <username>@noaa.gov is DERIVED from the template: public by construction (stage 34 decision)
     - ".iam.gserviceaccount.com"     # the runner service account's address is an identifier, not a person
     - "mykelalvis@infrastructurebuilder.org"   # the copyright holder's address in every SPDX header and REUSE.toml: public by intent
 gitignore:

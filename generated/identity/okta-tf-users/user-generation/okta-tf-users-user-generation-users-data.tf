@@ -6,7 +6,7 @@ data "okta_user" "breanna_vanderplow" {
 
   search {
     name       = "profile.login"
-    value      = "breanna.vanderplow@noaa.gov"
+    value      = local.sensitive["email_breanna_vanderplow"]
     comparison = "eq"
   }
 }
@@ -54,7 +54,7 @@ data "okta_user" "jason_ducker" {
 
   search {
     name       = "profile.login"
-    value      = "jason.ducker@noaa.gov"
+    value      = local.sensitive["email_jason_ducker"]
     comparison = "eq"
   }
 }
@@ -66,7 +66,7 @@ data "okta_user" "joshua_franklin" {
 
   search {
     name       = "profile.login"
-    value      = "joshua.franklin@noaa.gov"
+    value      = local.sensitive["email_joshua_franklin"]
     comparison = "eq"
   }
 }
@@ -78,7 +78,7 @@ data "okta_user" "katherine_powell" {
 
   search {
     name       = "profile.login"
-    value      = "katherine.powell@noaa.gov"
+    value      = local.sensitive["email_katherine_powell"]
     comparison = "eq"
   }
 }
@@ -90,7 +90,7 @@ data "okta_user" "matthew_austin" {
 
   search {
     name       = "profile.login"
-    value      = "matthew.austin@noaa.gov"
+    value      = local.sensitive["email_matthew_austin"]
     comparison = "eq"
   }
 }
@@ -102,7 +102,7 @@ data "okta_user" "michael_lalime" {
 
   search {
     name       = "profile.login"
-    value      = "michael.lalime@noaa.gov"
+    value      = local.sensitive["email_michael_lalime"]
     comparison = "eq"
   }
 }
@@ -114,7 +114,7 @@ data "okta_user" "mykel_alvis" {
 
   search {
     name       = "profile.login"
-    value      = "mykel.alvis@noaa.gov"
+    value      = local.sensitive["email_mykel_alvis"]
     comparison = "eq"
   }
 }
@@ -198,7 +198,7 @@ data "okta_user" "william_mchale" {
 
   search {
     name       = "profile.login"
-    value      = "william.mchale@noaa.gov"
+    value      = local.sensitive["email_william_mchale"]
     comparison = "eq"
   }
 }
@@ -222,7 +222,7 @@ data "okta_user" "zachary_wills" {
 
   search {
     name       = "profile.login"
-    value      = "zachary.wills@noaa.gov"
+    value      = local.sensitive["email_zachary_wills"]
     comparison = "eq"
   }
 }

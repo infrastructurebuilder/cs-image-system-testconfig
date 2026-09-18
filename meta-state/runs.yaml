@@ -1,12 +1,4 @@
 runs:
-- apply: {}
-  dry_run: true
-  error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''plan'']'' returned
-    non-zero exit status 1.'
-  ok: false
-  requested:
-  - identity
-  run: 2026_08_26t16_48_51_589085
 - apply:
     base-image: not-attempted
     identity: not-attempted
@@ -2519,3 +2511,33 @@ runs:
   - release
   - retention
   run: 2026_09_17t16_50_31_612963
+- apply: {}
+  dry_run: true
+  error: 'LifecycleRunError: Validation failed with 1 error(s)'
+  ok: false
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_18t10_32_43_774264
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_18t10_34_13_522187
