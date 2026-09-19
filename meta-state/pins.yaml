@@ -4,6 +4,7 @@ images:
   imgfile-basic-cloudflow@aws-east2-runtime: ami-073d81cd9b3eec54b
   imgfile-basic-dask-two@aws-east2-runtime: ami-015a9eb88d13c3236
   imgfile-basic-dask@aws-east2-runtime: ami-01a9a00286f1631af
+  imgfile-coops-model@aws-east2-runtime: ami-01a9a00286f1631af
   imgfile-data-science@aws-east2-runtime: ami-08a52e8f7f287b40a
 instances: {}
 upgrades:
@@ -329,3 +330,9 @@ upgrades:
   op: decommission
   run: 2026_09_10t22_41_29_385202
   to: null
+- kind: image
+  name: imgfile-coops-model@aws-east2-runtime
+  op: bind
+  run: 2026_09_19t09_57_50_263819
+  runtime: aws-east2-runtime
+  to: ami-01a9a00286f1631af

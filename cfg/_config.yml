@@ -27,6 +27,10 @@ gitignore:
 dateformat : "%Y%m%d_%H%M%S"    
 config:
   use_state_backends: true # emit backend/remote-state blocks (needs real state buckets)
+  # stage 19: an instance may pin only a build that was RELEASED -- a build
+  # whose post-bake tests passed. Without it a model node could pin whatever
+  # was baked last, tested or not.
+  require_released_builds: true
   apply_instances: false # FINALIZATION runs 'tofu apply' for instances only when true
   apply_storage: false
   apply_identity: false # FINALIZATION runs 'tofu apply' for identity roots only when true

@@ -5,5 +5,5 @@ idempotent: ansible
 image: imgfile-basic-dask
 name: dask-setup-jeffy
 operation: ansible
-run: 2026_09_19t07_42_12_357396
+run: 2026_09_19t09_57_50_263819
 type: ansible-default

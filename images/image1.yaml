@@ -92,6 +92,48 @@ images:
           derivative_version: "1.0.0"
     # stage 22.5 REMOVED -- not a field anywhere in the system; a stray value that has always been discarded
     # jethro: bodine
+  # ---------------------------------------------------------------- stage 19
+  # The first image built for a model rather than for the system's own proof.
+  # Derived from basic-rh-10 DIRECTLY (operator, 2026-09-19) rather than from
+  # either existing coops image: its only modifications are the model's, at the
+  # cost of repeating whatever imgfile-basic-dask already does.
+  - name: imgfile-coops-model
+    group: coops                  # owning group: its members get access through OPA
+    type: pckr-ebs-ans
+    source_image: basic-rh-10
+    # a newer basic-rh-10 head re-bakes this image from it in the same run
+    parent_policy: follow
+    description: "CO-OPS model image: the group's working image on AWS."
+    runtimes:
+      - image_builder: pckr-ebs-ans
+        # the bake host, not the instance: a 4xlarge is not needed to run dnf
+        machine_type: t3.medium
+    tests:
+      # `packages` compiles to `rpm -q <name>`, which asks exactly what
+      # `rpm -qa | grep` asks: does rpm know this package (operator, 2026-09-19)
+      packages: [vim, mpdecimal]
+      commands:
+        - run: "vim --version"
+          contains: "VIM - Vi IMproved"
+      users: [csisadmin]
+      # stage 14: `release` refuses a build whose post-bake tests did not pass,
+      # so the same proof runs again on the LAUNCHED instance -- an image that
+      # only passes inside the bake has not been shown to boot
+      post_bake:
+        commands:
+          - run: "rpm -q vim mpdecimal"
+          - run: "vim --version"
+            contains: "VIM - Vi IMproved"
+        mounts: [/mnt/data]
+    release:
+      model: coops
+    modifications:
+      - name: coops-model-packages
+        type: bash-remote
+        # declarative and idempotent: the generated shell guards each install,
+        # so a re-bake over a newer parent is not a reinstall
+        ensure:
+          packages: [vim, mpdecimal]
   - name: imgfile-data-science
     group: stofs # owning group (V2 Q4): identifies the identity type via the group's builder
     aliases:
