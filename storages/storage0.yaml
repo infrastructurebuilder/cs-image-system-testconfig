@@ -6,6 +6,10 @@ storages:
   # state: the REQUESTED lifecycle state (active | archived | destroyed);
   # the authoritative state lives in meta-state/storage-state.yaml.
   - name: mnt_data
+    # stage 52: the zone this volume is in (vol-0fe1e27716f86c2f2). Declared
+    # so a runtime pointed at another zone is refused at validate -- changing
+    # it REPLACES the volume, which is data loss, not a failed attachment.
+    availability_zone: us-east-2a
     mount_point: /mnt/data
     is_default: true
     groups:

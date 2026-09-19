@@ -61,14 +61,18 @@ runtime_builders:
         # SSM, so they belong on a private subnet with outbound NAT.
         - name: east2-az1-private
           subnet_id: subnet-09f79018af845358a
+          availability_zone: us-east-2a
           is_default: true
         - name: east2-az2-private
           subnet_id: subnet-00075cfbfcbc8f2cf
+          availability_zone: us-east-2b
         - name: east2-az1-public
           subnet_id: subnet-01e56d2f9c1c95cc8
+          availability_zone: us-east-2a
           public: true
         - name: east2-az2-public
           subnet_id: subnet-0c127b762e075a94d
+          availability_zone: us-east-2b
           public: true
     - name: gcloud-east1
       aliases:

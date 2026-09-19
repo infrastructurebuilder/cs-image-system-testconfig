@@ -1,12 +1,4 @@
 runs:
-- apply: {}
-  dry_run: true
-  error: 'CalledProcessError: Command ''[''/usr/local/bin/packer'', ''validate'',
-    ''.'']'' returned non-zero exit status 1.'
-  ok: false
-  requested:
-  - instance-image
-  run: 2026_08_27t05_19_35_400710
 - apply:
     base-image: not-attempted
     identity: not-attempted
@@ -2548,3 +2540,21 @@ runs:
   - release
   - retention
   run: 2026_09_18t11_26_51_075869
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_19t07_42_12_357396
