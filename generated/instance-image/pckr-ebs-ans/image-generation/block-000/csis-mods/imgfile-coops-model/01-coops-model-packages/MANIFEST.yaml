@@ -1,8 +1,0 @@
-content_hash: f2d0a78d45a4adb1b18539a8f340093837c0517f35d6d030ef812875cecd654c
-files: []
-idempotent: declared
-image: imgfile-coops-model
-name: coops-model-packages
-operation: bash
-run: 2026_09_19t10_04_47_715360
-type: bash-remote
