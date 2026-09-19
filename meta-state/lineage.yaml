@@ -637,3 +637,33 @@ builds:
     assertions: 2
     in_bake: true
   update: null
+- build_id: ami-0290b3741222d1e47
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  chain:
+  - imgfile-coops-model
+  input_fingerprint: 8e1a556d81369c0f772e01fa9baa313234028a460f239c0a0390bee61847ed12
+  local_mods: true
+  mods:
+  - content_hash: f2d0a78d45a4adb1b18539a8f340093837c0517f35d6d030ef812875cecd654c
+    idempotent: declared
+    name: coops-model-packages
+    operation: bash
+    run: 2026_09_19t10_04_47_715360
+    type: bash-remote
+  name: imgfile-coops-model-pckr-ebs-ans-20260919_100433
+  parent: ami-01a9a00286f1631af
+  run: 2026_09_19t10_04_47_715360
+  runtime: aws-east2-runtime
+  series: imgfile-coops-model
+  tests:
+    assertions: 6
+    in_bake: true
+  update: null
