@@ -1,24 +1,32 @@
 instances:
-  gce-test:
+  coops-model:
     build: unbound
     enrollment:
       enrollment: sftd-token
       server_label: sftd.tx.group=coops
-    ephemeral: true
+    ephemeral: false
     group: coops
-    hostname: gce-test
+    hostname: coops-model
     identity_type: okta
-    image: imgfile-basic-dask
-    launched: false
+    image: imgfile-coops-model
+    launched: true
+    launched_run: 2026_09_20t05_34_00_111083
     mounts:
-    - builder: gcp-pd
-      device: /dev/disk/by-id/google-gce-data
+    - builder: aws-ebs
+      device: /dev/xvdf
       group: coops
-      mount_point: /mnt/gce-data
+      mount_point: /mnt/data
       public_read: false
       share_mode: '2770'
-      storage: gce_data
-      type: pd
-    run: 2026_09_20t05_05_18_685306
-    session: iap
-    user_data_sha256: a3c2278dc804b182525e4621ee38d96cc29ba67570bdf3c680d2be5bbd193b6d
+      storage: mnt_data
+      type: ebs
+    - builder: aws-efs
+      group: coops
+      mount_point: /mnt/efs
+      public_read: false
+      share_mode: '2775'
+      storage: efs-storage
+      type: efs
+    run: 2026_09_20t05_34_00_111083
+    session: ssm
+    user_data_sha256: 72a17ab30dbe86a2a58721e6297b415418339be51ce566c25a0b8090ca6e75b2

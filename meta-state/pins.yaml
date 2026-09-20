@@ -6,7 +6,8 @@ images:
   imgfile-basic-dask@aws-east2-runtime: ami-01a9a00286f1631af
   imgfile-coops-model@aws-east2-runtime: ami-01a9a00286f1631af
   imgfile-data-science@aws-east2-runtime: ami-08a52e8f7f287b40a
-instances: {}
+instances:
+  coops-model: ami-0e209feedc49fa96c
 upgrades:
 - kind: image
   name: imgfile-basic-dask@aws-east2-runtime
@@ -347,3 +348,8 @@ upgrades:
   op: decommission
   run: 2026_09_20t05_05_18_685306
   to: null
+- kind: instance
+  name: coops-model
+  op: bind
+  run: 2026_09_20t05_34_00_111083
+  to: ami-0e209feedc49fa96c

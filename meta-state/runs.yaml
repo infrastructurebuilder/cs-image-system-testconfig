@@ -1,58 +1,4 @@
 runs:
-- apply:
-    base-image: dry-run
-    identity: no-script
-    instance-image: no-script
-    release: no-script
-    storage: no-script
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - base-image
-  run: 2026_08_31t10_33_38_987342
-- apply:
-    base-image: failed
-    identity: no-script
-    storage: no-script
-  dry_run: false
-  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
-  ok: false
-  requested:
-  - base-image
-  run: 2026_08_31t10_39_43_611454
-- apply:
-    base-image: dry-run
-    identity: no-script
-    instance-image: no-script
-    release: no-script
-    storage: no-script
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - base-image
-  run: 2026_08_31t11_00_05_993521
-- apply:
-    base-image: dry-run
-    identity: no-script
-    instance-image: no-script
-    release: no-script
-    storage: no-script
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - base-image
-  run: 2026_08_31t11_01_09_290959
-- apply: {}
-  dry_run: true
-  error: 'CalledProcessError: Command ''[''/usr/local/bin/packer'', ''fmt'', ''.'']''
-    returned non-zero exit status 1.'
-  ok: false
-  requested:
-  - base-image
-  run: 2026_08_31t11_02_03_651872
 - apply: {}
   dry_run: true
   error: 'CalledProcessError: Command ''[''/usr/local/bin/packer'', ''fmt'', ''.'']''
@@ -2579,3 +2525,65 @@ runs:
   requested:
   - instance-image
   run: 2026_09_20t05_05_18_685306
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_20t05_10_27_725146
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_20t05_15_40_238260
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_20t05_21_12_347911
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_20t05_27_30_699116
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: executed
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  - instance-image
+  run: 2026_09_20t05_34_00_111083
