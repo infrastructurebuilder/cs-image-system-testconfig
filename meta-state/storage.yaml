@@ -1,4 +1,4 @@
-run: 2026_09_19t10_53_03_745013
+run: 2026_09_20t08_42_01_444254
 storages:
   default-bucket:
     allowed_groups: []
@@ -21,8 +21,7 @@ storages:
     - coops
     - stofs
     attachment_cardinality: many
-    attachments:
-    - coops-model
+    attachments: []
     builder: aws-efs
     current_state: active
     generation: 1
@@ -68,8 +67,7 @@ storages:
     allowed_groups:
     - coops
     attachment_cardinality: single
-    attachments:
-    - coops-model
+    attachments: []
     builder: aws-ebs
     current_state: active
     generation: 1
