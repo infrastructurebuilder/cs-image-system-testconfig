@@ -111,7 +111,11 @@ images:
     tests:
       # `packages` compiles to `rpm -q <name>`, which asks exactly what
       # `rpm -qa | grep` asks: does rpm know this package (operator, 2026-09-19)
-      packages: [vim, mpdecimal]
+      # `vim-enhanced`, not `vim` (operator, 2026-09-20): on AlmaLinux 10 there
+      # is NO package named vim -- `dnf install vim` resolves a virtual provide
+      # to vim-enhanced, so `rpm -q vim` can never succeed. The first build's
+      # post-bake tests failed on exactly that.
+      packages: [vim-enhanced, mpdecimal]
       commands:
         - run: "vim --version"
           contains: "VIM - Vi IMproved"
@@ -121,10 +125,10 @@ images:
       # only passes inside the bake has not been shown to boot
       post_bake:
         commands:
-          - run: "rpm -q vim mpdecimal"
+          - run: "rpm -q vim-enhanced mpdecimal"
           - run: "vim --version"
             contains: "VIM - Vi IMproved"
-        mounts: [/mnt/data]
+        mounts: [/mnt/data, /mnt/efs]
     release:
       model: coops
     modifications:
@@ -133,7 +137,41 @@ images:
         # declarative and idempotent: the generated shell guards each install,
         # so a re-bake over a newer parent is not a reinstall
         ensure:
-          packages: [vim, mpdecimal]
+          # amazon-efs-utils supplies mount.efs, without which the generated
+          # fstab entry (efs type, tls, access point) cannot mount -- the first
+          # build's EFS mount failed for exactly that. By the system's design
+          # (N10) mount tooling belongs to the BASE image through its
+          # `storage_types`; basic-rh-10 declares none, and no instance in this
+          # tree had ever attached an EFS storage before this one.
+          packages: [vim-enhanced, mpdecimal]
+          commands:
+            # amazon-efs-utils supplies mount.efs, without which the generated
+            # fstab entry (efs type, tls, access point) cannot mount. It is NOT
+            # in AlmaLinux's repositories -- `dnf install amazon-efs-utils`
+            # answers "No match for argument", proven on a build 2026-09-20 --
+            # because AWS ships it in the Amazon Linux repos only. Their
+            # documented route for RHEL-family is to build the rpm from source.
+            # The build tooling is removed afterwards so it does not ride along
+            # in the image. rust/cargo are build requirements of efs-utils 2.x,
+            # The 1.x line is pinned deliberately: efs-utils 2.x builds a
+            # Rust watchdog whose crates need a newer rustc than AlmaLinux 10
+            # packages ("Either upgrade rustc or cargo update", proven on a
+            # build 2026-09-20). The remaining build requirements come from the
+            # spec itself (`dnf builddep`) rather than from guessing them one
+            # failed bake at a time.
+            - run: >-
+                sudo dnf -y install git make rpm-build 'dnf-command(builddep)' &&
+                rm -rf /tmp/efs-utils &&
+                git clone https://github.com/aws/efs-utils /tmp/efs-utils &&
+                cd /tmp/efs-utils &&
+                git checkout "$(git tag -l 'v1.*' --sort=-v:refname | head -1)" &&
+                sudo dnf -y builddep ./amazon-efs-utils.spec &&
+                make rpm &&
+                sudo dnf -y install ./build/amazon-efs-utils*rpm &&
+                (sudo dnf -y remove git make rpm-build || true) &&
+                rm -rf /tmp/efs-utils
+              unless: "rpm -q amazon-efs-utils"
+
   - name: imgfile-data-science
     group: stofs # owning group (V2 Q4): identifies the identity type via the group's builder
     aliases:

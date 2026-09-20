@@ -31,8 +31,12 @@ config:
   # whose post-bake tests passed. Without it a model node could pin whatever
   # was baked last, tested or not.
   require_released_builds: true
+  # stage 19 (2026-09-19): the coops model node is a STANDING instance, so the
+  # instance root applies. It bills continuously; decommissioning it is an
+  # operator decision, and flipping this back stops the next run from
+  # re-applying but does not stop the instance.
   apply_instances: false # FINALIZATION runs 'tofu apply' for instances only when true
-  apply_storage: false
+  apply_storage: true
   apply_identity: false # FINALIZATION runs 'tofu apply' for identity roots only when true
   # Relative to THIS configuration tree (test_folder/); every generated
   # terraform root resolves it to the right relative path for its own depth.
