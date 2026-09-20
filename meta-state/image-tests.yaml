@@ -1,4 +1,21 @@
 builds:
+  ami-0290b3741222d1e47:
+    checks:
+    - detail: FAIL
+      name: ( rpm -q vim mpdecimal ) >/dev/null 2>&1; test $? -eq 0
+      ok: false
+    - detail: pass
+      name: ( vim --version ) 2>&1 | grep -q -- 'VIM - Vi IMproved'
+      ok: true
+    - detail: pass
+      name: mount /mnt/data
+      ok: true
+    image: imgfile-coops-model
+    instance: coops-model
+    ok: false
+    run: 2026_09_19t11_01_19_841820
+    runtime: aws-east2-runtime
+    time: '2026-09-19T16:01:34+00:00'
   imgfile-basic-dask-pckr-gce-ans-20260910-064332:
     checks:
     - detail: pass

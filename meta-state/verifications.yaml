@@ -545,3 +545,27 @@ verifications:
   run: 2026_09_10t09_28_24_243720
   runtime: gcloud-east1
   time: '2026-09-10T14:29:30+00:00'
+- build: ami-0290b3741222d1e47
+  checks:
+  - detail: launch parameters applied
+    name: startup scripts
+    ok: true
+  - detail: booted ami-0290b3741222d1e47, expected ami-0290b3741222d1e47
+    name: booted image
+    ok: true
+  - detail: 1 mount(s) under /mnt, 2 declared
+    name: data disks mounted
+    ok: false
+  - detail: '1 of 3 failed: ( rpm -q vim mpdecimal ) >/dev/null 2>&1; test $? -eq
+      0'
+    name: declared tests
+    ok: false
+  ephemeral: false
+  evidence:
+  - LAUNCH_APPLIED
+  - '1'
+  instance: coops-model
+  ok: false
+  run: 2026_09_19t11_01_19_841820
+  runtime: aws-east2-runtime
+  time: '2026-09-19T16:01:34+00:00'
