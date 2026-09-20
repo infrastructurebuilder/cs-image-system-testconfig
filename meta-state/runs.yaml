@@ -1,12 +1,4 @@
 runs:
-- apply: {}
-  dry_run: true
-  error: 'CalledProcessError: Command ''[''/usr/local/bin/packer'', ''fmt'', ''.'']''
-    returned non-zero exit status 1.'
-  ok: false
-  requested:
-  - base-image
-  run: 2026_08_31t11_07_58_227417
 - apply:
     base-image: dry-run
     identity: no-script
@@ -2587,3 +2579,16 @@ runs:
   - base-image
   - instance-image
   run: 2026_09_20t05_34_00_111083
+- apply:
+    base-image: no-script
+    identity: no-script
+    instance-image: executed
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_20t05_45_36_675857

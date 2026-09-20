@@ -15,10 +15,6 @@ provider "aws" {
   profile = "noaa"
   alias   = "open_tofu"
 }
-variable "coops_model_ami_id" {
-  type    = string
-  default = ""
-}
 variable "sft_enrollment_token" {
   type        = string
   default     = ""
@@ -71,16 +67,6 @@ data "terraform_remote_state" "gcp_gcs" {
   config = {
     bucket  = "noaa-ioos-cloud-sandbox-tfstate"
     key     = "statefiles/csia-image-system-test/gcp_gcs.tfstate"
-    region  = "us-east-2"
-    profile = "noaa"
-  }
-}
-data "terraform_remote_state" "oktagroups" {
-  backend = "s3"
-
-  config = {
-    bucket  = "noaa-ioos-cloud-sandbox-tfstate"
-    key     = "statefiles/csia-image-system-test/oktagroups.tfstate"
     region  = "us-east-2"
     profile = "noaa"
   }
