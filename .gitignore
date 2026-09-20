@@ -29,3 +29,4 @@ YAML_DUMP.yaml
 *.tfstate
 *.tfstate.backup
 tfplan
+_private
