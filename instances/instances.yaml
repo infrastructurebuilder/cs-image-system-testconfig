@@ -39,18 +39,31 @@ instances:
   # fix it. The same hazard the test/test2 note below describes. Its pin for
   # ami-0e209feedc49fa96c is still in meta-state/pins.yaml and will have to go
   # or be superseded before this is declared again.
-  #- name: coops-model
-  # machine_type: c5n.4xlarge
-  # image: imgfile-coops-model
-  # description: "CO-OPS model node: the group's standing working instance."
-  # tags:
-  #   group: coops
-  #   purpose: model
-  # storages:
-  #   - name: mnt_data
-  #     mount_point: /mnt/data
-  #   - name: efs-storage
-  #     mount_point: /mnt/efs
+  # ---------------------------------------------------------------- stage 19
+  # The first instance declared for a MODEL rather than for the system's own
+  # proof. Operator decisions 2026-09-19: the coops group, a c5n.4xlarge, and
+  # the two storages that already exist -- no new declarations.
+  #
+  # It STANDS: not ephemeral, so the group's members can log in whenever,
+  # which is the half of the purpose an ephemeral instance cannot exercise.
+  # It bills continuously (~$0.86/hour on demand, about $620 a month) plus the
+  # 100 GiB volume and the EFS filesystem.
+  #
+  # No availability_zone here: the runtime's default subnet is east2-az1-private
+  # (us-east-2a), which is where mnt_data's volume lives, and stage 52 refuses
+  # the combination if that ever stops being true.
+  - name: coops-model
+    machine_type: c5n.4xlarge
+    image: imgfile-coops-model
+    description: "CO-OPS model node: the group's standing working instance."
+    tags:
+      group: coops
+      purpose: model
+    storages:
+      - name: mnt_data
+        mount_point: /mnt/data
+      - name: efs-storage
+        mount_point: /mnt/efs
   # test/test2 (the stage-1 AWS t3.medium instances) commented out for now
   # (user decision 2026-09-05): they were torn down at the stage-1 close-out,
   # and a dormant declaration would relaunch both the next time

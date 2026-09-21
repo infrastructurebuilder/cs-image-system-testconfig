@@ -6,5 +6,5 @@ idempotent: unknown
 image: imgfile-basic-dask
 name: derivative-setup
 operation: bash
-run: 2026_09_20t08_42_01_444254
+run: 2026_09_20t19_56_37_318516
 type: bash-remote

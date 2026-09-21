@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# cs-image-system lifecycle runner: release
+# cs-image-system lifecycle runner: base-image
 # run id: 2026_09_20t19_56_37_318516
 # Deferred commands accumulated while generating this lifecycle,
 # in phase order. Paths are relative to this lifecycle's directory.
@@ -9,5 +9,5 @@ set -euo pipefail
 cd "$(dirname "$0")"
 CSIS_ROOT="$(cd "../.." && pwd)"   # the configuration root, relative to this script
 
-# --- phase: instance-generation ---
-( cd "release" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && cs-image-system --root-dir "$CSIS_ROOT" --no-dry-run release --declared )
+# --- phase: image-generation ---
+( cd "pckr-gce-ans/image-generation/block-000" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && /usr/local/bin/packer build . )
