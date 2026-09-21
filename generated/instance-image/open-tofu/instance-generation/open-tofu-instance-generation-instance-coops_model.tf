@@ -4,8 +4,7 @@ module "instance_coops_model" {
   source                      = "../../../../../cs-image-system-3/tfmodules/aws_instance"
   providers                   = { aws = aws.open_tofu }
   name                        = "coops-model"
-  ami_id                      = var.coops_model_ami_id
-  ami_name_pattern            = "imgfile-coops-model-pckr-ebs-ans*"
+  ami_id                      = "ami-078cdf8a62d04f5e0"
   instance_type               = "c5n.4xlarge"
   associate_public_ip_address = false
   vpc_security_group_ids      = [aws_security_group.csis_instances.id, "sg-03015ec107ae5f81a"]

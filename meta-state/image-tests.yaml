@@ -27,15 +27,15 @@ builds:
     - detail: pass
       name: mount /mnt/data
       ok: true
-    - detail: FAIL
+    - detail: pass
       name: mount /mnt/efs
-      ok: false
+      ok: true
     image: imgfile-coops-model
     instance: coops-model
-    ok: false
-    run: 2026_09_20t16_22_34_828220
+    ok: true
+    run: 2026_09_20t19_20_44_774743
     runtime: aws-east2-runtime
-    time: '2026-09-20T21:22:49+00:00'
+    time: '2026-09-21T00:20:56+00:00'
   imgfile-basic-dask-pckr-gce-ans-20260910-064332:
     checks:
     - detail: pass
