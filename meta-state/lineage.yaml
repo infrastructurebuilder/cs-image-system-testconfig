@@ -697,3 +697,98 @@ builds:
     assertions: 6
     in_bake: true
   update: null
+- build_id: ami-01a7eb20527c25fe2
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  chain: []
+  input_fingerprint: b971b891378a3eeeee7a3c30d7d011df75bb81f2f0bc9549e131ecd087f5d9d4
+  local_mods: false
+  mods: []
+  name: basic-rh-10-aws-east2-runtime-20260920_154845
+  parent: vendor
+  run: 2026_09_20t15_48_58_295637
+  runtime: aws-east2-runtime
+  series: basic-rh-10
+  tests:
+    assertions: 13
+    in_bake: true
+  update:
+    exclude:
+    - kernel*
+    packages:
+    - openssl
+    pin: {}
+    policy: security
+- build_id: ami-0fc2c6aca84a05f6a
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  chain:
+  - imgfile-basic-dask
+  input_fingerprint: c95f4464dff33ba39ab2d1b0fec67d08a6b44a0f495240babb0aadec9ca3a4e2
+  local_mods: true
+  mods:
+  - content_hash: f69207b82321c53a4944d6cba1940d6a4b8e051fa26c8c30c733c7f7c0faea3d
+    idempotent: ansible
+    name: dask-setup-jeffy
+    operation: ansible
+    run: 2026_09_20t15_48_58_295637
+    type: ansible-default
+  - content_hash: 7efcd1a4fa07925eb1b11398f175aa61b5c77dff355050cc6871b50ffbe697cb
+    idempotent: unknown
+    name: derivative-setup
+    operation: bash
+    run: 2026_09_20t15_48_58_295637
+    type: bash-remote
+  name: imgfile-basic-dask-pckr-ebs-ans-20260920_154845
+  parent: ami-01a7eb20527c25fe2
+  run: 2026_09_20t15_48_58_295637
+  runtime: aws-east2-runtime
+  series: imgfile-basic-dask
+  tests:
+    assertions: 5
+    in_bake: true
+  update: null
+- build_id: ami-078cdf8a62d04f5e0
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  chain:
+  - imgfile-coops-model
+  input_fingerprint: 5e43e35b20850cb5fa5252687264d4237b2b76ad1b1f4fbbc96a8a8bb0ca71e9
+  local_mods: true
+  mods:
+  - content_hash: b49f9c19f3668ef0c636d6d7d518936e4db4c379b138f3f8c25e838baa0de5b9
+    idempotent: declared
+    name: coops-model-packages
+    operation: bash
+    run: 2026_09_20t15_48_58_295637
+    type: bash-remote
+  name: imgfile-coops-model-pckr-ebs-ans-20260920_154845
+  parent: ami-01a7eb20527c25fe2
+  run: 2026_09_20t15_48_58_295637
+  runtime: aws-east2-runtime
+  series: imgfile-coops-model
+  tests:
+    assertions: 6
+    in_bake: true
+  update: null

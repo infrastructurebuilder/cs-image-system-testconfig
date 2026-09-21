@@ -1,39 +1,5 @@
 runs:
 - apply:
-    base-image: failed
-    identity: no-script
-    storage: no-script
-  dry_run: false
-  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
-  ok: false
-  requested:
-  - base-image
-  run: 2026_08_31t11_43_37_713407
-- apply:
-    base-image: dry-run
-    identity: no-script
-    instance-image: no-script
-    release: no-script
-    storage: no-script
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - base-image
-  run: 2026_08_31t12_14_14_162931
-- apply:
-    base-image: dry-run
-    identity: no-script
-    instance-image: no-script
-    release: no-script
-    storage: no-script
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - base-image
-  run: 2026_08_31t12_19_30_894280
-- apply:
     base-image: dry-run
     identity: no-script
     instance-image: no-script
@@ -2606,3 +2572,48 @@ runs:
   - release
   - retention
   run: 2026_09_20t08_42_01_444254
+- apply:
+    base-image: executed
+    identity: stale-script-skipped
+    instance-image: executed
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: 'CalledProcessError: Command ''[''git'', ''-C'', ''/Volumes/MiniSSD/git/Work/Lynker/cs-image-system-testconfig'',
+    ''add'', ''-A'', ''--'', ''/Volumes/MiniSSD/git/Work/Lynker/cs-image-system-testconfig/meta-state'',
+    ''/Volumes/MiniSSD/git/Work/Lynker/cs-image-system-testconfig/generated'', '':(exclude,glob)**/tfplan'',
+    '':(exclude,glob)**/*.tfplan'', '':(exclude,glob)**/*.tfstate'', '':(exclude,glob)**/*.tfstate.*'',
+    '':(exclude,glob)**/*.tfvars'', '':(exclude,glob)**/*.tfvars.json'', '':(exclude,glob)**/.envrc'',
+    '':(exclude,glob)**/*.pem'', '':(exclude,glob)**/.private_key.*'', '':(exclude,glob)**/.public_key.json'',
+    '':(exclude,glob)_private/**'', '':(exclude,glob)**/_private/**'', '':(exclude,glob)**/run-summary.json'',
+    '':(exclude,glob)**/state-report.json'', '':(exclude,glob)**/manifest.json'']''
+    returned non-zero exit status 1.'
+  ok: false
+  requested:
+  - storage
+  - base-image
+  - instance-image
+  run: 2026_09_20t15_48_58_295637
+- apply: {}
+  dry_run: false
+  error: 'LifecycleRunError: Validation failed with 1 error(s)'
+  ok: false
+  requested:
+  - storage
+  - base-image
+  - instance-image
+  run: 2026_09_20t16_21_27_413946
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: stale-script-skipped
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: executed
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - storage
+  run: 2026_09_20t19_13_29_440651

@@ -10,7 +10,7 @@ data "amazon-ami" "basic-rh-10_aws-east2-runtime" {
 }
 source "amazon-ebs" "basic-rh-10" {
   source_ami    = data.amazon-ami.basic-rh-10_aws-east2-runtime.id
-  ami_name      = "basic-rh-10-aws-east2-runtime-20260920_084149"
+  ami_name      = "basic-rh-10-aws-east2-runtime-20260920_154845"
   instance_type = "t3.medium"
   region        = "us-east-2"
   vpc_id        = "vpc-0c78d0d63b7a100df"
@@ -18,7 +18,7 @@ source "amazon-ebs" "basic-rh-10" {
   tags = {
     csis_series         = "basic-rh-10",
     csis_parent         = "vendor",
-    csis_run            = "2026_09_20t08_42_01_444254",
+    csis_run            = "2026_09_20t15_48_58_295637",
     csis_fingerprint    = "b971b891378a3eee",
     csis_identity_types = "okta",
     csis_storage_types  = "ebs,efs,gcs,pd,s3",
