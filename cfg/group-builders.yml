@@ -12,6 +12,12 @@ group_builders:
     executable: open-tofu-1
     org: "noaa"
     team: "nos-coastal-modeling-cloud-sandbox"
+    # Stage 56: CI logs in as a WORKLOAD. Both objects are the team's, made by
+    # hand once in the OPA console (WORKLOAD_CONNECTION.md in cs-image-system);
+    # with both named, every managed group gets a CI login policy beside its
+    # user policy, kept by the identity lifecycle through the OPA API.
+    workload_connection: "github-cs-image-system"
+    workload_role: "cs-image-system-ci"
     # key: "test-key"
     # secret: "test-secret"
     # stage 22.5 REMOVED -- a field on the USER builder, not the group builder; group-builders.yml uses it correctly further down under user_builders
