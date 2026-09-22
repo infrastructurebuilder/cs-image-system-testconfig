@@ -1,4 +1,17 @@
 results:
+  02a29903fcd36d300c30565a842a66471d6e70d9ad5c6c818ff0ddd5a71093ae:
+    changes_on_rerun: []
+    content_hash: 02a29903fcd36d300c30565a842a66471d6e70d9ad5c6c818ff0ddd5a71093ae
+    detail: ''
+    first_run_rc: 0
+    idempotent: true
+    image: imgfile-coops-model
+    mod: coops-update-playbook
+    run: 2026_09_22t11_25_34_708833
+    second_run_rc: 0
+    status: pass
+    target: 131dfc01be9639848e7710d8c392ae45115086103880a16abb92c6933cecde73
+    type: ansible-default
   1a40dbc7caf2de73397f92b077264a46b4982344df5b1406f763dad0da0b8ecf:
     changes_on_rerun: []
     content_hash: 1a40dbc7caf2de73397f92b077264a46b4982344df5b1406f763dad0da0b8ecf

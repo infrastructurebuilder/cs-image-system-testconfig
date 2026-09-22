@@ -115,7 +115,7 @@ images:
       # is NO package named vim -- `dnf install vim` resolves a virtual provide
       # to vim-enhanced, so `rpm -q vim` can never succeed. The first build's
       # post-bake tests failed on exactly that.
-      packages: [vim-enhanced, mpdecimal]
+      packages: [vim-enhanced, mpdecimal, figlet]
       commands:
         - run: "vim --version"
           contains: "VIM - Vi IMproved"
@@ -125,7 +125,7 @@ images:
       # only passes inside the bake has not been shown to boot
       post_bake:
         commands:
-          - run: "rpm -q vim-enhanced mpdecimal"
+          - run: "rpm -q vim-enhanced mpdecimal figlet"
           - run: "vim --version"
             contains: "VIM - Vi IMproved"
         mounts: [/mnt/data, /mnt/efs]
@@ -171,7 +171,12 @@ images:
                 (sudo dnf -y remove git make rpm-build || true) &&
                 rm -rf /tmp/efs-utils
               unless: "rpm -q amazon-efs-utils"
-
+      - name: coops-update-playbook
+        type: ansible-default
+        playbooks:
+          - playbooks/coops_update.yml
+        
+        
   - name: imgfile-data-science
     group: stofs # owning group (V2 Q4): identifies the identity type via the group's builder
     aliases:
