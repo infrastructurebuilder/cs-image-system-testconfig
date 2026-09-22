@@ -7,8 +7,9 @@ images:
   imgfile-coops-model@aws-east2-runtime: ami-01a7eb20527c25fe2
   imgfile-data-science@aws-east2-runtime: ami-08a52e8f7f287b40a
 instances:
-  coops-model: ami-078cdf8a62d04f5e0
+  coops-model: ami-08b0d669a6b5d86af
   gce-test: imgfile-basic-dask-pckr-gce-ans-20260910-091415
+pending_replacements: {}
 upgrades:
 - kind: image
   name: imgfile-basic-dask@aws-east2-runtime
@@ -393,3 +394,9 @@ upgrades:
   op: bind
   run: 2026_09_21t22_18_06_561584
   to: imgfile-basic-dask-pckr-gce-ans-20260910-091415
+- from: ami-078cdf8a62d04f5e0
+  kind: instance
+  name: coops-model
+  op: upgrade
+  run: 2026_09_22t11_58_45_338689
+  to: ami-08b0d669a6b5d86af

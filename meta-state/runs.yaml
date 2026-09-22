@@ -1,32 +1,5 @@
 runs:
 - apply:
-    base-image: dry-run
-    identity: no-script
-    instance-image: no-script
-    release: no-script
-    storage: no-script
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - base-image
-  run: 2026_08_31t14_43_08_698069
-- apply:
-    base-image: executed
-    identity: no-script
-    instance-image: no-script
-    release: no-script
-    storage: no-script
-  dry_run: false
-  error: 'CalledProcessError: Command ''[''git'', ''-C'', ''/Volumes/MiniSSD/git/Work/Lynker/cs-image-system-3'',
-    ''add'', ''-A'', ''--'', ''/Volumes/MiniSSD/git/Work/Lynker/cs-image-system-3/test_folder/meta-state'',
-    ''/Volumes/MiniSSD/git/Work/Lynker/cs-image-system-3/test_folder/generated'']''
-    returned non-zero exit status 1.'
-  ok: false
-  requested:
-  - base-image
-  run: 2026_08_31t14_48_03_972801
-- apply:
     base-image: no-script
     identity: no-script
     instance-image: failed
@@ -2631,3 +2604,27 @@ runs:
   - release
   - retention
   run: 2026_09_22t11_34_06_839905
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_09_22t12_26_43_410486
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: executed
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_09_22t12_39_06_708738
