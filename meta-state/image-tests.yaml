@@ -36,6 +36,27 @@ builds:
     run: 2026_09_20t19_20_44_774743
     runtime: aws-east2-runtime
     time: '2026-09-21T00:20:56+00:00'
+  ami-08b0d669a6b5d86af:
+    checks:
+    - detail: pass
+      name: ( rpm -q vim-enhanced mpdecimal figlet ) >/dev/null 2>&1; test $? -eq
+        0
+      ok: true
+    - detail: pass
+      name: ( vim --version ) 2>&1 | grep -q -- 'VIM - Vi IMproved'
+      ok: true
+    - detail: pass
+      name: mount /mnt/data
+      ok: true
+    - detail: pass
+      name: mount /mnt/efs
+      ok: true
+    image: imgfile-coops-model
+    instance: coops-model
+    ok: true
+    run: 2026_09_22t13_02_07_745703
+    runtime: aws-east2-runtime
+    time: '2026-09-22T18:02:26+00:00'
   imgfile-basic-dask-pckr-gce-ans-20260910-064332:
     checks:
     - detail: pass

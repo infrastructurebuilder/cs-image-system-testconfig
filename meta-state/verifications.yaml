@@ -615,3 +615,26 @@ verifications:
   run: 2026_09_20t19_20_44_774743
   runtime: aws-east2-runtime
   time: '2026-09-21T00:20:56+00:00'
+- build: ami-08b0d669a6b5d86af
+  checks:
+  - detail: launch parameters applied
+    name: startup scripts
+    ok: true
+  - detail: booted ami-08b0d669a6b5d86af, expected ami-08b0d669a6b5d86af
+    name: booted image
+    ok: true
+  - detail: 2 mount(s) under /mnt, 2 declared
+    name: data disks mounted
+    ok: true
+  - detail: 4 assertion(s) passed
+    name: declared tests
+    ok: true
+  ephemeral: false
+  evidence:
+  - LAUNCH_APPLIED
+  - '2'
+  instance: coops-model
+  ok: true
+  run: 2026_09_22t13_02_07_745703
+  runtime: aws-east2-runtime
+  time: '2026-09-22T18:02:26+00:00'

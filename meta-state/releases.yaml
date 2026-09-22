@@ -1,6 +1,6 @@
 current:
   coops:
-    imgfile-coops-model: ami-078cdf8a62d04f5e0
+    imgfile-coops-model: ami-08b0d669a6b5d86af
   default:
     imgfile-basic-dask: imgfile-basic-dask-pckr-gce-ans-20260910-091415
 releases:
@@ -48,3 +48,18 @@ releases:
   name: imgfile-coops-model-pckr-ebs-ans-20260920_154845
   note: declared release (aws-east2-runtime)
   run: 2026_09_20t19_21_21_823202
+- build_id: ami-08b0d669a6b5d86af
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  image: imgfile-coops-model
+  model: coops
+  name: imgfile-coops-model-pckr-ebs-ans-20260922_113349
+  note: declared release (aws-east2-runtime)
+  run: 2026_09_22t13_07_56_024905
