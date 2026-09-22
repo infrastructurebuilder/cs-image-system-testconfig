@@ -1,0 +1,45 @@
+instances:
+  coops-model:
+    current:
+      how: observed
+      instance_id: i-0169f82844f4cc08d
+      kind: durable
+      launch_params:
+        build: ami-078cdf8a62d04f5e0
+        enrollment:
+          enrollment: sftd-token
+          server_label: sftd.tx.group=coops
+        ephemeral: false
+        group: coops
+        hostname: coops-model
+        identity_type: okta
+        image: imgfile-coops-model
+        launched: true
+        launched_run: 2026_09_21t22_21_25_452025
+        mounts:
+        - builder: aws-ebs
+          device: /dev/xvdf
+          group: coops
+          mount_point: /mnt/data
+          public_read: false
+          share_mode: '2770'
+          storage: mnt_data
+          type: ebs
+        - builder: aws-efs
+          group: coops
+          mount_point: /mnt/efs
+          public_read: false
+          share_mode: '2775'
+          storage: efs-storage
+          type: efs
+        run: 2026_09_21t22_21_25_452025
+        session: ssm
+        user_data_sha256: 72a17ab30dbe86a2a58721e6297b415418339be51ce566c25a0b8090ca6e75b2
+      number: 1
+      opened_at: '2026-09-22T03:24:12+00:00'
+      opened_run: 2026_09_21t22_21_25_452025
+      provider_hostname: ip-10-26-34-156.us-east-2.compute.internal
+    generation:
+      durable: 1
+      ephemeral: 0
+    history: []
