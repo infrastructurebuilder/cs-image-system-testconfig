@@ -62,7 +62,7 @@ workspaces:
     location: s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/okta_tf_users.tfstate
     profile: noaa
     region: us-east-2
-    run: 2026_09_22t08_20_35_419227
+    run: 2026_09_22t09_07_51_985772
     type: s3
     use_lockfile: true
   oktagroups:
@@ -73,7 +73,7 @@ workspaces:
     location: s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/oktagroups.tfstate
     profile: noaa
     region: us-east-2
-    run: 2026_09_22t08_20_35_419227
+    run: 2026_09_22t09_07_51_985772
     type: s3
     use_lockfile: true
   open-tofu:

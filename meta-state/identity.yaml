@@ -9,13 +9,14 @@ groups:
     managed: true
     members: []
     workload:
-      action: failed
+      action: created
       connection: github-cs-image-system
-      error: OPA's security policies or workload roles could not be read
+      id: eab5c659-71c3-4e18-9aa3-e040423b51ee
       mirrors: basic_v1_security_policy_user
       policy: basic_v1_security_policy_ci
       role: cs-image-system-ci
-      run: 2026_09_22t08_20_35_419227
+      role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
+      run: 2026_09_22t09_07_51_985772
   coops:
     admins:
     - mykel.alvis
@@ -27,13 +28,14 @@ groups:
     members:
     - zachary.wills
     workload:
-      action: failed
+      action: created
       connection: github-cs-image-system
-      error: OPA's security policies or workload roles could not be read
+      id: 0bbe4c09-6414-4425-af81-cc3fd9255c6c
       mirrors: coops_v1_security_policy_user
       policy: coops_v1_security_policy_ci
       role: cs-image-system-ci
-      run: 2026_09_22t08_20_35_419227
+      role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
+      run: 2026_09_22t09_07_51_985772
   secofs:
     admins:
     - jason.ducker
@@ -49,13 +51,14 @@ groups:
     - hjyoo
     - jason.ducker
     workload:
-      action: failed
+      action: created
       connection: github-cs-image-system
-      error: OPA's security policies or workload roles could not be read
+      id: 9c3b5517-bcb7-476d-ad33-f83c0512856d
       mirrors: secofs_v1_security_policy_user
       policy: secofs_v1_security_policy_ci
       role: cs-image-system-ci
-      run: 2026_09_22t08_20_35_419227
+      role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
+      run: 2026_09_22t09_07_51_985772
   stofs:
     admins:
     - mykel.alvis
@@ -68,13 +71,14 @@ groups:
     - james.brown
     - mykel.alvis
     workload:
-      action: failed
+      action: created
       connection: github-cs-image-system
-      error: OPA's security policies or workload roles could not be read
+      id: 28e77ee8-1e64-439f-bd27-1e668c602fcf
       mirrors: stofs_v1_security_policy_user
       policy: stofs_v1_security_policy_ci
       role: cs-image-system-ci
-      run: 2026_09_22t08_20_35_419227
+      role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
+      run: 2026_09_22t09_07_51_985772
   tcmet:
     admins:
     - jason.ducker
@@ -90,15 +94,16 @@ groups:
     - rick_luettich
     - rmarsool
     workload:
-      action: failed
+      action: created
       connection: github-cs-image-system
-      error: OPA's security policies or workload roles could not be read
+      id: 130dff88-e109-4348-9592-fcbd4661ed9e
       mirrors: tcmet_v1_security_policy_user
       policy: tcmet_v1_security_policy_ci
       role: cs-image-system-ci
-      run: 2026_09_22t08_20_35_419227
+      role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
+      run: 2026_09_22t09_07_51_985772
 note: structural facts only; gids flow by terraform remote-state reference (N7)
-run: 2026_09_22t08_20_35_419227
+run: 2026_09_22t09_07_51_985772
 user_builders:
   okta-tf-users: okta-tf-ro
 users:
