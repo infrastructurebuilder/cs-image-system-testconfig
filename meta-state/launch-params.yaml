@@ -27,7 +27,7 @@ instances:
       share_mode: '2775'
       storage: efs-storage
       type: efs
-    run: 2026_09_21t22_21_25_452025
+    run: 2026_09_22t11_34_06_839905
     session: ssm
     user_data_sha256: 72a17ab30dbe86a2a58721e6297b415418339be51ce566c25a0b8090ca6e75b2
   gce-test:
@@ -50,6 +50,6 @@ instances:
       share_mode: '2770'
       storage: gce_data
       type: pd
-    run: 2026_09_21t22_21_25_452025
+    run: 2026_09_22t11_34_06_839905
     session: iap
     user_data_sha256: 29bee6bb7860d0a580101f1179ecf1643da350bb18da93423e5fb14b4d1e1231
