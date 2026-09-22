@@ -1,0 +1,69 @@
+proofs:
+- as: client
+  checks:
+  - detail: the machine is STOPPED (switched off; not drift); a login needs it running
+      and the power state is the operator's (stage 57)
+    name: precondition
+    ok: false
+  evidence: []
+  group: coops
+  hostname: coops-model
+  instance: coops-model
+  ok: false
+  run: 2026_09_22t09_21_50_793830
+  runtime: aws-east2-runtime
+  skipped: true
+  time: '2026-09-22T14:21:52+00:00'
+- as: client
+  checks:
+  - detail: the machine is STOPPED (switched off; not drift); a login needs it running
+      and the power state is the operator's (stage 57)
+    name: precondition
+    ok: false
+  evidence: []
+  group: coops
+  hostname: coops-model
+  instance: coops-model
+  ok: false
+  run: 2026_09_22t09_25_36_961070
+  runtime: aws-east2-runtime
+  skipped: true
+  time: '2026-09-22T14:25:39+00:00'
+- as: client
+  checks:
+  - detail: '''coops-model'' is registered once (10ff7662-17e8-428e-bc55-30592d313db0)'
+    name: one registration
+    ok: true
+  - detail: 'sft resolve coops-model: exit 126 -- '
+    name: resolves
+    ok: false
+  evidence: []
+  group: coops
+  hostname: coops-model
+  instance: coops-model
+  ok: false
+  run: 2026_09_22t09_31_32_501599
+  runtime: aws-east2-runtime
+  time: '2026-09-22T14:31:37+00:00'
+- as: client
+  checks:
+  - detail: '''coops-model'' is registered once (10ff7662-17e8-428e-bc55-30592d313db0)'
+    name: one registration
+    ok: true
+  - detail: 'sft resolve coops-model: exit 0'
+    name: resolves
+    ok: true
+  - detail: logged in as mykel.alvis over sft ssh
+    name: login
+    ok: true
+  evidence:
+  - uid=150006(mykel.alvis) gid=150006(mykel.alvis) groups=150006(mykel.alvis),90000(sft-admin)
+    context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+  - coops-model
+  group: coops
+  hostname: coops-model
+  instance: coops-model
+  ok: true
+  run: 2026_09_22t09_35_41_238379
+  runtime: aws-east2-runtime
+  time: '2026-09-22T14:35:48+00:00'
