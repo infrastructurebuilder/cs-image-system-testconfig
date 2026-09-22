@@ -1,39 +1,5 @@
 runs:
 - apply:
-    base-image: dry-run
-    identity: no-script
-    instance-image: no-script
-    release: no-script
-    storage: no-script
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - base-image
-  run: 2026_08_31t12_58_33_699973
-- apply:
-    base-image: failed
-    identity: no-script
-    storage: no-script
-  dry_run: false
-  error: 'LifecycleRunError: Apply failed for lifecycle base-image'
-  ok: false
-  requested:
-  - base-image
-  run: 2026_08_31t13_04_07_208128
-- apply:
-    base-image: dry-run
-    identity: no-script
-    instance-image: no-script
-    release: no-script
-    storage: no-script
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - base-image
-  run: 2026_08_31t13_35_46_359577
-- apply:
     base-image: failed
     identity: no-script
     storage: no-script
@@ -2632,3 +2598,32 @@ runs:
   requested:
   - instance-image
   run: 2026_09_21t22_21_25_452025
+- apply: {}
+  dry_run: false
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''plan'']'' returned
+    non-zero exit status 1.'
+  ok: false
+  requested:
+  - identity
+  run: 2026_09_22t07_22_02_823026
+- apply: {}
+  dry_run: false
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''plan'']'' returned
+    non-zero exit status 1.'
+  ok: false
+  requested:
+  - identity
+  run: 2026_09_22t08_01_20_030201
+- apply:
+    base-image: stale-script-skipped
+    identity: executed
+    instance-image: stale-script-skipped
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - identity
+  run: 2026_09_22t08_20_35_419227
