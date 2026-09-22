@@ -37,7 +37,7 @@ config:
   # re-applying but does not stop the instance.
   apply_instances: false # FINALIZATION runs 'tofu apply' for instances only when true
   apply_storage: true
-  apply_identity: false # FINALIZATION runs 'tofu apply' for identity roots only when true
+  apply_identity: true # FINALIZATION runs 'tofu apply' for identity roots only when true
   # Relative to THIS configuration tree (test_folder/); every generated
   # terraform root resolves it to the right relative path for its own depth.
   # Absolute paths and git/registry URLs pass through unchanged.
