@@ -16,7 +16,7 @@ groups:
       policy: basic_v1_security_policy_ci
       role: cs-image-system-ci
       role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_23t09_57_38_250729
+      run: 2026_09_23t10_44_12_844176
   coops:
     admins:
     - mykel.alvis
@@ -35,7 +35,7 @@ groups:
       policy: coops_v1_security_policy_ci
       role: cs-image-system-ci
       role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_23t09_57_38_250729
+      run: 2026_09_23t10_44_12_844176
   secofs:
     admins:
     - jason.ducker
@@ -58,7 +58,7 @@ groups:
       policy: secofs_v1_security_policy_ci
       role: cs-image-system-ci
       role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_23t09_57_38_250729
+      run: 2026_09_23t10_44_12_844176
   stofs:
     admins:
     - mykel.alvis
@@ -69,7 +69,6 @@ groups:
     managed: true
     members:
     - james.brown
-    - mykel.alvis
     workload:
       action: unchanged
       connection: github-cs-image-system
@@ -78,7 +77,7 @@ groups:
       policy: stofs_v1_security_policy_ci
       role: cs-image-system-ci
       role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_23t09_57_38_250729
+      run: 2026_09_23t10_44_12_844176
   tcmet:
     admins:
     - jason.ducker
@@ -101,9 +100,9 @@ groups:
       policy: tcmet_v1_security_policy_ci
       role: cs-image-system-ci
       role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_23t09_57_38_250729
+      run: 2026_09_23t10_44_12_844176
 note: structural facts only; gids flow by terraform remote-state reference (N7)
-run: 2026_09_23t09_57_38_250729
+run: 2026_09_23t10_44_12_844176
 user_builders:
   okta-tf-users: okta-tf-ro
 users:
