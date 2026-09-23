@@ -10,7 +10,7 @@ data "amazon-ami" "imgfile-coops-model_aws-east2-runtime" {
 }
 source "amazon-ebs" "imgfile-coops-model" {
   source_ami    = data.amazon-ami.imgfile-coops-model_aws-east2-runtime.id
-  ami_name      = "imgfile-coops-model-pckr-ebs-ans-20260923_111008"
+  ami_name      = "imgfile-coops-model-pckr-ebs-ans-20260923_121911"
   instance_type = "t3.medium"
   region        = "us-east-2"
   vpc_id        = "vpc-0c78d0d63b7a100df"
@@ -18,7 +18,7 @@ source "amazon-ebs" "imgfile-coops-model" {
   tags = {
     csis_series         = "imgfile-coops-model",
     csis_parent         = "ami-01a7eb20527c25fe2",
-    csis_run            = "2026_09_23t11_10_23_878541",
+    csis_run            = "2026_09_23t12_19_27_423236",
     csis_fingerprint    = "243b388f46b1f5af",
     csis_identity_types = "okta",
     csis_storage_types  = "ebs,efs,gcs,pd,s3",

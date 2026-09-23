@@ -5,5 +5,5 @@ idempotent: ansible
 image: imgfile-coops-model
 name: coops-update-playbook
 operation: ansible
-run: 2026_09_23t11_10_23_878541
+run: 2026_09_23t12_19_27_423236
 type: ansible-default

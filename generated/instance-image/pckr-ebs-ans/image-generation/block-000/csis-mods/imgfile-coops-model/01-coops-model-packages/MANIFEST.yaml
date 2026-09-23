@@ -4,5 +4,5 @@ idempotent: declared
 image: imgfile-coops-model
 name: coops-model-packages
 operation: bash
-run: 2026_09_23t11_10_23_878541
+run: 2026_09_23t12_19_27_423236
 type: bash-remote

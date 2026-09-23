@@ -12,4 +12,4 @@ mods:
   name: coops-update-playbook
   operation: ansible
   type: ansible-default
-run: 2026_09_23t11_10_23_878541
+run: 2026_09_23t12_19_27_423236
