@@ -11,7 +11,7 @@ instances:
     identity_type: okta
     image: imgfile-coops-model
     launched: true
-    launched_run: 2026_09_23t12_59_38_731217
+    launched_run: 2026_09_23t13_08_01_607040
     mounts:
     - builder: aws-ebs
       device: /dev/xvdf
@@ -28,7 +28,7 @@ instances:
       share_mode: '2775'
       storage: efs-storage
       type: efs
-    run: 2026_09_23t12_59_38_731217
+    run: 2026_09_23t13_08_01_607040
     session: ssm
     user_data_sha256: 411a92d77e0b4f6e1df6fbb46a96d92f6a0b5b9a540b6a9ef8e92812dc198489
   gce-test:
@@ -51,6 +51,6 @@ instances:
       share_mode: '2770'
       storage: gce_data
       type: pd
-    run: 2026_09_23t12_59_38_731217
+    run: 2026_09_23t13_08_01_607040
     session: iap
     user_data_sha256: 29bee6bb7860d0a580101f1179ecf1643da350bb18da93423e5fb14b4d1e1231
