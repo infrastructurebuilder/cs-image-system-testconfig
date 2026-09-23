@@ -828,3 +828,39 @@ builds:
     assertions: 7
     in_bake: true
   update: null
+- build_id: ami-0e84baea05364bfb8
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  chain:
+  - imgfile-coops-model
+  input_fingerprint: 243b388f46b1f5af65a66b776e4f51531998f60a0ed08c9a073836064037917a
+  local_mods: true
+  mods:
+  - content_hash: b49f9c19f3668ef0c636d6d7d518936e4db4c379b138f3f8c25e838baa0de5b9
+    idempotent: declared
+    name: coops-model-packages
+    operation: bash
+    run: 2026_09_23t11_10_23_878541
+    type: bash-remote
+  - content_hash: 02a29903fcd36d300c30565a842a66471d6e70d9ad5c6c818ff0ddd5a71093ae
+    idempotent: ansible
+    name: coops-update-playbook
+    operation: ansible
+    run: 2026_09_23t11_10_23_878541
+    type: ansible-default
+  name: imgfile-coops-model-pckr-ebs-ans-20260923_111008
+  parent: ami-01a7eb20527c25fe2
+  run: 2026_09_23t11_10_23_878541
+  runtime: aws-east2-runtime
+  series: imgfile-coops-model
+  tests:
+    assertions: 7
+    in_bake: true
+  update: null

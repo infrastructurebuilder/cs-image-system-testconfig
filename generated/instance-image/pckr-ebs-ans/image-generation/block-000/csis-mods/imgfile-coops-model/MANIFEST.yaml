@@ -1,0 +1,15 @@
+image: imgfile-coops-model
+mods:
+- content_hash: b49f9c19f3668ef0c636d6d7d518936e4db4c379b138f3f8c25e838baa0de5b9
+  dir: 01-coops-model-packages
+  idempotent: declared
+  name: coops-model-packages
+  operation: bash
+  type: bash-remote
+- content_hash: 02a29903fcd36d300c30565a842a66471d6e70d9ad5c6c818ff0ddd5a71093ae
+  dir: 02-coops-update-playbook
+  idempotent: ansible
+  name: coops-update-playbook
+  operation: ansible
+  type: ansible-default
+run: 2026_09_23t11_10_23_878541
