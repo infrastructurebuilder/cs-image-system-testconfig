@@ -3,7 +3,7 @@ module "group_stofs" {
   source                    = "../../../../../cs-image-system-3/tfmodules/okta_opa_module"
   providers                 = { oktapam = oktapam.oktagroups }
   group_id                  = "stofs"
-  members                   = ["james.brown", "mykel.alvis"]
+  members                   = ["james.brown"]
   admins                    = ["mykel.alvis"]
   delegated_admin_group_ids = []
   account_discovery         = true
