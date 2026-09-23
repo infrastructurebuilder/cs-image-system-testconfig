@@ -1,16 +1,17 @@
 instances:
   coops-model:
-    build: ami-08b0d669a6b5d86af
+    alias: cod
+    build: ami-06863fb35ff62f9ba
     enrollment:
       enrollment: sftd-token
       server_label: sftd.tx.group=coops
     ephemeral: false
     group: coops
-    hostname: coops-model-002
+    hostname: coops-model-003
     identity_type: okta
     image: imgfile-coops-model
     launched: true
-    launched_run: 2026_09_22t13_13_16_079742
+    launched_run: 2026_09_23t12_59_38_731217
     mounts:
     - builder: aws-ebs
       device: /dev/xvdf
@@ -27,9 +28,9 @@ instances:
       share_mode: '2775'
       storage: efs-storage
       type: efs
-    run: 2026_09_23t12_19_27_423236
+    run: 2026_09_23t12_59_38_731217
     session: ssm
-    user_data_sha256: 706b0e01f14f2d01d024b80d054a286bbbe1eb2bd70dc6f7345872ef07618fc0
+    user_data_sha256: 411a92d77e0b4f6e1df6fbb46a96d92f6a0b5b9a540b6a9ef8e92812dc198489
   gce-test:
     build: imgfile-basic-dask-pckr-gce-ans-20260910-091415
     enrollment:
@@ -50,6 +51,6 @@ instances:
       share_mode: '2770'
       storage: gce_data
       type: pd
-    run: 2026_09_23t12_19_27_423236
+    run: 2026_09_23t12_59_38_731217
     session: iap
     user_data_sha256: 29bee6bb7860d0a580101f1179ecf1643da350bb18da93423e5fb14b4d1e1231

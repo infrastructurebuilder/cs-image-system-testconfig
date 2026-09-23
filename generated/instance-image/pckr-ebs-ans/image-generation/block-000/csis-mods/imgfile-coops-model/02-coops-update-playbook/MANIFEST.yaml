@@ -1,9 +1,0 @@
-content_hash: 02a29903fcd36d300c30565a842a66471d6e70d9ad5c6c818ff0ddd5a71093ae
-files:
-- coops_update.yml
-idempotent: ansible
-image: imgfile-coops-model
-name: coops-update-playbook
-operation: ansible
-run: 2026_09_23t12_19_27_423236
-type: ansible-default
