@@ -661,3 +661,48 @@ verifications:
   run: 2026_09_23t13_04_46_627656
   runtime: aws-east2-runtime
   time: '2026-09-23T18:05:02+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260910-091415
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260910-091415, expected imgfile-basic-dask-pckr-gce-ans-20260910-091415
+    name: booted image
+    ok: true
+  - detail: 3 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  - detail: 3 assertion(s) passed
+    name: declared tests
+    ok: true
+  ephemeral: true
+  evidence:
+  - '[    7.744004] SGI XFS with ACLs, security attributes, scrub, quota, no debug
+    enabled'
+  - '[    7.754357] XFS (sdb2): Mounting V5 Filesystem 528af818-a957-4484-bf87-b831a0288eb4'
+  - '[    8.161445] XFS (sdb2): Ending clean mount'
+  - 'Sep 24 17:28:02 gce-test systemd[1]: Starting google-startup-scripts.service
+    - Google Compute Engine Startup Scripts...'
+  - 'Sep 24 17:28:10 gce-test google_compat_metadata_script_runner[1230]: Enable core
+    plugin set to: [true], launching script runner for event "startup" from "/usr/bin/gce_metadata_script_runner"'
+  - 'gce-test login: [   73.176293] XFS (sda): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep 24 17:28:11 gce-test google_metadata_script_runner[1237]: Running metadata
+    script runner (version 20260715.00) for "startup" event'
+  - 'Sep 24 17:28:11 gce-test google_metadata_script_runner[1237]: Found startup-script
+    in metadata'
+  - 'Sep 24 17:28:12 gce-test kernel: XFS (sda): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - '[   73.390655] XFS (sda): Ending clean mount'
+  - 'Sep 24 17:28:12 gce-test kernel: XFS (sda): Ending clean mount'
+  - 'Sep 24 17:28:12 gce-test google_metadata_script_runner[1237]: Finished running
+    startup scripts'
+  - 'Sep 24 17:28:13 gce-test systemd[1]: google-startup-scripts.service: Deactivated
+    successfully.'
+  - 'Sep 24 17:28:13 gce-test systemd[1]: Finished google-startup-scripts.service
+    - Google Compute Engine Startup Scripts.'
+  - 'Sep 24 17:28:13 gce-test systemd[1]: google-startup-scripts.service: Consumed
+    237ms CPU time, 64.3M memory peak.'
+  instance: gce-test
+  ok: true
+  run: 2026_09_24t12_27_36_369384
+  runtime: gcloud-east1
+  time: '2026-09-24T17:28:57+00:00'

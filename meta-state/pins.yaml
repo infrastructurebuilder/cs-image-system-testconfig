@@ -8,7 +8,6 @@ images:
   imgfile-data-science@aws-east2-runtime: ami-08a52e8f7f287b40a
 instances:
   coops-model: ami-06863fb35ff62f9ba
-  gce-test: imgfile-basic-dask-pckr-gce-ans-20260910-091415
 pending_replacements: {}
 upgrades:
 - kind: image
@@ -406,3 +405,21 @@ upgrades:
   op: upgrade
   run: 2026_09_23t12_58_09_205471
   to: ami-06863fb35ff62f9ba
+- kind: image
+  name: imgfile-basic-dask@gcloud-east1
+  op: bind
+  run: 2026_09_24t12_01_15_155175
+  runtime: gcloud-east1
+  to: basic-rh-10-gcloud-east1-20260924-120051
+- from: imgfile-basic-dask-pckr-gce-ans-20260910-091415
+  kind: instance
+  name: gce-test
+  op: ephemeral
+  run: 2026_09_24t12_01_15_155175
+  to: null
+- from: basic-rh-10-gcloud-east1-20260924-120051
+  kind: image
+  name: imgfile-basic-dask@gcloud-east1
+  op: dispose
+  run: 2026_09_24t12_32_56_972080
+  to: null

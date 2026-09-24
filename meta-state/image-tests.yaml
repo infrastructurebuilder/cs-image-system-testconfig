@@ -126,6 +126,6 @@ builds:
     image: imgfile-basic-dask
     instance: gce-test
     ok: true
-    run: 2026_09_10t09_28_24_243720
+    run: 2026_09_24t12_27_36_369384
     runtime: gcloud-east1
-    time: '2026-09-10T14:29:30+00:00'
+    time: '2026-09-24T17:28:57+00:00'

@@ -89,3 +89,43 @@ proofs:
   run: 2026_09_22t13_21_15_525711
   runtime: aws-east2-runtime
   time: '2026-09-22T18:21:24+00:00'
+- as: client
+  checks:
+  - detail: '''coops-model-003'' is registered once (72925b35-5969-427d-a3da-93f1926f882e)'
+    name: one registration
+    ok: true
+  - detail: 'sft resolve coops-model-003: exit 126 -- the client has no session (as
+      the enrolled client: run `sft login`; as the workload: OPA_TOKEN is missing
+      or was refused)'
+    name: resolves
+    ok: false
+  evidence: []
+  group: coops
+  hostname: coops-model-003
+  instance: coops-model
+  ok: false
+  run: 2026_09_23t13_14_21_409136
+  runtime: aws-east2-runtime
+  time: '2026-09-23T18:14:25+00:00'
+- as: client
+  checks:
+  - detail: '''coops-model-003'' is registered once (72925b35-5969-427d-a3da-93f1926f882e)'
+    name: one registration
+    ok: true
+  - detail: 'sft resolve coops-model-003: exit 0'
+    name: resolves
+    ok: true
+  - detail: logged in as mykel.alvis over sft ssh
+    name: login
+    ok: true
+  evidence:
+  - uid=150006(mykel.alvis) gid=150006(mykel.alvis) groups=150006(mykel.alvis),90000(sft-admin)
+    context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+  - coops-model-003
+  group: coops
+  hostname: coops-model-003
+  instance: coops-model
+  ok: true
+  run: 2026_09_23t13_15_53_948263
+  runtime: aws-east2-runtime
+  time: '2026-09-23T18:16:02+00:00'
