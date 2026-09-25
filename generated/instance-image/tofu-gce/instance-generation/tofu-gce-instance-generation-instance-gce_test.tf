@@ -5,7 +5,8 @@ module "instance_gce_test" {
   providers    = { google = google.tofu_gce }
   count        = var.ephemeral_present ? 1 : 0
   name         = "gce-test"
-  image        = "imgfile-basic-dask-pckr-gce-ans-20260910-091415"
+  image        = var.gce_test_image
+  image_family = "imgfile-basic-dask"
   machine_type = "e2-micro"
   zone         = "us-east1-b"
   subnetwork   = "projects/csis-sandbox/regions/us-east1/subnetworks/default"

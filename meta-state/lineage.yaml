@@ -543,42 +543,6 @@ builds:
     assertions: 5
     in_bake: true
   update: null
-- build_id: imgfile-basic-dask-pckr-gce-ans-20260910-091415
-  capabilities:
-    identity_types:
-    - okta
-    storage_types:
-    - ebs
-    - efs
-    - gcs
-    - pd
-    - s3
-  chain:
-  - imgfile-basic-dask
-  input_fingerprint: de18cb2753d43b868dcf566602de3c7865f94334a785a3f6a1fc59602523cc94
-  local_mods: true
-  mods:
-  - content_hash: f69207b82321c53a4944d6cba1940d6a4b8e051fa26c8c30c733c7f7c0faea3d
-    idempotent: ansible
-    name: dask-setup-jeffy
-    operation: ansible
-    run: 2026_09_10t09_14_27_793542
-    type: ansible-default
-  - content_hash: 7efcd1a4fa07925eb1b11398f175aa61b5c77dff355050cc6871b50ffbe697cb
-    idempotent: unknown
-    name: derivative-setup
-    operation: bash
-    run: 2026_09_10t09_14_27_793542
-    type: bash-remote
-  name: imgfile-basic-dask-pckr-gce-ans-20260910_091415
-  parent: basic-rh-10-gcloud-east1-20260910-091415
-  run: 2026_09_10t09_14_27_793542
-  runtime: gcloud-east1
-  series: imgfile-basic-dask
-  tests:
-    assertions: 5
-    in_bake: true
-  update: null
 - build_id: ami-0bac0b93422c22661
   capabilities:
     identity_types:
@@ -898,5 +862,41 @@ builds:
   series: imgfile-coops-model
   tests:
     assertions: 7
+    in_bake: true
+  update: null
+- build_id: imgfile-basic-dask-pckr-gce-ans-20260925-112801
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  chain:
+  - imgfile-basic-dask
+  input_fingerprint: bd1b37a8f0c9bc60cab8933ecd9dcceeedcf76b64af5ab54b99266ee158b5af2
+  local_mods: true
+  mods:
+  - content_hash: f69207b82321c53a4944d6cba1940d6a4b8e051fa26c8c30c733c7f7c0faea3d
+    idempotent: ansible
+    name: dask-setup-jeffy
+    operation: ansible
+    run: 2026_09_25t11_28_31_278610
+    type: ansible-default
+  - content_hash: 7efcd1a4fa07925eb1b11398f175aa61b5c77dff355050cc6871b50ffbe697cb
+    idempotent: unknown
+    name: derivative-setup
+    operation: bash
+    run: 2026_09_25t11_28_31_278610
+    type: bash-remote
+  name: imgfile-basic-dask-pckr-gce-ans-20260925_112801
+  parent: basic-rh-10-gcloud-east1-20260925-112801
+  run: 2026_09_25t11_28_31_278610
+  runtime: gcloud-east1
+  series: imgfile-basic-dask
+  tests:
+    assertions: 5
     in_bake: true
   update: null

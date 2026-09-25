@@ -28,6 +28,6 @@ instances:
       share_mode: '2775'
       storage: efs-storage
       type: efs
-    run: 2026_09_24t12_01_15_155175
+    run: 2026_09_25t11_28_31_278610
     session: ssm
     user_data_sha256: 411a92d77e0b4f6e1df6fbb46a96d92f6a0b5b9a540b6a9ef8e92812dc198489
