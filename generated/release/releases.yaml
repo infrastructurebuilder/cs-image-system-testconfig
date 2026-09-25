@@ -1,7 +1,7 @@
-count: 5
+count: 6
 current:
   coops:
     imgfile-coops-model: ami-06863fb35ff62f9ba
   default:
-    imgfile-basic-dask: imgfile-basic-dask-pckr-gce-ans-20260910-091415
-run: 2026_09_25t11_28_31_278610
+    imgfile-basic-dask: imgfile-basic-dask-pckr-gce-ans-20260925-112801
+run: 2026_09_25t15_16_23_826583

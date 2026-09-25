@@ -129,7 +129,7 @@ instances:
   gce-test:
     generation:
       durable: 0
-      ephemeral: 2
+      ephemeral: 3
     history:
     - closed_at: '2026-09-24T17:31:17+00:00'
       closed_run: 2026_09_24t12_01_15_155175
@@ -194,4 +194,36 @@ instances:
       number: 2
       opened_at: '2026-09-25T16:51:26+00:00'
       opened_run: 2026_09_25t11_28_31_278610
+      why: ephemeral
+    - closed_at: '2026-09-25T20:36:25+00:00'
+      closed_run: 2026_09_25t15_16_23_826583
+      how: inferred
+      kind: ephemeral
+      launch_params:
+        build: unbound
+        enrollment:
+          enrollment: sftd-token
+          server_label: sftd.tx.group=coops
+        ephemeral: true
+        group: coops
+        hostname: gce-test-003
+        identity_type: okta
+        image: imgfile-basic-dask
+        launched: true
+        launched_run: 2026_09_25t15_16_23_826583
+        mounts:
+        - builder: gcp-pd
+          device: /dev/disk/by-id/google-gce-data
+          group: coops
+          mount_point: /mnt/gce-data
+          public_read: false
+          share_mode: '2770'
+          storage: gce_data
+          type: pd
+        run: 2026_09_25t15_16_23_826583
+        session: iap
+        user_data_sha256: 9aa3fc49a8f472def17667bf40891d8481bce901e85c44c51c433b71a496a779
+      number: 3
+      opened_at: '2026-09-25T20:36:25+00:00'
+      opened_run: 2026_09_25t15_16_23_826583
       why: ephemeral
