@@ -16,7 +16,7 @@ groups:
       policy: basic_v1_security_policy_ci
       role: cs-image-system-ci
       role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_25t15_16_23_826583
+      run: 2026_09_25t21_35_51_777595
   coops:
     admins:
     - mykel.alvis
@@ -35,7 +35,7 @@ groups:
       policy: coops_v1_security_policy_ci
       role: cs-image-system-ci
       role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_25t15_16_23_826583
+      run: 2026_09_25t21_35_51_777595
   secofs:
     admins:
     - jason.ducker
@@ -58,7 +58,7 @@ groups:
       policy: secofs_v1_security_policy_ci
       role: cs-image-system-ci
       role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_25t15_16_23_826583
+      run: 2026_09_25t21_35_51_777595
   stofs:
     admins:
     - mykel.alvis
@@ -78,7 +78,7 @@ groups:
       policy: stofs_v1_security_policy_ci
       role: cs-image-system-ci
       role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_25t15_16_23_826583
+      run: 2026_09_25t21_35_51_777595
   tcmet:
     admins:
     - jason.ducker
@@ -101,9 +101,9 @@ groups:
       policy: tcmet_v1_security_policy_ci
       role: cs-image-system-ci
       role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_25t15_16_23_826583
+      run: 2026_09_25t21_35_51_777595
 note: structural facts only; gids flow by terraform remote-state reference (N7)
-run: 2026_09_25t15_16_23_826583
+run: 2026_09_25t21_35_51_777595
 user_builders:
   okta-tf-users: okta-tf-ro
 users:

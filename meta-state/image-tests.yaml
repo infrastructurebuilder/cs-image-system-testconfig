@@ -163,3 +163,20 @@ builds:
     run: 2026_09_25t15_33_40_127065
     runtime: gcloud-east1
     time: '2026-09-25T20:34:15+00:00'
+  imgfile-basic-dask-pckr-gce-ans-20260925-213539:
+    checks:
+    - detail: pass
+      name: test -e /var/lib/csis/launch-applied
+      ok: true
+    - detail: pass
+      name: ( python3 -c 'import dask' ) >/dev/null 2>&1; test $? -eq 0
+      ok: true
+    - detail: pass
+      name: mount /mnt/gce-data
+      ok: true
+    image: imgfile-basic-dask
+    instance: gce-test
+    ok: true
+    run: 2026_09_25t21_51_48_358851
+    runtime: gcloud-east1
+    time: '2026-09-26T02:54:14+00:00'
