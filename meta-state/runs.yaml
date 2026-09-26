@@ -1,20 +1,5 @@
 runs:
 - apply:
-    base-image: dry-run
-    identity: dry-run
-    instance-image: dry-run
-    release: no-script
-    storage: dry-run
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - identity
-  - storage
-  - base-image
-  - instance-image
-  run: 2026_09_02t20_12_36_589465
-- apply:
     identity: executed
     storage: failed
   dry_run: false
@@ -2670,3 +2655,21 @@ runs:
   - release
   - retention
   run: 2026_09_26t06_45_39_658174
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_09_26t12_10_24_749446

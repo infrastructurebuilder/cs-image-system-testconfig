@@ -9,14 +9,10 @@ groups:
     managed: true
     members: []
     workload:
-      action: unchanged
       connection: github-cs-image-system
-      id: eab5c659-71c3-4e18-9aa3-e040423b51ee
       mirrors: basic_v1_security_policy_user
       policy: basic_v1_security_policy_ci
       role: cs-image-system-ci
-      role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_26t06_45_39_658174
   coops:
     admins:
     - mykel.alvis
@@ -28,14 +24,10 @@ groups:
     members:
     - zachary.wills
     workload:
-      action: unchanged
       connection: github-cs-image-system
-      id: 0bbe4c09-6414-4425-af81-cc3fd9255c6c
       mirrors: coops_v1_security_policy_user
       policy: coops_v1_security_policy_ci
       role: cs-image-system-ci
-      role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_26t06_45_39_658174
   secofs:
     admins:
     - jason.ducker
@@ -51,14 +43,10 @@ groups:
     - hjyoo
     - jason.ducker
     workload:
-      action: unchanged
       connection: github-cs-image-system
-      id: 9c3b5517-bcb7-476d-ad33-f83c0512856d
       mirrors: secofs_v1_security_policy_user
       policy: secofs_v1_security_policy_ci
       role: cs-image-system-ci
-      role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_26t06_45_39_658174
   stofs:
     admins:
     - mykel.alvis
@@ -71,14 +59,10 @@ groups:
     - james.brown
     - mykel.alvis
     workload:
-      action: unchanged
       connection: github-cs-image-system
-      id: 28e77ee8-1e64-439f-bd27-1e668c602fcf
       mirrors: stofs_v1_security_policy_user
       policy: stofs_v1_security_policy_ci
       role: cs-image-system-ci
-      role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_26t06_45_39_658174
   tcmet:
     admins:
     - jason.ducker
@@ -94,16 +78,12 @@ groups:
     - rick_luettich
     - rmarsool
     workload:
-      action: unchanged
       connection: github-cs-image-system
-      id: 130dff88-e109-4348-9592-fcbd4661ed9e
       mirrors: tcmet_v1_security_policy_user
       policy: tcmet_v1_security_policy_ci
       role: cs-image-system-ci
-      role_id: 67e66093-382e-4b48-a112-6ed80d3ab548
-      run: 2026_09_26t06_45_39_658174
 note: structural facts only; gids flow by terraform remote-state reference (N7)
-run: 2026_09_26t06_45_39_658174
+run: 2026_09_26t12_10_24_749446
 user_builders:
   okta-tf-users: okta-tf-ro
 users:
