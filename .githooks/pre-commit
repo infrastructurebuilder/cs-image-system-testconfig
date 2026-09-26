@@ -1,4 +1,9 @@
 #!/usr/bin/env sh
+
+# SPDX-FileCopyrightText: 2026 Mykel Alvis <mykelalvis@infrastructurebuilder.org>
+#
+# SPDX-License-Identifier: Apache-2.0
+
 # cs-image-system public-safe gate (stage 35): refuse a commit that would publish
 # material that must never be public. Plain sh, no framework; installed by
 # `just init` (this repository) and `just hooks-live` (the live configuration)

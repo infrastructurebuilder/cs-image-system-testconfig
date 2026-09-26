@@ -38,10 +38,12 @@ config:
   apply_instances: false # FINALIZATION runs 'tofu apply' for instances only when true
   apply_storage: true
   apply_identity: true # FINALIZATION runs 'tofu apply' for identity roots only when true
-  # Relative to THIS configuration tree (test_folder/); every generated
-  # terraform root resolves it to the right relative path for its own depth.
-  # Absolute paths and git/registry URLs pass through unchanged.
-  module_source_base: ../cs-image-system-3/tfmodules
+  # Relative to THIS configuration tree; every generated terraform root resolves it
+  # to the right relative path for its own depth. Absolute paths and git/registry
+  # URLs pass through unchanged. Since stage 64 (2026-09-26) the modules travel with
+  # the tree: the release ships them and `cs-image-system init-config . --force`
+  # refreshes tfmodules/ after an upgrade (until then: ../cs-image-system-3/tfmodules).
+  module_source_base: tfmodules
   some_key: some_value
   another_key: another_value
   systemuser: "{{ ENV.USER }}"

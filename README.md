@@ -1,4 +1,4 @@
-# cs-image-system-testconfig — the live configuration
+# cs-image-system-testconfig: the reference configuration
 
 This repository is a configuration, not a program. It is the tree that
 [cs-image-system](https://github.com/infrastructurebuilder/cs-image-system-3)
@@ -11,35 +11,72 @@ under `meta-state/` (never edited by hand; see `meta-state/README.md`).
 The environment it describes is the NOAA NOS coastal-modeling cloud
 sandbox on AWS and GCE, with SSH access governed by Okta Privileged
 Access. What each file and field means is in the system's
-[configuration reference](https://github.com/infrastructurebuilder/cs-image-system-3/blob/develop/docs/CONFIGURATION.md).
+[configuration reference](https://github.com/infrastructurebuilder/cs-image-system-3/blob/develop/docs/CONFIGURATION.md);
+how a team works with such a repository, from the first command on, is
+its [daily driver](https://github.com/infrastructurebuilder/cs-image-system-3/blob/develop/DAILY_DRIVER.md).
+
+It is also the system's REFERENCE configuration: the tree the system's own
+live proofs run against, and the first repository ever written by
+`cs-image-system init-config`.
 
 ## How it is driven
 
-Check it out **beside** `cs-image-system-3` (the default), or point
-`CSIS_CONFIG_ROOT` at it. From the system repository:
+This repository stands alone (stage 64 of the system, 2026-09-26). The
+parts a configuration repository needs beyond its YAML came from the
+release through `cs-image-system init-config`, and are the release's byte
+for byte:
+
+| Part | What it is |
+| --- | --- |
+| `Justfile` | the single entry point: the five contract targets (`init`, `build`, `test`, `full-test`, `release`) and every daily and cycle recipe, each wrapping the `cs-image-system` command against this tree |
+| `.github/workflows/ci.yml` | this repository's own CI: `verify` (no secrets), `live` (read-only against both clouds and OPA), `perform` (on `main`: the record, the guard on the GCE runtime, the performing run on `aws-east2-runtime` under the write role, the login proof as a workload, the closing record; records pushed back here) |
+| `.github/workflows/opa-workload-probe.yml` | dispatch only: this repository's OIDC token presented to the team's workload connection |
+| `.githooks/pre-commit` | the public-safe gate on every commit; `just init` installs it |
+| `tfmodules/` | the terraform modules the emitted roots call, at `module_source_base: tfmodules` |
+| `.gitignore` | the shell's exports, every credential file, the private mirror, tool residue; `generated/` and `meta-state/` ARE committed |
+| `.csis-version` | the release that wrote these parts, which CI installs; move it when a new release is taken, then `cs-image-system init-config . --force` refreshes the parts |
+
+The command comes from a release (`uv tool install cs-image-system`, or a
+`pyproject.toml` depending on it with `CSIS="uv run cs-image-system"`).
+Whoever develops the system drives this tree with the development
+checkout instead: `export CSIS=<checkout>/.venv/bin/cs-image-system` (the
+ignored `.envrc` here does that), or `just cli ...` from the system
+repository, which points at this checkout beside it by default.
 
 ```sh
-just cli validate                 # the tree against every rule
-just v2-dry-run                   # headless dry run --all: generation + the enumerated applies
-just cloud-preflight              # reality matches meta-state (state query --strict)
-just gce-cycle                    # a real GCE change cycle, committed here
+just init                          # the hook, the plugin cache, a check that the command runs
+just validate                      # the tree against every rule
+just dry                           # a dry run of every lifecycle: generated/ and the runner scripts
+just cloud-preflight               # reality matches the records (state query --strict)
+just cloud-cycle gcloud-east1      # the GCE change cycle, committed here (the operator's money)
+just cloud-perform aws-east2-runtime
 ```
 
-`cfg/_config.yml` declares `module_source_base: ../cs-image-system-3/tfmodules`:
-the terraform modules stay in the system repository and are reached from
-this checkout by that relative path, so the two repositories sit side by
-side (or the value names wherever the modules are). The system's CI reads
-this repository's `develop` branch.
+`just` alone lists every recipe, the contract first.
 
 ## What a run writes here
 
 Every run writes `meta-state/` (read-models, lineage, pins, launch
 parameters, the run journal) and regenerates `generated/<lifecycle>/`,
 including one self-contained `run-<lifecycle>.sh` per lifecycle. With
-`--commit` the run commits exactly those two trees into this repository —
-generated IaC included, by design — and pushes nothing; pushing is the
-operator's act. `.gitignore` keeps only tool residue out of that commit
-(`.terraform/`, plans, state files).
+`--commit` (`just record`, `just run ...`, the cycle recipes) the run
+commits exactly those two trees into this repository, generated IaC
+included, by design, and pushes nothing; pushing is the operator's act,
+or CI's on `main`. `.gitignore` keeps only tool residue out of that commit
+(`.terraform/`, plans, state files, the private mirror).
+
+## Branches and CI
+
+`develop` is where the operator's cycles are committed and pushed; `main`
+is what CI performs on. Every push runs `verify` and `live`; a push to
+`main` (or a dispatch asking to record) runs `perform`, whose records are
+pushed back to `main`. Each job is gated on the repository secrets it
+names: none configured is SKIPPED and said so in the job summary, some
+configured and some missing is a failure that names them. A green job is
+not proof its steps ran; read the summary. The GCE runtime stays out of
+CI by the cost decision (`GUARD_RUNTIME: gcloud-east1`): a declaration
+change there fails `perform` before anything performs, and the operator
+runs the GCE cycle by hand.
 
 ## Credentials, secrets and people
 
@@ -48,34 +85,35 @@ repository: an AWS session for the `noaa` profile, application-default
 credentials for GCP, the OPA API pair as `TF_VAR_<team>_key` and
 `TF_VAR_<team>_secret`, the Okta API key as `OKTA_API_*`, and the age
 identity that opens the encrypted values as `CSIS_CONFIG_IDENTITY`. An
-operator keeps them in a `.envrc` that is ignored here; the full contract
-is the system's [operating manual](https://github.com/infrastructurebuilder/cs-image-system-3/blob/develop/docs/OPERATIONS.md).
+operator keeps them in a `.envrc` that is ignored here; CI reads them
+from the repository secrets the workflow names; the full contract is the
+system's [operating manual](https://github.com/infrastructurebuilder/cs-image-system-3/blob/develop/docs/OPERATIONS.md).
 
 The user and group rosters under `groups/` are encrypted entry by entry
 (`ENC[age:...]`) to the recipients listed in `cfg/_config.yml`; the system
 decrypts them at load and the emitted IaC carries only the ciphertext,
-decrypting at plan time. Addresses derived from a username by the
-configured template are public by construction.
+which an execution materialises into the private mirror `_private/`
+(never committed).
 
 ## No overlays
 
 The live configuration carries **no overlay files**: a transient
-undeclare is `--undeclare instance:<name>` on the command line (what
-`just gce-decommission` passes), and an overlay does nothing unless an
-invocation names one anyway. The tests of `cs-image-system-3` never read
-this tree; they own a frozen, synthetic copy under `tests/fixtures/config/`.
+undeclare is `--undeclare instance:<name>` on the command line, and an
+overlay does nothing unless an invocation names one anyway. The tests of
+`cs-image-system-3` never read this tree; they own a frozen, synthetic copy
+under `tests/fixtures/config/`.
 
 ## Public-safe by construction
 
 Every commit here is gated: `.githooks/pre-commit` runs
 `cs-image-system public-safe --staged`, which refuses keys, tokens, PEM
 bodies, an age identity, a service-account file, plans and state by name,
-and, outside prose, addresses and long tokens. Install it once with
-`just hooks-live` from the system repository (`git config core.hooksPath
-.githooks`); scan the whole tree with `just public-safe-live`. What the gate
-may let through is listed by decision, with the reason, in `cfg/_config.yml`
-`public_safe.allow`, never by bypassing the hook. Encrypted values and the
-emission's references to them pass by structure.
+and, outside prose, addresses and long tokens. `just init` installs it
+(`git config core.hooksPath .githooks`); `just public-safe` scans the
+whole tree. What the gate may let through is listed by decision, with the
+reason, in `cfg/_config.yml` `public_safe.allow`, never by bypassing the
+hook. Encrypted values and the emission's references to them pass by
+structure.
 
 ## Licence
 
