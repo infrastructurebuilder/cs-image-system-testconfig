@@ -459,3 +459,15 @@ upgrades:
   op: dispose
   run: 2026_09_25t21_56_47_415529
   to: null
+- kind: image
+  name: imgfile-basic-dask@gcloud-east1
+  op: bind
+  run: 2026_09_26t06_45_39_658174
+  runtime: gcloud-east1
+  to: basic-rh-10-gcloud-east1-20260926-064527
+- from: basic-rh-10-gcloud-east1-20260926-064527
+  kind: image
+  name: imgfile-basic-dask@gcloud-east1
+  op: dispose
+  run: 2026_09_26t07_06_52_370312
+  to: null

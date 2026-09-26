@@ -834,3 +834,48 @@ verifications:
   run: 2026_09_25t21_51_48_358851
   runtime: gcloud-east1
   time: '2026-09-26T02:54:14+00:00'
+- build: imgfile-basic-dask-pckr-gce-ans-20260926-064527
+  checks:
+  - detail: finished
+    name: startup scripts
+    ok: true
+  - detail: booted imgfile-basic-dask-pckr-gce-ans-20260926-064527, a recorded build
+      of imgfile-basic-dask on gcloud-east1
+    name: booted image
+    ok: true
+  - detail: 3 clean XFS mount(s) on the console, 1 declared
+    name: data disks mounted
+    ok: true
+  - detail: 3 assertion(s) passed
+    name: declared tests
+    ok: true
+  ephemeral: true
+  evidence:
+  - '[   42.070171] SGI XFS with ACLs, security attributes, scrub, quota, no debug
+    enabled'
+  - "\e[K[    \e[0;31m*\e[0;1;31m*\e[0[   42.312142] XFS (sdb2): Mounting V5 Filesystem\
+    \ 528af818-a957-4484-bf87-b831a0288eb4"
+  - '[   42.723388] XFS (sdb2): Ending clean mount'
+  - 'Sep 26 12:03:39 gce-test systemd[1]: Starting google-startup-scripts.service
+    - Google Compute Engine Startup Scripts...'
+  - 'Sep 26 12:03:46 gce-test google_compat_metadata_script_runner[1161]: Enable core
+    plugin set to: [true], launching script runner for event "startup" from "/usr/bin/gce_metadata_script_runner"'
+  - '[  121.078877] XFS (sda): Mounting V5 Filesystem 793eb709-37ff-411b-ac61-b8442356b2ed'
+  - 'Sep 26 12:03:48 gce-test google_metadata_script_runner[1250]: Running metadata
+    script runner (version 20260715.00) for "startup" event'
+  - 'Sep 26 12:03:48 gce-test google_metadata_script_runner[1250]: Found startup-script
+    in metadata'
+  - 'Sep 26 12:03:48 gce-test kernel: XFS (sda): Mounting V5 Filesyste[  121.253521]
+    XFS (sda): Ending clean mount'
+  - 'Sep 26 12:03:48 gce-test kernel: XFS (sda): Ending clean mount'
+  - 'Sep 26 12:03:48 gce-test google_metadata_script_runner[1250]: Finished running
+    startup scripts'
+  - 'Sep 26 12:03:49 gce-test systemd[1]: google-startup-scripts.service: Deactivated
+    successfully.'
+  - 'Sep 26 12:03:49 gce-test systemd[1]: Finished google-startup-scripts.service
+    - Google Compute Engine Startup Scripts.'
+  instance: gce-test
+  ok: true
+  run: 2026_09_26t07_01_42_512046
+  runtime: gcloud-east1
+  time: '2026-09-26T12:04:10+00:00'
