@@ -30,6 +30,7 @@ for byte:
 | --- | --- |
 | `Justfile` | the single entry point: the five contract targets (`init`, `build`, `test`, `full-test`, `release`) and every daily and cycle recipe, each wrapping the `cs-image-system` command against this tree |
 | `.github/workflows/ci.yml` | this repository's own CI: `verify` (no secrets), `live` (read-only against both clouds and OPA), `perform` (on `main`: the record, the guard on the GCE runtime, the performing run on `aws-east2-runtime` under the write role, the login proof as a workload, the closing record; records pushed back here) |
+| `CI_SETUP.md` | how this repository's CI was set up, and how to set it up again from nothing: federation, the OPA workload objects, the secrets, the proofs (the release's, byte for byte) |
 | `.github/workflows/opa-workload-probe.yml` | dispatch only: this repository's OIDC token presented to the team's workload connection |
 | `.githooks/pre-commit` | the public-safe gate on every commit; `just init` installs it |
 | `tfmodules/` | the terraform modules the emitted roots call, at `module_source_base: tfmodules` |
