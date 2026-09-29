@@ -18,6 +18,10 @@ default:
 csis := env("CSIS", "cs-image-system")
 root := justfile_directory()
 cli := csis + " --root-dir " + quote(root)
+# A CSIS that names a path (a development checkout's venv) is not on PATH, yet a run's own steps and the
+# emitted runner scripts call the command back by its bare name: its directory goes first on PATH for every
+# recipe. A release on PATH, or CSIS="uv run cs-image-system" (uv puts its venv on the child's PATH), needs nothing.
+export PATH := if csis =~ "/" { parent_directory(csis) + ":" + env("PATH") } else { env("PATH") }
 
 # One tofu process at a time: every recipe that may execute tofu passes `--locked` to the command,
 # which holds a lock under this cache directory for the whole run (a second holder is refused with exit 75).
@@ -31,6 +35,7 @@ init:
 	git config core.hooksPath .githooks && echo "init: core.hooksPath = .githooks (the public-safe gate)"
 	mkdir -p "$TF_PLUGIN_CACHE_DIR"
 	echo "init: $({{csis}} --version 2>/dev/null || echo cs-image-system) ready against {{root}}"
+	echo "init: the run's callbacks find $(command -v cs-image-system || echo 'NOTHING -- put the command on PATH, or point CSIS at it')"
 
 # The emission: a DRY run of every lifecycle writes generated/ and enumerates every apply; nothing executes
 build:
@@ -137,6 +142,12 @@ cloud-stand runtime dry="no": cloud-preflight
 cloud-launch runtime dry="no": cloud-preflight
 	@{{cli}} --locked {{ if dry == "yes" { "--dry-run" } else { "--no-dry-run" } }} run instance-image --only none --apply-runtime {{runtime}} --commit
 
+# Gated destroy of ONE instance of the runtime: INSTANCE is undeclared for this invocation alone (the tree is
+# untouched), so a leftover standing machine is destroyed through the gate instead of re-verified; a dry
+# run keeps the record. `cloud-dispose-images` afterwards is the runtime's full teardown.
+cloud-decommission runtime instance dry="no": cloud-preflight
+	@{{cli}} --locked {{ if dry == "yes" { "--dry-run" } else { "--no-dry-run" } }} --undeclare instance:{{instance}} run instance-image --only none --apply-runtime {{runtime}} --commit
+
 # Verify a standing instance through the system; `sft` adds the login proof through the managed policy
 cloud-verify runtime instance leg="serial":
 	#!/usr/bin/env bash
@@ -178,7 +189,7 @@ ci-login-proof *ARGS:
 	#!/usr/bin/env bash
 	set -euo pipefail
 	if [ -n "${ACTIONS_ID_TOKEN_REQUEST_URL:-}" ]; then
-		OPA_TOKEN="$({{cli}} workload token)"
+		OPA_TOKEN=$({{cli}} workload token)
 		export OPA_TOKEN
 	else
 		echo "ci-login-proof: not a GitHub Actions job -- logging in as the enrolled client, not the workload" >&2
