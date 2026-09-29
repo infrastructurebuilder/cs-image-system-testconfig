@@ -4,4 +4,4 @@ current:
     imgfile-coops-model: ami-06863fb35ff62f9ba
   default:
     imgfile-basic-dask: imgfile-basic-dask-pckr-gce-ans-20260926-064527
-run: 2026_09_29t11_58_39_927667
+run: 2026_09_29t12_01_08_937290
