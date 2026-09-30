@@ -1,46 +1,5 @@
 instances:
   coops-model:
-    current:
-      how: observed
-      instance_id: i-0a81c75317dc0bb89
-      kind: durable
-      launch_params:
-        alias: cod
-        build: ami-06863fb35ff62f9ba
-        enrollment:
-          enrollment: sftd-token
-          server_label: sftd.tx.group=coops
-        ephemeral: false
-        group: coops
-        hostname: coops-model-003
-        identity_type: okta
-        image: imgfile-coops-model
-        launched: true
-        launched_run: 2026_09_23t12_59_38_731217
-        machine_type: t3.medium
-        mounts:
-        - builder: aws-ebs
-          device: /dev/xvdf
-          group: coops
-          mount_point: /mnt/data
-          public_read: false
-          share_mode: '2770'
-          storage: mnt_data
-          type: ebs
-        - builder: aws-efs
-          group: coops
-          mount_point: /mnt/efs
-          public_read: false
-          share_mode: '2775'
-          storage: efs-storage
-          type: efs
-        run: 2026_09_23t12_59_38_731217
-        session: ssm
-        user_data_sha256: 411a92d77e0b4f6e1df6fbb46a96d92f6a0b5b9a540b6a9ef8e92812dc198489
-      number: 3
-      opened_at: '2026-09-23T18:03:35+00:00'
-      opened_run: 2026_09_23t12_59_38_731217
-      provider_hostname: ip-10-26-35-29.us-east-2.compute.internal
     generation:
       durable: 3
       ephemeral: 0
@@ -141,6 +100,49 @@ instances:
       number: 3
       run: 2026_09_30t10_43_31_678678
       to: t3.medium
+    - closed_at: '2026-09-30T22:22:06+00:00'
+      closed_run: 2026_09_30t17_18_51_216690
+      how: observed
+      instance_id: i-0a81c75317dc0bb89
+      kind: durable
+      launch_params:
+        alias: cod
+        build: ami-06863fb35ff62f9ba
+        enrollment:
+          enrollment: sftd-token
+          server_label: sftd.tx.group=coops
+        ephemeral: false
+        group: coops
+        hostname: coops-model-003
+        identity_type: okta
+        image: imgfile-coops-model
+        launched: true
+        launched_run: 2026_09_23t12_59_38_731217
+        machine_type: t3.medium
+        mounts:
+        - builder: aws-ebs
+          device: /dev/xvdf
+          group: coops
+          mount_point: /mnt/data
+          public_read: false
+          share_mode: '2770'
+          storage: mnt_data
+          type: ebs
+        - builder: aws-efs
+          group: coops
+          mount_point: /mnt/efs
+          public_read: false
+          share_mode: '2775'
+          storage: efs-storage
+          type: efs
+        run: 2026_09_23t12_59_38_731217
+        session: ssm
+        user_data_sha256: 411a92d77e0b4f6e1df6fbb46a96d92f6a0b5b9a540b6a9ef8e92812dc198489
+      number: 3
+      opened_at: '2026-09-23T18:03:35+00:00'
+      opened_run: 2026_09_23t12_59_38_731217
+      provider_hostname: ip-10-26-35-29.us-east-2.compute.internal
+      why: decommission
   gce-test:
     generation:
       durable: 0
