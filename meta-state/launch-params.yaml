@@ -1,5 +1,6 @@
 instances:
   coops-model:
+    alias: eel
     build: ami-06863fb35ff62f9ba
     enrollment:
       enrollment: sftd-token
@@ -9,7 +10,8 @@ instances:
     hostname: coops-model-004
     identity_type: okta
     image: imgfile-coops-model
-    launched: false
+    launched: true
+    launched_run: 2026_09_30t18_43_23_014353
     machine_type: t3.medium
     mounts:
     - builder: aws-ebs
@@ -27,7 +29,7 @@ instances:
       share_mode: '2775'
       storage: efs-storage
       type: efs
-    run: 2026_09_30t18_25_47_351715
+    run: 2026_09_30t18_43_23_014353
     session: ssm
     user_data_sha256: 30e23d77c32ffe592ccb6801fd180a8c9992f3766ebdacd860e9096ce3f3045b
   gce-test:
@@ -51,6 +53,6 @@ instances:
       share_mode: '2770'
       storage: gce_data
       type: pd
-    run: 2026_09_30t18_25_47_351715
+    run: 2026_09_30t18_43_23_014353
     session: iap
     user_data_sha256: b28bcfdf54c8ede788ed2e723da57819b383292c40165c43ba534135d1967985
