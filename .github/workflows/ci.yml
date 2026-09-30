@@ -197,10 +197,6 @@ jobs:
       id-token: write
       contents: write           # the records are committed and pushed back here
     env:
-      # until the release that carries cs-image-system hygiene VIII item 1 (verify login
-      # hands the client its team and address itself): the OPA client reads these
-      OPA_ADDR: https://noaa.pam.okta.com
-      SFT_TEAM: nos-coastal-modeling-cloud-sandbox
       OKTA_API_PRIVATE_KEY: ${{ secrets.OKTA_API_PRIVATE_KEY }}
       TF_VAR_nos_coastal_modeling_cloud_sandbox_key: ${{ secrets.TF_VAR_KEY }}
       TF_VAR_nos_coastal_modeling_cloud_sandbox_secret: ${{ secrets.TF_VAR_SECRET }}
