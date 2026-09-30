@@ -151,3 +151,19 @@ proofs:
   run: 2026_09_29t12_21_47_585020
   runtime: aws-east2-runtime
   time: '2026-09-29T12:21:52+00:00'
+- as: workload
+  checks:
+  - detail: '''coops-model-003'' is registered once (72925b35-5969-427d-a3da-93f1926f882e)'
+    name: one registration
+    ok: true
+  - detail: 'sft resolve coops-model-003: exit 1 -- '
+    name: resolves
+    ok: false
+  evidence: []
+  group: coops
+  hostname: coops-model-003
+  instance: coops-model
+  ok: false
+  run: 2026_09_30t02_09_08_649908
+  runtime: aws-east2-runtime
+  time: '2026-09-30T02:09:10+00:00'
