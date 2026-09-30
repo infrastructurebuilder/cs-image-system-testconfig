@@ -53,7 +53,7 @@ instances:
   # (us-east-2a), which is where mnt_data's volume lives, and stage 52 refuses
   # the combination if that ever stops being true.
   - name: coops-model
-    machine_type: c5n.4xlarge
+    machine_type: t3.xlarge
     image: imgfile-coops-model
     description: "CO-OPS model node: the group's standing working instance."
     tags:
