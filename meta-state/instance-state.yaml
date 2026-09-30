@@ -17,6 +17,7 @@ instances:
         image: imgfile-coops-model
         launched: true
         launched_run: 2026_09_23t12_59_38_731217
+        machine_type: t3.xlarge
         mounts:
         - builder: aws-ebs
           device: /dev/xvdf
@@ -126,6 +127,13 @@ instances:
       opened_run: 2026_09_22t12_39_06_708738
       provider_hostname: ip-10-26-34-64.us-east-2.compute.internal
       why: replaced
+    - at: '2026-09-30T15:22:29+00:00'
+      event: resized
+      from: c5n.4xlarge
+      kind: durable
+      number: 3
+      run: 2026_09_30t10_19_33_362404
+      to: t3.xlarge
   gce-test:
     generation:
       durable: 0
