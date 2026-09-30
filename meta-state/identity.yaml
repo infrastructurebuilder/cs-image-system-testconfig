@@ -83,7 +83,7 @@ groups:
       policy: tcmet_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
 note: structural facts only; gids flow by terraform remote-state reference (N7)
-run: 2026_09_30t11_27_38_400104
+run: 2026_09_30t14_22_48_403764
 user_builders:
   okta-tf-users: okta-tf-ro
 users:
