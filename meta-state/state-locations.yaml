@@ -84,7 +84,7 @@ workspaces:
     location: s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/open_tofu.tfstate
     profile: noaa
     region: us-east-2
-    run: 2026_09_30t02_04_25_367578
+    run: 2026_09_30t02_07_33_272245
     type: s3
     use_lockfile: true
   tofu-gce:
