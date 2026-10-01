@@ -1,12 +1,4 @@
 runs:
-- apply: {}
-  dry_run: false
-  error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''init'', ''-backend-config=tofu-gce-instance-generation.tfbackend.hcl'']''
-    returned non-zero exit status 1.'
-  ok: false
-  requested:
-  - instance-image
-  run: 2026_09_07t09_02_58_906581
 - apply:
     base-image: stale-script-skipped
     identity: stale-script-skipped
@@ -2899,3 +2891,21 @@ runs:
   - release
   - retention
   run: 2026_10_01t13_29_34_128624
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_01t16_12_58_457146
