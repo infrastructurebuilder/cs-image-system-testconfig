@@ -1,29 +1,5 @@
 runs:
 - apply:
-    base-image: stale-script-skipped
-    identity: stale-script-skipped
-    instance-image: dry-run
-    release: no-script
-    storage: stale-script-skipped
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - instance-image
-  run: 2026_09_07t08_00_29_608608
-- apply:
-    base-image: stale-script-skipped
-    identity: stale-script-skipped
-    instance-image: stale-script-skipped
-    release: no-script
-    storage: dry-run
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - storage
-  run: 2026_09_07t08_02_23_654061
-- apply:
     base-image: executed
     identity: stale-script-skipped
     instance-image: stale-script-skipped
@@ -2874,3 +2850,25 @@ runs:
   requested:
   - instance-image
   run: 2026_10_01t07_40_30_574504
+- apply: {}
+  dry_run: false
+  error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''init'', ''-reconfigure'',
+    ''-backend-config=open-tofu-instance-generation.tfbackend.hcl'']'' returned non-zero
+    exit status 1.'
+  ok: false
+  requested:
+  - instance-image
+  run: 2026_10_01t07_56_37_823964
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_10_01t08_00_31_875079
