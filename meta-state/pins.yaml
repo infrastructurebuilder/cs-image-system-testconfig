@@ -7,6 +7,7 @@ images:
   imgfile-coops-model@aws-east2-runtime: ami-01a7eb20527c25fe2
   imgfile-data-science@aws-east2-runtime: ami-08a52e8f7f287b40a
 instances:
+  coops-model: ami-06863fb35ff62f9ba
   gce-test: imgfile-basic-dask-pckr-gce-ans-20260926-064527
 pending_replacements: {}
 upgrades:
@@ -493,3 +494,8 @@ upgrades:
   op: decommission
   run: 2026_10_01t06_32_45_025310
   to: null
+- kind: instance
+  name: coops-model
+  op: bind
+  run: 2026_10_01t06_38_21_686249
+  to: ami-06863fb35ff62f9ba
