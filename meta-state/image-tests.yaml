@@ -34,9 +34,9 @@ builds:
     image: imgfile-coops-model
     instance: coops-model
     ok: true
-    run: 2026_09_30t18_47_20_772256
+    run: 2026_10_01t08_11_22_193735
     runtime: aws-east2-runtime
-    time: '2026-09-30T23:47:32+00:00'
+    time: '2026-10-01T13:11:36+00:00'
   ami-078cdf8a62d04f5e0:
     checks:
     - detail: pass
