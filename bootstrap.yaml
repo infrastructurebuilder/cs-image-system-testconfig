@@ -1,0 +1,20 @@
+# cs-image-system bootstrap: the interview's answers (stage 70).
+#
+# `cs-image-system bootstrap` wrote this; `generated/bootstrap/` is generated
+# from it by every run and by `bootstrap` itself. Edit it by hand or
+# re-interview (`just bootstrap`: each question shows the answer here as its
+# default); the next run regenerates the root. A section with `wanted: false`
+# contributes nothing. No secret VALUE belongs here: the secrets script reads
+# values from files under the directory named below.
+version: 1
+sections:
+  github:
+    aws_region: us-east-2
+    default_branch: develop
+    guard_runtime: ''
+    perform_runtime: aws-east2-runtime
+    production_branch: main
+    protect_production: true
+    repository: infrastructurebuilder/cs-image-system-testconfig
+    secrets_dir: _uncommitted/secrets
+    wanted: true
