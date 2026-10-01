@@ -5,6 +5,17 @@ storages:
       run: 2026_09_01t07_02_35_567104
       to: active
     state: active
+  efs-scratch:
+    facts:
+      builder: aws-efs
+      type: efs
+    generation: 1
+    history:
+    - from: null
+      generation: 1
+      run: 2026_10_01t07_25_57_699954
+      to: active
+    state: active
   efs-storage:
     history:
     - from: null
