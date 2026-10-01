@@ -66,6 +66,42 @@ included, by design, and pushes nothing; pushing is the operator's act,
 or CI's on `main`. `.gitignore` keeps only tool residue out of that commit
 (`.terraform/`, plans, state files, the private mirror).
 
+## What stands
+
+The reference configuration keeps one durable machine on AWS and two EFS
+filesystems, and the records in `meta-state/` are its memory; this
+section is the human summary, revised when the machine changes (stages
+72 and 73 of the system, 2026-09-30 and 2026-10-01).
+
+- **`coops-model`** stands as `coops-model-005`: durable generation 5,
+  alias `gar` (the pool's third live draw, after `cod` and `eel`), a
+  `t3.medium` on `ami-06863fb35ff62f9ba` (the coops model image's third
+  release). Its biography is `meta-state/instance-state.yaml`: generation
+  3 (`coops-model-003`, alias `cod`) was resized in place twice on
+  2026-09-30 (`c5n.4xlarge` to `t3.xlarge` to `t3.medium`, two `resized`
+  events on the one generation, the same instance id throughout) and then
+  decommissioned the same day; generation 4 (`coops-model-004`, alias
+  `eel`) was raised from the same image with the same storages and proved
+  the EFS data persisted, then decommissioned on 2026-10-01; generation 5
+  was raised onto a different share.
+- **`/mnt/efs` is `efs-scratch`** (`fs-09c4927fd6e539753`, declared
+  2026-10-01, coops access point only): empty when the machine first
+  mounted it. **`efs-storage`** (`fs-02d658f1561aab44b`, coops and stofs
+  access points) is still declared and still holds everything it held --
+  including `/ABC/DEF/here_we_are.txt`, the file stage 72 planted to prove
+  persistence -- and is mounted by no machine. Its fate (keep as an
+  archive, re-attach to something, or delete the entry and with it the
+  filesystem) is the operator's decision, not yet taken.
+- **`/mnt/data` is `mnt_data`** (`vol-0fe1e27716f86c2f2`, 100 GB,
+  us-east-2a), attached to every generation so far; its contents came
+  through each replacement.
+- `gce-test` is declared `ephemeral: true` on `gcloud-east1` and stands
+  only within a cycle run.
+
+The strict state query (`just state-query --strict`) is the word on
+whether this summary and reality agree; `main`'s `perform` job runs it
+last, after logging in to the machine by its bare name.
+
 ## Branches and CI
 
 `develop` is where the operator's cycles are committed and pushed; `main`
