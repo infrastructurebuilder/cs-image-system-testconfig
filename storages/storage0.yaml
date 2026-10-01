@@ -43,3 +43,15 @@ storages:
     # data lifecycle (stage 15): files not read for 30 days move to EFS IA
     lifecycle:
       ia_days: 30
+  - name: efs-scratch
+    type: aws-efs
+    # stage 73 (2026-10-01): a SECOND EFS filesystem, declared so the coops
+    # model can be replaced onto a share that does NOT hold efs-storage's
+    # data -- the proof that a machine mounts exactly what its declaration
+    # names. Same shape as efs-storage minus the stofs access point; the
+    # module CREATES the filesystem and the coops access point.
+    groups:
+      - coops
+    share_mode: "2775"
+    lifecycle:
+      ia_days: 30

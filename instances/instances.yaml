@@ -62,7 +62,7 @@ instances:
     storages:
       - name: mnt_data
         mount_point: /mnt/data
-      - name: efs-storage
+      - name: efs-scratch # stage 73: the model's share is the NEW filesystem; efs-storage keeps its data, mounted nowhere
         mount_point: /mnt/efs
   # test/test2 (the stage-1 AWS t3.medium instances) commented out for now
   # (user decision 2026-09-05): they were torn down at the stage-1 close-out,
