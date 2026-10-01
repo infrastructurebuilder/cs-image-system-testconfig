@@ -8,6 +8,12 @@ apply needs nothing typed again; no secret value is in it or in the state.
 
 ## What it declares
 
+- **aws** (`tfmodules/bootstrap_aws`)
+  - account `514190660293`, region `us-east-2`; the GitHub OIDC provider read (it exists)
+  - the READ-ONLY role `csis-github-readonly` (any ref of `infrastructurebuilder/cs-image-system-testconfig`) and the WRITE role `csis-github-apply` (`main` alone), subject forms: both; adopted by import: csis-github-readonly, csis-github-apply
+  - the READ role also keeps trusting: `repo:infrastructurebuilder/cs-image-system-3:*`, `repo:infrastructurebuilder@50206755/cs-image-system-3@1373601731:*` (not this repository's; kept because the role already trusted them)
+  - the state bucket `noaa-ioos-cloud-sandbox-tfstate` exists: this root's state is bound to it (decision D8)
+  - the instance profile `AmazonSSMRoleForInstancesQuickSetup` read (it exists)
 - **github** (`tfmodules/bootstrap_github`)
   - the repository `infrastructurebuilder/cs-image-system-testconfig`: default branch `develop`, perform on `main` (protected by a ruleset the Actions app bypasses)
   - Actions enabled for all actions; workflow permissions stay read-only (the workflow asks for what each job needs)
@@ -17,7 +23,7 @@ apply needs nothing typed again; no secret value is in it or in the state.
 
 ```sh
 cd generated/bootstrap
-tofu init                      # local state for the first apply
+tofu init                      # the tree's declared backend
 tofu plan                      # read it: nothing here is gated by the system
 tofu apply
 cd ../..
@@ -26,6 +32,9 @@ bash generated/bootstrap/set-secrets.sh
 
 ## By hand, still
 
+- The network (VPC, subnets, security groups, the access gateway): the team's, never modified by the system.
+- If an adopted role carries an inline policy made by hand, it stays beside the managed one: once the plan is clean and CI is green, remove the hand-made policy in the console so one document is the truth.
+- The first performing run (CI_SETUP.md 3.8), after the secrets are set.
 - The nine secrets' VALUES: one file per secret under the secrets directory (`_uncommitted/secrets`, never committed), then `bash set-secrets.sh` (CI_SETUP.md 3.7).
 - The OPA workload connection and role (CI_SETUP.md 3.5 steps 1-2 and 4-6): the oktapam provider has no workload resources.
 - The age identity for CI (CI_SETUP.md 3.6): `age-keygen`, the public key into encryption.recipients, `reencrypt`.
@@ -35,8 +44,8 @@ bash generated/bootstrap/set-secrets.sh
 
 | Secret | From |
 | --- | --- |
-| `AWS_ROLE_ARN` | a file named after it in the secrets directory |
-| `AWS_APPLY_ROLE_ARN` | a file named after it in the secrets directory |
+| `AWS_ROLE_ARN` | the output `aws_read_role_arn` |
+| `AWS_APPLY_ROLE_ARN` | the output `aws_write_role_arn` |
 | `GCP_WORKLOAD_IDENTITY_PROVIDER` | a file named after it in the secrets directory |
 | `GCP_SERVICE_ACCOUNT` | a file named after it in the secrets directory |
 | `GCP_APPLY_SERVICE_ACCOUNT` | a file named after it in the secrets directory |
@@ -47,10 +56,8 @@ bash generated/bootstrap/set-secrets.sh
 
 ## Afterwards
 
-The first apply keeps its state in `terraform.tfstate` here, which `.gitignore`
-keeps out of every commit. When the tree's state bucket stands, move this root's
-state into it like any other root's (OPERATIONS.md, "Moving a root's state"), so
-a second apply from another checkout sees what the first did.
+This root's state is in the tree's declared backend (see `providers.tf`), so a
+second apply from another checkout sees what the first did.
 
 Then the proofs in CI_SETUP.md 3.8, in order.
 

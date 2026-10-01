@@ -17,10 +17,10 @@ from_output() {   # NAME OUTPUT: the applied root's output holds the value
   gh secret set "$1" --repo "$REPO" --body "$(tofu -chdir="$ROOT" output -raw "$2")" && echo "set-secrets: $1 set from output $2"
 }
 
-# the READ-ONLY AWS role's ARN (CI_SETUP.md 3.3)
-from_file AWS_ROLE_ARN
-# the WRITE AWS role's ARN (3.3)
-from_file AWS_APPLY_ROLE_ARN
+# the READ-ONLY role's ARN, from the applied root
+from_output AWS_ROLE_ARN aws_read_role_arn
+# the WRITE role's ARN, from the applied root
+from_output AWS_APPLY_ROLE_ARN aws_write_role_arn
 # the provider's full resource name (3.4)
 from_file GCP_WORKLOAD_IDENTITY_PROVIDER
 # the READ-ONLY service account's address (3.4)

@@ -2,15 +2,33 @@
 terraform {
   required_version = ">= 1.6"
   required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 5.81"
+    }
     github = {
       source  = "integrations/github"
       version = ">= 6.0"
     }
   }
-  # Local state for the first apply (decision D8): the bootstrap may be what
-  # makes the state bucket. Once a bucket stands, move this root's state to it
-  # (README.md, "Afterwards"); terraform.tfstate never enters a commit.
-  backend "local" {}
+  # The tree's declared state backend (decision D8): its bucket stands, so this
+  # root keeps its state where every other root does.
+  backend "s3" {
+    bucket       = "noaa-ioos-cloud-sandbox-tfstate"
+    encrypt      = true
+    key          = "statefiles/csia-image-system-test/bootstrap.tfstate"
+    profile      = "noaa"
+    region       = "us-east-2"
+    use_lockfile = true
+  }
+}
+
+provider "aws" {
+  region  = var.aws_region
+  profile = var.aws_profile != "" ? var.aws_profile : null
+  default_tags {
+    tags = var.aws_tags
+  }
 }
 
 provider "github" {

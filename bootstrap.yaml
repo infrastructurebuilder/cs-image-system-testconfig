@@ -8,6 +8,30 @@
 # values from files under the directory named below.
 version: 1
 sections:
+  aws:
+    account_id: '514190660293'
+    instance_profile: AmazonSSMRoleForInstancesQuickSetup
+    instance_profile_exists: true
+    oidc_provider_exists: true
+    owner_id: '50206755'
+    production_branch: main
+    profile: noaa
+    read_extra_subjects: repo:infrastructurebuilder/cs-image-system-3:*,repo:infrastructurebuilder@50206755/cs-image-system-3@1373601731:*
+    read_role_exists: true
+    read_role_name: csis-github-readonly
+    region: us-east-2
+    repo_id: '1373601874'
+    repository: infrastructurebuilder/cs-image-system-testconfig
+    state_bucket: noaa-ioos-cloud-sandbox-tfstate
+    state_bucket_exists: true
+    state_prefix: statefiles/csia-image-system-test
+    state_region: us-east-2
+    subject_forms: both
+    tags: Environment=CSIS_TEST,Project=CSIS_Bootstrap
+    wanted: true
+    write_extra_subjects: ''
+    write_role_exists: true
+    write_role_name: csis-github-apply
   github:
     aws_region: us-east-2
     default_branch: develop
