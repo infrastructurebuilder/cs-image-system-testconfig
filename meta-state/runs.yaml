@@ -1,15 +1,4 @@
 runs:
-- apply:
-    base-image: stale-script-skipped
-    identity: stale-script-skipped
-    instance-image: failed
-    storage: stale-script-skipped
-  dry_run: false
-  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
-  ok: false
-  requested:
-  - instance-image
-  run: 2026_09_07t08_44_20_975507
 - apply: {}
   dry_run: false
   error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''init'', ''-backend-config=open-tofu-instance-generation.tfbackend.hcl'']''
@@ -2878,3 +2867,21 @@ runs:
   - release
   - retention
   run: 2026_10_01t08_12_36_843034
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_01t13_25_11_732977
