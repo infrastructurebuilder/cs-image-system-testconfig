@@ -32,6 +32,25 @@ sections:
     write_extra_subjects: ''
     write_role_exists: true
     write_role_name: csis-github-apply
+  gcp:
+    attribute_condition: assertion.repository in ['infrastructurebuilder/cs-image-system-3',
+      'infrastructurebuilder/cs-image-system-testconfig']
+    labels: Environment=Development,Project=csis-sandbox
+    pool: github
+    pool_exists: true
+    principal_attribute: repository
+    production_branch: main
+    project: csis-sandbox
+    project_number: '86233086783'
+    provider: github
+    provider_exists: true
+    read_account: csis-github-readonly
+    read_account_exists: true
+    read_roles: roles/compute.viewer
+    repository: infrastructurebuilder/cs-image-system-testconfig
+    state_bucket: ''
+    want_write: false
+    wanted: true
   github:
     aws_region: us-east-2
     default_branch: develop
