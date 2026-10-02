@@ -24,6 +24,11 @@ apply needs nothing typed again; no secret value is in it or in the state.
   - the repository `infrastructurebuilder/cs-image-system-testconfig`: default branch `develop`, perform on `main` (a ruleset: no deletion, no force push; ordinary pushes, the perform job's included, unaffected)
   - Actions enabled for all actions; workflow permissions stay read-only (the workflow asks for what each job needs)
   - Actions variables: PERFORM_RUNTIME=aws-east2-runtime, AWS_REGION=us-east-2
+- **okta**
+  - OPA team `nos-coastal-modeling-cloud-sandbox` at https://noaa.pam.okta.com; the workload connection `github-actions-infrastructurebuilder` exists (active: yes; requires this repository: yes)
+  - the workload role `cs-image-system-testconfig-ci` exists (bound to `github-actions-infrastructurebuilder`: yes; pinned to `main`: yes); named on `oktagroups`: yes
+  - the Okta API services app authenticates with its key; read scopes only: yes; its own record readable: no
+  - nothing here is terraform: the section reads and checks, and every check above was made when `bootstrap` last ran (re-run it to check again)
 
 ## Apply
 
@@ -53,9 +58,10 @@ bash generated/bootstrap/set-secrets.sh
 - The network and the firewall rules: the team's, never modified by the system.
 - No WRITE service account: `GCP_APPLY_SERVICE_ACCOUNT` is set to the READ-ONLY account's address (CI never writes to a runtime it does not perform on), or delete those lines from the `perform` job (CI_SETUP.md 3.4 step 4).
 - The nine secrets' VALUES: one file per secret under the secrets directory (`_uncommitted/secrets`, never committed), then `bash set-secrets.sh` (CI_SETUP.md 3.7).
-- The OPA workload connection and role (CI_SETUP.md 3.5 steps 1-2 and 4-6): the oktapam provider has no workload resources.
 - The age identity for CI (CI_SETUP.md 3.6): `age-keygen`, the public key into encryption.recipients, `reencrypt`.
 - The values in `.github/workflows/ci.yml` still marked REPLACE-ME: PERFORM_RUNTIME, GUARD_RUNTIME and AWS_REGION are set as Actions variables by this root, but the workflow reads its own literals until a release makes it read `vars`.
+- Ask the org's Okta admins to confirm the API services app grants no `*.manage` scope and allows private-key client authentication only: its read scopes cannot see its own record, so the bootstrap could not check either.
+- The OPA service user and its API key pair (`TF_VAR_KEY` / `TF_VAR_SECRET`) are made by hand in the OPA console; set-secrets.sh reads them from files (CI_SETUP.md 3.5).
 
 ## The secrets the script sets
 

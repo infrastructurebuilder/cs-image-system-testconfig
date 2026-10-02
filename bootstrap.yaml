@@ -61,3 +61,23 @@ sections:
     repository: infrastructurebuilder/cs-image-system-testconfig
     secrets_dir: _uncommitted/secrets
     wanted: true
+  okta:
+    api_host: https://noaa.pam.okta.com
+    builder: oktagroups
+    builder_names_them: true
+    connection_active: true
+    connection_exists: true
+    connection_requires_repository: true
+    okta_app_authenticates: true
+    okta_app_read_only: true
+    okta_app_readable: false
+    okta_base_url: okta.com
+    org: noaa
+    production_branch: main
+    role_bound: true
+    role_exists: true
+    role_pinned: true
+    team: nos-coastal-modeling-cloud-sandbox
+    wanted: true
+    workload_connection: github-actions-infrastructurebuilder
+    workload_role: cs-image-system-testconfig-ci
