@@ -1,17 +1,4 @@
 runs:
-- apply:
-    base-image: dry-run
-    identity: stale-script-skipped
-    instance-image: dry-run
-    release: no-script
-    storage: stale-script-skipped
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - base-image
-  - instance-image
-  run: 2026_09_08t06_57_18_969884
 - apply: {}
   dry_run: true
   error: 'LifecycleRunError: Validation failed with 2 error(s)'
@@ -2966,3 +2953,21 @@ runs:
   - release
   - retention
   run: 2026_10_02t13_59_01_479040
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_02t14_00_24_983096
