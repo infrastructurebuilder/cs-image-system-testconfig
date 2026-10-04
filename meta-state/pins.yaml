@@ -6,7 +6,6 @@ images:
   imgfile-basic-dask@aws-east2-runtime: ami-01a7eb20527c25fe2
   imgfile-coops-model@aws-east2-runtime: ami-01a7eb20527c25fe2
   imgfile-data-science@aws-east2-runtime: ami-08a52e8f7f287b40a
-  imgfile-posix-proof@aws-east2-runtime: ami-0237e65c0f8a30b22
 instances:
   coops-model: ami-06863fb35ff62f9ba
   gce-test: imgfile-basic-dask-pckr-gce-ans-20260926-064527
@@ -516,4 +515,10 @@ upgrades:
   name: posix-proof
   op: decommission
   run: 2026_10_04t10_09_59_359652
+  to: null
+- from: ami-0237e65c0f8a30b22
+  kind: image
+  name: imgfile-posix-proof@aws-east2-runtime
+  op: dispose
+  run: 2026_10_04t10_13_12_383240
   to: null
