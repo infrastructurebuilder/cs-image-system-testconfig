@@ -10,7 +10,6 @@ images:
 instances:
   coops-model: ami-06863fb35ff62f9ba
   gce-test: imgfile-basic-dask-pckr-gce-ans-20260926-064527
-  posix-proof: ami-0ec88a61e731d36a0
 pending_replacements: {}
 upgrades:
 - kind: image
@@ -512,3 +511,9 @@ upgrades:
   op: bind
   run: 2026_10_04t09_55_03_782495
   to: ami-0ec88a61e731d36a0
+- from: ami-0ec88a61e731d36a0
+  kind: instance
+  name: posix-proof
+  op: decommission
+  run: 2026_10_04t10_09_59_359652
+  to: null

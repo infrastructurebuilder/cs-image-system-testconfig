@@ -393,7 +393,12 @@ instances:
       opened_run: 2026_09_26t06_45_39_658174
       why: ephemeral
   posix-proof:
-    current:
+    generation:
+      durable: 1
+      ephemeral: 0
+    history:
+    - closed_at: '2026-10-04T15:12:22+00:00'
+      closed_run: 2026_10_04t10_09_59_359652
       how: observed
       instance_id: i-0d09fa2a1b5a5cf30
       kind: durable
@@ -417,7 +422,4 @@ instances:
       opened_at: '2026-10-04T14:57:08+00:00'
       opened_run: 2026_10_04t09_55_03_782495
       provider_hostname: ip-10-26-34-49.us-east-2.compute.internal
-    generation:
-      durable: 1
-      ephemeral: 0
-    history: []
+      why: decommission
