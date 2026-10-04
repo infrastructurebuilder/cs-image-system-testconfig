@@ -4,8 +4,7 @@ module "instance_posix_proof" {
   source                      = "../../../../tfmodules/aws_instance"
   providers                   = { aws = aws.open_tofu }
   name                        = "posix-proof"
-  ami_id                      = var.posix_proof_ami_id
-  ami_name_pattern            = "imgfile-posix-proof-pckr-ebs-ans*"
+  ami_id                      = "ami-0ec88a61e731d36a0"
   instance_type               = "t3.small"
   associate_public_ip_address = false
   vpc_security_group_ids      = [aws_security_group.csis_instances.id, "sg-03015ec107ae5f81a"]

@@ -392,3 +392,32 @@ instances:
       opened_at: '2026-09-26T12:06:14+00:00'
       opened_run: 2026_09_26t06_45_39_658174
       why: ephemeral
+  posix-proof:
+    current:
+      how: observed
+      instance_id: i-0d09fa2a1b5a5cf30
+      kind: durable
+      launch_params:
+        alias: koi
+        build: ami-0ec88a61e731d36a0
+        enrollment: {}
+        ephemeral: false
+        group: pxproof
+        hostname: posix-proof-001
+        identity_type: posix
+        image: imgfile-posix-proof
+        launched: true
+        launched_run: 2026_10_04t09_55_03_782495
+        machine_type: t3.small
+        mounts: []
+        run: 2026_10_04t09_55_03_782495
+        session: ssm
+        user_data_sha256: d82fbf2b64331c7abfc5908a8c63618fb2fececface31864a63b3af28da68d11
+      number: 1
+      opened_at: '2026-10-04T14:57:08+00:00'
+      opened_run: 2026_10_04t09_55_03_782495
+      provider_hostname: ip-10-26-34-49.us-east-2.compute.internal
+    generation:
+      durable: 1
+      ephemeral: 0
+    history: []

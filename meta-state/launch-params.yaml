@@ -11,7 +11,7 @@ instances:
     identity_type: okta
     image: imgfile-coops-model
     launched: true
-    launched_run: 2026_10_04t08_13_18_847966
+    launched_run: 2026_10_04t09_55_03_782495
     machine_type: t3.medium
     mounts:
     - builder: aws-ebs
@@ -29,7 +29,7 @@ instances:
       share_mode: '2775'
       storage: efs-scratch
       type: efs
-    run: 2026_10_04t09_28_44_046274
+    run: 2026_10_04t09_55_03_782495
     session: ssm
     user_data_sha256: b87b482881317f121c64cff692ec7207c44d048dee3266bd3eb62de2d96e0421
   gce-test:
@@ -53,20 +53,22 @@ instances:
       share_mode: '2770'
       storage: gce_data
       type: pd
-    run: 2026_10_04t09_28_44_046274
+    run: 2026_10_04t09_55_03_782495
     session: iap
     user_data_sha256: b28bcfdf54c8ede788ed2e723da57819b383292c40165c43ba534135d1967985
   posix-proof:
-    build: unbound
+    alias: koi
+    build: ami-0ec88a61e731d36a0
     enrollment: {}
     ephemeral: false
     group: pxproof
     hostname: posix-proof-001
     identity_type: posix
     image: imgfile-posix-proof
-    launched: false
+    launched: true
+    launched_run: 2026_10_04t09_55_03_782495
     machine_type: t3.small
     mounts: []
-    run: 2026_10_04t09_28_44_046274
+    run: 2026_10_04t09_55_03_782495
     session: ssm
     user_data_sha256: d82fbf2b64331c7abfc5908a8c63618fb2fececface31864a63b3af28da68d11
