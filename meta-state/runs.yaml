@@ -1,21 +1,5 @@
 runs:
 - apply:
-    base-image: executed
-    identity: executed
-    instance-image: failed
-    storage: executed
-  dry_run: false
-  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
-  ok: false
-  requested:
-  - identity
-  - storage
-  - base-image
-  - instance-image
-  - release
-  - retention
-  run: 2026_09_08t12_48_23_888542
-- apply:
     base-image: no-script
     identity: executed
     instance-image: executed
@@ -2993,3 +2977,21 @@ runs:
   requested:
   - instance-image
   run: 2026_10_04t08_13_18_847966
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_04t08_17_34_963032
