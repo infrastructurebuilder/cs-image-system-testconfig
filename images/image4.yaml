@@ -1,0 +1,17 @@
+---
+images:
+  # stage 75 step 9 (operator, 2026-10-04; develop only, removed before main
+  # moves): the standalone posix proof's image. Its bake creates pxproof with
+  # its declared gid; the in-bake test asserts it is there.
+  - name: imgfile-posix-proof
+    group: pxproof # owning group: a posix group, so the identity type is posix
+    type: pckr-ebs-ans
+    source_image: basic-rh-10-posix
+    description: "The standalone posix proof: the owning group exists on the machine."
+    runtimes:
+      - image_builder: pckr-ebs-ans
+        machine_type: t3.medium
+    tests:
+      commands:
+        - run: "getent group pxproof"
+          contains: "pxproof:x:3101:"

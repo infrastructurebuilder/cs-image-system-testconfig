@@ -64,6 +64,18 @@ instances:
         mount_point: /mnt/data
       - name: efs-scratch # stage 73: the model's share is the NEW filesystem; efs-storage keeps its data, mounted nowhere
         mount_point: /mnt/efs
+  # ---------------------------------------------------------------- stage 75
+  # Step 9 (operator, 2026-10-04; develop only, removed before main moves):
+  # the standalone posix proof's machine. DURABLE, because `verify login`
+  # proves durable machines only; launched by the operator's
+  # `just cloud-launch aws-east2-runtime`, proved over real ssh as the proof
+  # user, then decommissioned and its two builds disposed. No storage.
+  - name: posix-proof
+    machine_type: t3.small
+    image: imgfile-posix-proof
+    description: "Stage 75 step 9: the standalone posix proof (temporary)."
+    tags:
+      purpose: proof
   # test/test2 (the stage-1 AWS t3.medium instances) commented out for now
   # (user decision 2026-09-05): they were torn down at the stage-1 close-out,
   # and a dormant declaration would relaunch both the next time

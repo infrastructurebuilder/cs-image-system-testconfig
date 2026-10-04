@@ -6,4 +6,4 @@ mods:
   name: data-science-setup
   operation: ansible
   type: ansible-default
-run: 2026_10_04t08_17_34_963032
+run: 2026_10_04t09_09_02_647937

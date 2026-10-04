@@ -160,3 +160,33 @@ os_builders:
             # which this pattern cannot match -- same trap as finding 39
             # (an ARM image on an x86 build VM never boots -- SSH timeout)
             name: "almalinux-10-v*"
+  # ---------------------------------------------------------------- stage 75
+  # Step 9 (operator, 2026-10-04): the standalone posix proof. The same vendor
+  # image as basic-rh-10, on AWS alone, declaring ONLY posix: no OPA agent, no
+  # Okta repository, so the proof machine is reached by real ssh as a posix
+  # account and nothing else. Declared on develop only, for the proof; removed,
+  # with everything else marked stage 75 step 9, before main moves.
+  - name: basic-rh-10-posix
+    identity_types: [posix]
+    storage_types: [ebs]
+    update:
+      policy: security
+      packages: [openssl]
+      exclude: ["kernel*"]
+    type: rhel
+    family: rhel
+    family_version: 10
+    is_default: false
+    runtimes:
+    -   name: aws-posix-rh10
+        default_machine_type: t3.medium
+        owners:
+            - "self"
+            - "764336703387"
+        query:
+          filters:
+            name: "AlmaLinux OS 10*x86_64"
+            state: available
+            root_device_type: ebs
+            architecture: x86_64
+            virtualization_type: hvm

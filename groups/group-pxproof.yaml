@@ -1,0 +1,15 @@
+---
+# stage 75 step 9 (operator, 2026-10-04; develop only, removed before main
+# moves): the standalone posix proof's group. It exists as a POSIX group on
+# the machines of the image it owns (images/image4.yaml), baked with this gid;
+# its one member is the proof user, whose account and key every applying run
+# makes on each running machine, and as whom `verify login` logs in over ssh.
+groups:
+  - name: pxproof
+    type: posix-local
+    gid: 3101
+    description: "{{ group.name }}: the standalone posix proof's group"
+    members:
+      - csis_proof
+    tags:
+      environment: test

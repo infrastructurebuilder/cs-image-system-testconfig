@@ -10,7 +10,7 @@ data "amazon-ami" "imgfile-basic-dask_aws-east2-runtime" {
 }
 source "amazon-ebs" "imgfile-basic-dask" {
   source_ami    = data.amazon-ami.imgfile-basic-dask_aws-east2-runtime.id
-  ami_name      = "imgfile-basic-dask-pckr-ebs-ans-20261004_081717"
+  ami_name      = "imgfile-basic-dask-pckr-ebs-ans-20261004_090850"
   instance_type = "t2.micro"
   region        = "us-east-2"
   vpc_id        = "vpc-0c78d0d63b7a100df"
@@ -19,7 +19,7 @@ source "amazon-ebs" "imgfile-basic-dask" {
     dask                = "true",
     csis_series         = "imgfile-basic-dask",
     csis_parent         = "ami-01a7eb20527c25fe2",
-    csis_run            = "2026_10_04t08_17_34_963032",
+    csis_run            = "2026_10_04t09_09_02_647937",
     csis_fingerprint    = "37b45f2d0c0a827e",
     csis_identity_types = "okta",
     csis_storage_types  = "ebs,efs,gcs,pd,s3",

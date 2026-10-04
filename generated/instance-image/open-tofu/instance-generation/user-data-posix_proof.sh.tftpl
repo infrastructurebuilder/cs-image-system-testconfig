@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# cs-image-system launch parameters for instance posix-proof-001 (N26).
+# Generated from validated configuration; immutable after launch --
+# changing them means replacing the instance.
+set -euo pipefail
+hostnamectl set-hostname 'posix-proof-001' || true
+# owning group: pxproof (gid by reference)
+GID="${group_gid}"
+mkdir -p /var/lib/csis
+date -u +%FT%TZ > /var/lib/csis/launch-applied

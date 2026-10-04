@@ -28,6 +28,15 @@ groups:
       mirrors: coops_v1_security_policy_user
       policy: coops_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
+  pxproof:
+    admins: []
+    builder: posix-local
+    gid_policy: config-time
+    identity_type: posix
+    is_root: false
+    managed: true
+    members:
+    - csis_proof
   secofs:
     admins:
     - jason.ducker
@@ -83,11 +92,13 @@ groups:
       policy: tcmet_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
 note: structural facts only; gids flow by terraform remote-state reference (N7)
-run: 2026_10_04t08_17_34_963032
+run: 2026_10_04t09_09_02_647937
 user_builders:
   okta-tf-users: okta-tf-ro
+  posix-users: posix
 users:
 - breanna.vanderplow
+- csis_proof
 - danishyo
 - hjyoo
 - james.brown

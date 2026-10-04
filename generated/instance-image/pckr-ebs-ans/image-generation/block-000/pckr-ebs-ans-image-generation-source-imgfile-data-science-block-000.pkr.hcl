@@ -10,7 +10,7 @@ data "amazon-ami" "imgfile-data-science_aws-east2-runtime" {
 }
 source "amazon-ebs" "imgfile-data-science" {
   source_ami    = data.amazon-ami.imgfile-data-science_aws-east2-runtime.id
-  ami_name      = "imgfile-data-science-pckr-ebs-ans-20261004_081717"
+  ami_name      = "imgfile-data-science-pckr-ebs-ans-20261004_090850"
   instance_type = "t2.micro"
   region        = "us-east-2"
   vpc_id        = "vpc-0c78d0d63b7a100df"
@@ -19,7 +19,7 @@ source "amazon-ebs" "imgfile-data-science" {
     data_science        = "true",
     csis_series         = "imgfile-data-science",
     csis_parent         = "ami-08a52e8f7f287b40a",
-    csis_run            = "2026_10_04t08_17_34_963032",
+    csis_run            = "2026_10_04t09_09_02_647937",
     csis_fingerprint    = "49d8b4c37dcbf7b1",
     csis_identity_types = "okta",
     csis_storage_types  = "ebs",

@@ -6,7 +6,8 @@ build {
     "source.amazon-ebs.imgfile-basic-dask",
     "source.amazon-ebs.imgfile-basic-dask-two",
     "source.amazon-ebs.imgfile-coops-model",
-    "source.amazon-ebs.imgfile-data-science"
+    "source.amazon-ebs.imgfile-data-science",
+    "source.amazon-ebs.imgfile-posix-proof"
   ]
   # identity activation for owning group 'tcmet' (okta)
   provisioner "shell" {
@@ -410,6 +411,39 @@ build {
       "# verify: the posix login hook is installed (stage 75)",
       "test -x /usr/local/sbin/csis-group-login",
       "grep -q csis-group-login /etc/pam.d/sshd",
+    ]
+  }
+  # identity activation for owning group 'pxproof' (posix)
+  provisioner "shell" {
+    only = ["amazon-ebs.imgfile-posix-proof"]
+    inline = [
+      "# identity activation for group 'pxproof' (posix) on image imgfile-posix-proof",
+      "sudo bash -s <<'CSIS_POSIX_ACCOUNTS'",
+      "#!/usr/bin/env bash",
+      "# cs-image-system posix accounts (stage 75): idempotent; adopts what is equal, refuses what differs",
+      "set -euo pipefail",
+      "conflict() { echo \"posix accounts: $*\" >&2; exit 3; }",
+      "# group pxproof (gid 3101)",
+      "if getent group pxproof >/dev/null; then",
+      "  have=$(getent group pxproof | cut -d: -f3)",
+      "  [ \"$have\" = 3101 ] || conflict \"group pxproof has gid $have here; the configuration says 3101\"",
+      "else",
+      "  if other=$(getent group 3101 | cut -d: -f1) && [ -n \"$other\" ]; then",
+      "    conflict \"gid 3101 belongs to group $other here; the configuration gives it to pxproof\"",
+      "  fi",
+      "  groupadd -g 3101 pxproof",
+      "fi",
+      "CSIS_POSIX_ACCOUNTS",
+    ]
+  }
+  # in-bake verification for instance image imgfile-posix-proof: 2 assertion(s)
+  provisioner "shell" {
+    only = ["amazon-ebs.imgfile-posix-proof"]
+    inline = [
+      "set -e",
+      "# verify: group 'pxproof' stands with gid 3101",
+      "test \"$(getent group pxproof | cut -d: -f3)\" = '3101'",
+      "( getent group pxproof ) 2>&1 | grep -q -- pxproof:x:3101:",
     ]
   }
   post-processor "manifest" {

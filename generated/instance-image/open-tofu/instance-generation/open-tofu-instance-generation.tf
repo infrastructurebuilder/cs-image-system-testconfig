@@ -19,6 +19,10 @@ variable "coops_model_ami_id" {
   type    = string
   default = ""
 }
+variable "posix_proof_ami_id" {
+  type    = string
+  default = ""
+}
 variable "sft_enrollment_token" {
   type        = string
   default     = ""

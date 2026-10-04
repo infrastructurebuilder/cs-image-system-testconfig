@@ -62,3 +62,8 @@ user_builders:
       - name: okta
         source: okta/okta
         version: '>= 6.0'
+  # stage 75 step 9 (develop only, removed before main moves): POSIX accounts
+  # with a declared uid, a user-private group and their keys -- the proof user
+  # of the standalone posix proof sits on it (groups/users.yaml).
+  - name: posix-users
+    type: posix
