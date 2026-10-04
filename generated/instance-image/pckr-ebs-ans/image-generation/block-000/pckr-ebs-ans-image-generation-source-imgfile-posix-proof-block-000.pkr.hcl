@@ -14,7 +14,7 @@ data "amazon-ami" "imgfile-posix-proof_aws-east2-runtime" {
 }
 source "amazon-ebs" "imgfile-posix-proof" {
   source_ami    = data.amazon-ami.imgfile-posix-proof_aws-east2-runtime.id
-  ami_name      = "imgfile-posix-proof-pckr-ebs-ans-20261004_090850"
+  ami_name      = "imgfile-posix-proof-pckr-ebs-ans-20261004_092830"
   instance_type = "t3.medium"
   region        = "us-east-2"
   vpc_id        = "vpc-0c78d0d63b7a100df"
@@ -22,7 +22,7 @@ source "amazon-ebs" "imgfile-posix-proof" {
   tags = {
     csis_series         = "imgfile-posix-proof",
     csis_parent         = "series:basic-rh-10-posix",
-    csis_run            = "2026_10_04t09_09_02_647937",
+    csis_run            = "2026_10_04t09_28_44_046274",
     csis_fingerprint    = "5675d66de96282e5",
     csis_identity_types = "posix",
     csis_storage_types  = "ebs",
