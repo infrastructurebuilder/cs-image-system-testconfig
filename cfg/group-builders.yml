@@ -18,6 +18,13 @@ group_builders:
     # user policy, kept by the identity lifecycle through the OPA API.
     workload_connection: "github-actions-infrastructurebuilder"
     workload_role: "cs-image-system-testconfig-ci"
+    # stage 75: REQUIRED since 0.1.1.dev13 -- the posix group builder that makes
+    # these groups exist on their machines: each applying instance run creates
+    # the group with OPA's gid and its member list, and a PAM hook (baked, and
+    # installed again by that run) adds each member at every login, because
+    # OPA's agent makes accounts at a login and drops their groups when it
+    # deletes them (seen on coops-model-005, 2026-10-03)
+    posix: posix-local
     # key: "test-key"
     # secret: "test-secret"
     # stage 22.5 REMOVED -- a field on the USER builder, not the group builder; group-builders.yml uses it correctly further down under user_builders
@@ -26,6 +33,10 @@ group_builders:
       - name: oktapam
         source: okta/oktapam
         version: '>= 0.6.3'
+  # stage 75: the posix group builder oktagroups names as its `posix:` delegate;
+  # no terraform root, no credentials. No group of its own here.
+  - name: posix-local
+    type: posix
 # User builders handle users
 user_builders:
   # okta-tf-ro: read-only. Emits only `data "okta_user"` lookups of existing

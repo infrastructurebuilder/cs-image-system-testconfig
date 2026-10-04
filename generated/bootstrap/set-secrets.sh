@@ -35,3 +35,5 @@ from_file TF_VAR_KEY
 from_file TF_VAR_SECRET
 # CI's age identity, the whole file (3.6)
 from_file CSIS_CONFIG_IDENTITY
+# a posix group's proof user's private key, PEM (3.7; only with one)
+from_file CSIS_PROOF_SSH_KEY

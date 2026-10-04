@@ -76,6 +76,7 @@ bash generated/bootstrap/set-secrets.sh
 | `TF_VAR_KEY` | a file named after it in the secrets directory |
 | `TF_VAR_SECRET` | a file named after it in the secrets directory |
 | `CSIS_CONFIG_IDENTITY` | a file named after it in the secrets directory |
+| `CSIS_PROOF_SSH_KEY` | a file named after it in the secrets directory |
 
 ## Afterwards
 
