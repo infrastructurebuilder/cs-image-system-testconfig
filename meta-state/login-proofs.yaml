@@ -497,3 +497,28 @@ proofs:
   run: 2026_10_03t12_58_41_949198
   runtime: aws-east2-runtime
   time: '2026-10-03T12:58:47+00:00'
+- as: proof key
+  checks:
+  - detail: CSIS_PROOF_SSH_KEY holds the proof user's key
+    name: proof key
+    ok: true
+  - detail: through aws ssm
+    name: tunnel
+    ok: true
+  - detail: logged in as csis_proof over ssh
+    name: login
+    ok: true
+  - detail: csis_proof is in pxproof
+    name: in its group
+    ok: true
+  evidence:
+  - uid=3999(csis_proof) gid=3999(csis_proof) groups=3999(csis_proof),3101(pxproof)
+    context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+  - 'Warning: Permanently added ''posix-proof'' (ED25519) to the list of known hosts.'
+  group: pxproof
+  hostname: posix-proof-001
+  instance: posix-proof
+  ok: true
+  run: 2026_10_04t09_59_33_964759
+  runtime: aws-east2-runtime
+  time: '2026-10-04T14:59:40+00:00'
