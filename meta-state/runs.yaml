@@ -1,33 +1,5 @@
 runs:
 - apply:
-    base-image: executed
-    identity: stale-script-skipped
-    instance-image: executed
-    release: no-script
-    retention: stale-script-skipped
-    storage: executed
-  dry_run: false
-  error: null
-  ok: true
-  requested:
-  - storage
-  - base-image
-  - instance-image
-  run: 2026_09_09t08_07_33_779160
-- apply:
-    base-image: stale-script-skipped
-    identity: stale-script-skipped
-    instance-image: executed
-    release: no-script
-    retention: stale-script-skipped
-    storage: stale-script-skipped
-  dry_run: false
-  error: null
-  ok: true
-  requested:
-  - instance-image
-  run: 2026_09_09t09_14_26_955044
-- apply:
     base-image: stale-script-skipped
     identity: stale-script-skipped
     instance-image: stale-script-skipped
@@ -3001,3 +2973,33 @@ runs:
   requested:
   - instance-image
   run: 2026_10_04t10_09_59_359652
+- apply: {}
+  dry_run: true
+  error: 'LifecycleRunError: Validation failed with 1 error(s)'
+  ok: false
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_04t10_16_28_732303
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_04t10_18_05_664878

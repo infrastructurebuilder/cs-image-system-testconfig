@@ -1,15 +1,13 @@
 ---
-# stage 75 step 9 (operator, 2026-10-04; develop only, removed before main
-# moves): the standalone posix proof's group. It exists as a POSIX group on
-# the machines of the image it owns (images/image4.yaml), baked with this gid;
-# its one member is the proof user, whose account and key every applying run
-# makes on each running machine, and as whom `verify login` logs in over ssh.
+# stage 75 step 9 (operator, 2026-10-04): the standalone posix proof's group,
+# RETIRED the same day -- its machine decommissioned, its two builds disposed,
+# its proof user and image removed. The entry stays because a group the system
+# once managed never leaves the configuration (DESIGN N19): gid 3101 stays
+# claimed by this name. Unmanaged: no image owns it, no machine carries it, no
+# run touches it.
 groups:
   - name: pxproof
     type: posix-local
     gid: 3101
-    description: "{{ group.name }}: the standalone posix proof's group"
-    members:
-      - csis_proof
-    tags:
-      environment: test
+    unmanaged: true
+    description: "{{ group.name }}: the retired standalone posix proof's group"

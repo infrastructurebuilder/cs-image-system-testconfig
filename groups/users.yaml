@@ -90,15 +90,3 @@ users:
     first_name: Philip
     last_name: Orton
     email: ENC[age:YWdlLWVuY3J5cHRpb24ub3JnL3YxCi0+IFgyNTUxOSA0YkI1SnBQZkp6OUNDdG5haExhZytkaUpheXVRYmJ4Rm9xVjdPQ1JIcDNZCkdnSmRhS3J6Z1B6Tnl2MGxMdDIyeGVBcmhBNG1Oa3I4RkhraC9VMEtCYXMKLT4gWDI1NTE5IE81N2Y1a1Jla0piblEvSEg0L3BtOGhXbmpOdU11WWJqcVprcGJ6dTdjeWsKalkvdU5hMUM4UVhrb1lvZVBtdjBSb25XdkIycnY5YVQ2T0doQkoxZlhURQotPiBYMjU1MTkgejM4aEFTMTUweGx1S1c2djBveVlyNmlDcWNTZER6U0o1WXc3SnZlY2l4dwpIRzNObWZmMU5SaTlrbEcwN2pGdzlWd3B4YzJZT1RabUMrYk50dUdmb3lBCi0+IFgyNTUxOSBMNjlNaEJsYTY4SjRWa1d5UkpyeFppaWg2a2drc3Q4ZUo0T0hlbWQwcWlzCjRmWjM4WDdSMTR6QU1LMC9BTEx2c0kxY2hXOFN4V3NvMmRBMjMrMDlVVWMKLS0tIHhrL0d1dDVNZkhtVGI5eUhiYU9aMndyZzBjaXdvNk9Vb1QwNnpmMk51UzAKdchUgIdNieAoGf2aSz8kOryRnekYRICjV0Mu8J6v9NiSQTeTE50CdTQ/6HoVLQPsuwY=]
-  # stage 75 step 9 (develop only, removed before main moves): the proof user
-  # of the standalone posix proof. A POSIX account on the proof machine, with
-  # this uid and exactly this key; `verify login` logs in as it with the
-  # private half, CSIS_PROOF_SSH_KEY (the operator's ~/.ssh/csis_proof).
-  - name: csis_proof
-    type: posix-users
-    first_name: Proof
-    last_name: User
-    is_service_account: true
-    uid: 3999
-    public_keys:
-      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEsRgQhu+pj39CZLcMjQiNRtDv6aLG0jIZ+/gJkGAA3E csis-proof

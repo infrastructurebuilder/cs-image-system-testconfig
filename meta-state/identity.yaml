@@ -34,9 +34,8 @@ groups:
     gid_policy: config-time
     identity_type: posix
     is_root: false
-    managed: true
-    members:
-    - csis_proof
+    managed: false
+    members: []
   secofs:
     admins:
     - jason.ducker
@@ -92,13 +91,11 @@ groups:
       policy: tcmet_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
 note: structural facts only; gids flow by terraform remote-state reference (N7)
-run: 2026_10_04t10_01_21_610985
+run: 2026_10_04t10_18_05_664878
 user_builders:
   okta-tf-users: okta-tf-ro
-  posix-users: posix
 users:
 - breanna.vanderplow
-- csis_proof
 - danishyo
 - hjyoo
 - james.brown
