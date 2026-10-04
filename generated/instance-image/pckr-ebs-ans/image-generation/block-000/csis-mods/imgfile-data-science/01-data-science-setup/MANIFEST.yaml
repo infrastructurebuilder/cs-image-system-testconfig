@@ -5,5 +5,5 @@ idempotent: ansible
 image: imgfile-data-science
 name: data-science-setup
 operation: ansible
-run: 2026_10_04t15_29_43_093060
+run: 2026_10_04t16_00_29_002805
 type: ansible-default
