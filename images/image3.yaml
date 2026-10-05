@@ -10,3 +10,8 @@ images:
     type: some-other-builder
     runtimes:
       - image_builder: pckr-ebs-ans
+        # the bake host, not an instance (operator, 2026-10-05): undeclared it
+        # was a 1 GB t2.micro, and this image's bake timed out on SSH over SSM
+        # (perform run 37296813122) while the same RHEL 9 parent baked fine on
+        # an r5.4xlarge; machine type is outside the fingerprint
+        machine_type: t3.medium
