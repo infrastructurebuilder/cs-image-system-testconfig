@@ -1,7 +1,7 @@
 images:
   imgfile-basic-cloudflow-notdocker@aws-east2-runtime: ami-015a9eb88d13c3236
   imgfile-basic-cloudflow-two@aws-east2-runtime: ami-015a9eb88d13c3236
-  imgfile-basic-cloudflow@aws-east2-runtime: ami-073d81cd9b3eec54b
+  imgfile-basic-cloudflow@aws-east2-runtime: ami-07353d3ce5e252eba
   imgfile-basic-dask-two@aws-east2-runtime: ami-015a9eb88d13c3236
   imgfile-basic-dask@aws-east2-runtime: ami-01a7eb20527c25fe2
   imgfile-coops-model@aws-east2-runtime: ami-01a7eb20527c25fe2
@@ -522,3 +522,9 @@ upgrades:
   op: dispose
   run: 2026_10_04t10_13_12_383240
   to: null
+- from: ami-073d81cd9b3eec54b
+  kind: image
+  name: imgfile-basic-cloudflow@aws-east2-runtime
+  op: upgrade
+  run: 2026_10_05t05_03_47_357002
+  to: ami-07353d3ce5e252eba
