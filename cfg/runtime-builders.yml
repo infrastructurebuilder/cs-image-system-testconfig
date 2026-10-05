@@ -38,7 +38,11 @@ runtime_builders:
       # this VPC; decided 2026-08-31, TODO stage 1). Profile is swappable.
       session_mechanism: ssm
       session_instance_profile: AmazonSSMRoleForInstancesQuickSetup
-      default_machine_type: t2.micro
+      # 4 GB, as the starters ship (cs-image-system stage 80, 2026-10-05): every
+      # bake host and instance that names no machine type gets this, and a
+      # 1 GB t2.micro starved bakes until SSH over SSM timed out (perform runs
+      # 37212963588, 37290586415, 37296813122); outside the fingerprint
+      default_machine_type: t3.medium
       default_image_builder: pckr-ebs-ans
       # stage 22.5 REMOVED -- `executables` is an IAConfig field, not a runtime-builder one; declared here it is dropped
       # executables: 
@@ -131,7 +135,7 @@ runtime_builders:
         # aws_access_key_id: "{{ ENV['AWS_ACCESS_KEY_ID_east2'] }}"
         # aws_secret_access_key: "{{ ENV['AWS_SECRET_ACCESS_KEY_east2'] }}"
         # aws_session_token: "{{ ENV['AWS_SESSION_TOKEN_east2'] }}" 
-      default_machine_type: t2.micro
+      default_machine_type: t3.medium   # stage 80: as above
       default_image_builder: pckr-ebs-ans
       networking:
         # network_id is the vpc_id
@@ -165,7 +169,7 @@ runtime_builders:
         Project: MyProject
         Environment: Development
       region: us-west-1
-      default_machine_type: t2.micro
+      default_machine_type: t3.medium   # stage 80: as above
       networking:
         # network_id is the vpc_id
         network: default # Query builder for identifier for default network

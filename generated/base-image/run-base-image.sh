@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # cs-image-system lifecycle runner: base-image
-# run id: 2026_10_05t11_36_01_698080
+# run id: 2026_10_05t06_58_44_429166
 # Deferred commands accumulated while generating this lifecycle,
 # in phase order. Paths are relative to this lifecycle's directory.
 # NOTE: builders' pre/post finalize hooks are NOT part of this
