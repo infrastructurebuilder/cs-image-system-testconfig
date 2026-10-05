@@ -1,9 +1,0 @@
-content_hash: e835044f85def6722a70ad56bb710d52e6b1207c464addd60bf7bb879cf3213f
-files:
-- setup_data_science.yml
-idempotent: ansible
-image: imgfile-data-science
-name: data-science-setup
-operation: ansible
-run: 2026_10_04t14_59_28_108997
-type: ansible-default
