@@ -10,7 +10,7 @@ data "amazon-ami" "imgfile-basic-cloudflow_aws-east2-runtime" {
 }
 source "amazon-ebs" "imgfile-basic-cloudflow" {
   source_ami    = data.amazon-ami.imgfile-basic-cloudflow_aws-east2-runtime.id
-  ami_name      = "imgfile-basic-cloudflow-some-other-builder-20261005_093527"
+  ami_name      = "imgfile-basic-cloudflow-some-other-builder-20261005_095940"
   instance_type = "t2.micro"
   region        = "us-east-2"
   vpc_id        = "vpc-0c78d0d63b7a100df"
@@ -19,7 +19,7 @@ source "amazon-ebs" "imgfile-basic-cloudflow" {
     cloudflow           = "true",
     csis_series         = "imgfile-basic-cloudflow",
     csis_parent         = "ami-073d81cd9b3eec54b",
-    csis_run            = "2026_10_05t09_35_33_221130",
+    csis_run            = "2026_10_05t09_59_45_987536",
     csis_fingerprint    = "6f0d59c5a999ea4f",
     csis_identity_types = "okta",
     csis_storage_types  = "ebs,efs,s3",

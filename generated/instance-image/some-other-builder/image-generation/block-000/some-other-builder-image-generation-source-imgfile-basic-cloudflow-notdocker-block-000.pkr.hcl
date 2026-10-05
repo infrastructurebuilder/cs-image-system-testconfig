@@ -10,7 +10,7 @@ data "amazon-ami" "imgfile-basic-cloudflow-notdocker_aws-east2-runtime" {
 }
 source "amazon-ebs" "imgfile-basic-cloudflow-notdocker" {
   source_ami    = data.amazon-ami.imgfile-basic-cloudflow-notdocker_aws-east2-runtime.id
-  ami_name      = "imgfile-basic-cloudflow-notdocker-pckr-ebs-ans-20261005_093527"
+  ami_name      = "imgfile-basic-cloudflow-notdocker-pckr-ebs-ans-20261005_095940"
   instance_type = "t2.micro"
   region        = "us-east-2"
   vpc_id        = "vpc-0c78d0d63b7a100df"
@@ -19,7 +19,7 @@ source "amazon-ebs" "imgfile-basic-cloudflow-notdocker" {
     cloudflow           = "true",
     csis_series         = "imgfile-basic-cloudflow-notdocker",
     csis_parent         = "ami-015a9eb88d13c3236",
-    csis_run            = "2026_10_05t09_35_33_221130",
+    csis_run            = "2026_10_05t09_59_45_987536",
     csis_fingerprint    = "4221cb1daf4f9341",
     csis_identity_types = "okta",
     csis_storage_types  = "ebs,efs,s3",
