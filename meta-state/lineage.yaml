@@ -1026,3 +1026,28 @@ builds:
   run: 2026_10_04t15_32_14_846854
   runtime: aws-east2-runtime
   series: imgfile-coops-model
+- build_id: ami-02b48baa19d69f49b
+  capabilities:
+    identity_types:
+    - okta
+    storage_types:
+    - ebs
+    - efs
+    - gcs
+    - pd
+    - s3
+  chain:
+  - imgfile-basic-cloudflow
+  - imgfile-basic-dask
+  input_fingerprint: 20d24c75244d4aa130711bca25e3b217958283b0cd065b45a6bc6fa3ca4e1247
+  local_mods: false
+  mods: []
+  name: imgfile-basic-cloudflow-some-other-builder-20261005_103507
+  parent: ami-07353d3ce5e252eba
+  run: 2026_10_05t10_35_13_245300
+  runtime: aws-east2-runtime
+  series: imgfile-basic-cloudflow
+  tests:
+    assertions: 4
+    in_bake: true
+  update: null

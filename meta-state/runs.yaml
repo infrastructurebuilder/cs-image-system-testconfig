@@ -1,31 +1,5 @@
 runs:
 - apply:
-    base-image: executed
-    identity: executed
-    instance-image: executed
-    release: no-script
-    retention: executed
-    storage: executed
-  dry_run: false
-  error: null
-  ok: true
-  requested:
-  - identity
-  - storage
-  - base-image
-  - instance-image
-  - release
-  - retention
-  run: 2026_09_09t18_28_02_288057
-- apply: {}
-  dry_run: true
-  error: 'ValueError: Unsupported RHEL version ''10'' in OS builder basic-rh-10'
-  ok: false
-  requested:
-  - base-image
-  - instance-image
-  run: 2026_09_10t04_35_22_483011
-- apply:
     base-image: dry-run
     identity: stale-script-skipped
     instance-image: dry-run
@@ -3032,3 +3006,35 @@ runs:
   - release
   - retention
   run: 2026_10_05t10_32_47_355939
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: failed
+    storage: stale-script-skipped
+  dry_run: false
+  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
+  ok: false
+  requested:
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_05t10_35_13_245300
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_05t10_59_51_079658
