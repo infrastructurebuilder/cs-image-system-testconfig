@@ -2,17 +2,18 @@
 source "googlecompute" "basic-rh-10" {
   project_id   = "csis-sandbox"
   zone         = "us-east1-b"
-  source_image = "almalinux-10-v20260811"
+  source_image = "almalinux-10-v20261005"
   source_image_project_id = [
     "almalinux-cloud",
   ]
-  image_name   = "basic-rh-10-gcloud-east1-20261005-065827"
+  image_name   = "basic-rh-10-gcloud-east1-20261006-092453"
   image_family = "basic-rh-10"
   image_labels = {
+    csis_config         = "cs-image-action-test",
     csis_fingerprint    = "ccb47e6f20a34238",
     csis_identity_types = "okta",
     csis_parent         = "vendor",
-    csis_run            = "2026_10_05t06_58_44_429166",
+    csis_run            = "2026_10_06t09_25_08_831835",
     csis_series         = "basic-rh-10",
     csis_storage_types  = "ebs-efs-gcs-pd-s3",
   }

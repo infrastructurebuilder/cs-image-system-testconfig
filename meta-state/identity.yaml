@@ -8,6 +8,7 @@ groups:
     is_root: true
     managed: true
     members: []
+    seen: true
     workload:
       connection: github-actions-infrastructurebuilder
       mirrors: basic_v1_security_policy_user
@@ -23,6 +24,7 @@ groups:
     managed: true
     members:
     - zachary.wills
+    seen: true
     workload:
       connection: github-actions-infrastructurebuilder
       mirrors: coops_v1_security_policy_user
@@ -50,6 +52,7 @@ groups:
     - danishyo
     - hjyoo
     - jason.ducker
+    seen: true
     workload:
       connection: github-actions-infrastructurebuilder
       mirrors: secofs_v1_security_policy_user
@@ -66,6 +69,7 @@ groups:
     members:
     - james.brown
     - mykel.alvis
+    seen: true
     workload:
       connection: github-actions-infrastructurebuilder
       mirrors: stofs_v1_security_policy_user
@@ -85,13 +89,14 @@ groups:
     - nnwogwu
     - rick_luettich
     - rmarsool
+    seen: true
     workload:
       connection: github-actions-infrastructurebuilder
       mirrors: tcmet_v1_security_policy_user
       policy: tcmet_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
 note: structural facts only; gids flow by terraform remote-state reference (N7)
-run: 2026_10_05t06_58_44_429166
+run: 2026_10_06t09_25_08_831835
 user_builders:
   okta-tf-users: okta-tf-ro
 users:
