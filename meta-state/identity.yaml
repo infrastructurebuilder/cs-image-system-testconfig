@@ -10,10 +10,14 @@ groups:
     members: []
     seen: true
     workload:
+      action: unchanged
       connection: github-actions-infrastructurebuilder
+      id: eab5c659-71c3-4e18-9aa3-e040423b51ee
       mirrors: basic_v1_security_policy_user
       policy: basic_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
+      role_id: 69d795dc-c911-47d0-979e-d157d2cba70d
+      run: 2026_10_07t09_03_31_416124
   coops:
     admins:
     - mykel.alvis
@@ -26,10 +30,14 @@ groups:
     - zachary.wills
     seen: true
     workload:
+      action: unchanged
       connection: github-actions-infrastructurebuilder
+      id: 0bbe4c09-6414-4425-af81-cc3fd9255c6c
       mirrors: coops_v1_security_policy_user
       policy: coops_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
+      role_id: 69d795dc-c911-47d0-979e-d157d2cba70d
+      run: 2026_10_07t09_03_31_416124
   pxproof:
     admins: []
     builder: posix-local
@@ -54,10 +62,14 @@ groups:
     - jason.ducker
     seen: true
     workload:
+      action: unchanged
       connection: github-actions-infrastructurebuilder
+      id: 9c3b5517-bcb7-476d-ad33-f83c0512856d
       mirrors: secofs_v1_security_policy_user
       policy: secofs_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
+      role_id: 69d795dc-c911-47d0-979e-d157d2cba70d
+      run: 2026_10_07t09_03_31_416124
   stofs:
     admins:
     - mykel.alvis
@@ -71,10 +83,14 @@ groups:
     - mykel.alvis
     seen: true
     workload:
+      action: unchanged
       connection: github-actions-infrastructurebuilder
+      id: 28e77ee8-1e64-439f-bd27-1e668c602fcf
       mirrors: stofs_v1_security_policy_user
       policy: stofs_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
+      role_id: 69d795dc-c911-47d0-979e-d157d2cba70d
+      run: 2026_10_07t09_03_31_416124
   tcmet:
     admins:
     - jason.ducker
@@ -91,12 +107,16 @@ groups:
     - rmarsool
     seen: true
     workload:
+      action: unchanged
       connection: github-actions-infrastructurebuilder
+      id: 130dff88-e109-4348-9592-fcbd4661ed9e
       mirrors: tcmet_v1_security_policy_user
       policy: tcmet_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
+      role_id: 69d795dc-c911-47d0-979e-d157d2cba70d
+      run: 2026_10_07t09_03_31_416124
 note: structural facts only; gids flow by terraform remote-state reference (N7)
-run: 2026_10_07t08_01_38_567363
+run: 2026_10_07t09_03_31_416124
 user_builders:
   okta-tf-users: okta-tf-ro
 users:
