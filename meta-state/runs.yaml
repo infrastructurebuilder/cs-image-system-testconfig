@@ -1,18 +1,5 @@
 runs:
 - apply:
-    base-image: executed
-    identity: stale-script-skipped
-    instance-image: stale-script-skipped
-    release: no-script
-    retention: stale-script-skipped
-    storage: stale-script-skipped
-  dry_run: false
-  error: null
-  ok: true
-  requested:
-  - base-image
-  run: 2026_09_10t06_36_35_242315
-- apply:
     base-image: no-script
     identity: executed
     instance-image: failed
@@ -3067,3 +3054,19 @@ runs:
   - release
   - retention
   run: 2026_10_07t05_31_20_149369
+- apply:
+    base-image: no-script
+    identity: stale-script-skipped
+    instance-image: executed
+    release: executed
+    retention: executed
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_07t05_33_50_612146
