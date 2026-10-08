@@ -2,17 +2,6 @@ runs:
 - apply:
     base-image: stale-script-skipped
     identity: stale-script-skipped
-    instance-image: failed
-    storage: stale-script-skipped
-  dry_run: false
-  error: 'LifecycleRunError: Apply failed for lifecycle instance-image'
-  ok: false
-  requested:
-  - instance-image
-  run: 2026_09_10t22_07_51_456403
-- apply:
-    base-image: stale-script-skipped
-    identity: stale-script-skipped
     instance-image: executed
     release: stale-script-skipped
     retention: stale-script-skipped
@@ -3087,3 +3076,21 @@ runs:
   - release
   - retention
   run: 2026_10_07t17_23_59_118669
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_08t11_16_08_498322
