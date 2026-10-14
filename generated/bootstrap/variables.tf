@@ -62,7 +62,12 @@ variable "aws_state_prefix" {
 
 variable "aws_state_bucket_exists" {
   type        = bool
-  description = "the state bucket already exists (not made)"
+  description = "the state bucket already stands (observed at every interview; decides the backend)"
+}
+
+variable "aws_state_bucket_managed" {
+  type        = bool
+  description = "this root manages the state bucket: made by an apply of it and kept here (decides the bucket resources; a destroy of the root removes the bucket)"
 }
 
 variable "aws_instance_profile" {

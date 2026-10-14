@@ -15,6 +15,7 @@ module "bootstrap_aws" {
   repository              = var.aws_repository
   state_bucket            = var.aws_state_bucket
   state_bucket_exists     = var.aws_state_bucket_exists
+  state_bucket_managed    = var.aws_state_bucket_managed
   state_prefix            = var.aws_state_prefix
   subject_forms           = var.aws_subject_forms
   write_extra_subjects    = var.aws_write_extra_subjects

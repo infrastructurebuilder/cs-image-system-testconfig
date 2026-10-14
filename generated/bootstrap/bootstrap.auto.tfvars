@@ -18,6 +18,7 @@ aws_repo_id                 = "1373601874"
 aws_repository              = "infrastructurebuilder/cs-image-system-testconfig"
 aws_state_bucket            = "noaa-ioos-cloud-sandbox-tfstate"
 aws_state_bucket_exists     = true
+aws_state_bucket_managed    = false
 aws_state_prefix            = "statefiles/csia-image-system-test"
 aws_subject_forms           = "both"
 aws_tags                    = {

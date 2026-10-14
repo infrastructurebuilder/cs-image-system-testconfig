@@ -12,13 +12,13 @@ apply needs nothing typed again; no secret value is in it or in the state.
   - account `514190660293`, region `us-east-2`; the GitHub OIDC provider read (it exists)
   - the READ-ONLY role `csis-github-readonly` (any ref of `infrastructurebuilder/cs-image-system-testconfig`) and the WRITE role `csis-github-apply` (`main` alone), subject forms: both; adopted by import: csis-github-readonly, csis-github-apply
   - the READ role also keeps trusting: `repo:infrastructurebuilder/cs-image-system-3:*`, `repo:infrastructurebuilder@50206755/cs-image-system-3@1373601731:*` (not this repository's; kept because the role already trusted them)
-  - the state bucket `noaa-ioos-cloud-sandbox-tfstate` exists: this root's state is bound to it (decision D8)
+  - the state bucket `noaa-ioos-cloud-sandbox-tfstate` exists: this root's state is bound to it (decision D8); the bucket stood before this root and is not managed here
   - the instance profile `AmazonSSMRoleForInstancesQuickSetup` read (it exists)
 - **gcp** (`tfmodules/bootstrap_gcp`)
   - project `csis-sandbox` (number 86233086783); the pool `github` read (it exists), its provider `github` read (it exists, and is not rewritten)
   - the READ-ONLY account `csis-github-readonly` read (it exists), holding roles/compute.viewer; impersonated by `attribute.repository/infrastructurebuilder/cs-image-system-testconfig`
   - no WRITE account: CI does not perform on a GCE runtime
-  - every role and binding here is one member added; nothing existing is replaced
+  - every role and binding here is one member added; nothing existing is replaced; an account that already exists is granted nothing unless you named the roles
   - labels: Environment=Development, Project=csis-sandbox (service accounts carry no labels; kept for what later iterations make)
 - **github** (`tfmodules/bootstrap_github`)
   - the repository `infrastructurebuilder/cs-image-system-testconfig`: default branch `develop`, perform on `main` (a ruleset: no deletion, no force push; ordinary pushes, the perform job's included, unaffected)
@@ -62,6 +62,15 @@ bash generated/bootstrap/set-secrets.sh
 - The values in `.github/workflows/ci.yml` still marked REPLACE-ME: PERFORM_RUNTIME, GUARD_RUNTIME and AWS_REGION are set as Actions variables by this root, but the workflow reads its own literals until a release makes it read `vars`.
 - Ask the org's Okta admins to confirm the API services app grants no `*.manage` scope and allows private-key client authentication only: its read scopes cannot see its own record, so the bootstrap could not check either.
 - The OPA service user and its API key pair (`TF_VAR_KEY` / `TF_VAR_SECRET`) are made by hand in the OPA console; set-secrets.sh reads them from files (CI_SETUP.md 3.5).
+
+## What a destroy would take that this root did not make
+
+A `tofu destroy` here removes these as well; they were adopted or granted,
+not created, and whatever else relies on them loses them:
+
+- the READ role `csis-github-readonly`, adopted by import: the destroy deletes the role itself, with every subject it trusted (`repo:infrastructurebuilder/cs-image-system-3:*`, `repo:infrastructurebuilder@50206755/cs-image-system-3@1373601731:*` among them)
+- the WRITE role `csis-github-apply`, adopted by import: the destroy deletes the role itself, with every subject it trusted
+- the project roles `roles/compute.viewer` of the READ account `csis-github-readonly`, which already existed: every tree that reads the account relies on what it holds
 
 ## The secrets the script sets
 
