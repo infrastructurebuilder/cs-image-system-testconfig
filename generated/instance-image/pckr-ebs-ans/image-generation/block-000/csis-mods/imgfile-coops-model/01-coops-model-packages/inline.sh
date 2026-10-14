@@ -1,4 +1,0 @@
-#!/bin/sh
-set -eu
-for p in vim-enhanced mpdecimal; do rpm -q "$p" >/dev/null 2>&1 || dpkg -s "$p" >/dev/null 2>&1 || if command -v dnf >/dev/null 2>&1; then sudo dnf -y install "$p"; elif command -v yum >/dev/null 2>&1; then sudo yum -y install "$p"; elif command -v apt-get >/dev/null 2>&1; then sudo apt-get install -y "$p"; else echo "csis ensure: no dnf, yum or apt-get to install $p" >&2; false; fi || exit 1; done
-( rpm -q amazon-efs-utils ) >/dev/null 2>&1 || { sudo dnf -y install git make rpm-build 'dnf-command(builddep)' && rm -rf /tmp/efs-utils && git clone https://github.com/aws/efs-utils /tmp/efs-utils && cd /tmp/efs-utils && git checkout "$(git tag -l 'v1.*' --sort=-v:refname | head -1)" && sudo dnf -y builddep ./amazon-efs-utils.spec && make rpm && sudo dnf -y install ./build/amazon-efs-utils*rpm && (sudo dnf -y remove git make rpm-build || true) && rm -rf /tmp/efs-utils; }

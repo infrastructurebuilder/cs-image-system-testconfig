@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # cs-image-system lifecycle runner: base-image
-# run id: 2026_10_14t22_59_04_565368
+# run id: 2026_10_14t23_30_43_798714
 # Deferred commands accumulated while generating this lifecycle,
 # in phase order. Paths are relative to this lifecycle's directory.
 # NOTE: builders' pre/post finalize hooks are NOT part of this
@@ -10,4 +10,4 @@ cd "$(dirname "$0")"
 CSIS_ROOT="$(cd "../.." && pwd)"   # the configuration root, relative to this script
 
 # --- phase: image-generation ---
-( cd "pckr-ebs-ans/image-generation/block-000" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && /usr/local/bin/packer build . )
+( cd "pckr-gce-ans/image-generation/block-000" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && /usr/local/bin/packer build . )
