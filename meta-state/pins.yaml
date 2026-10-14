@@ -3,8 +3,8 @@ images:
   imgfile-basic-cloudflow-two@aws-east2-runtime: ami-015a9eb88d13c3236
   imgfile-basic-cloudflow@aws-east2-runtime: ami-07353d3ce5e252eba
   imgfile-basic-dask-two@aws-east2-runtime: ami-015a9eb88d13c3236
-  imgfile-basic-dask@aws-east2-runtime: ami-01a7eb20527c25fe2
-  imgfile-coops-model@aws-east2-runtime: ami-01a7eb20527c25fe2
+  imgfile-basic-dask@aws-east2-runtime: ami-04eafb725bf4f17aa
+  imgfile-coops-model@aws-east2-runtime: ami-04eafb725bf4f17aa
   imgfile-data-science@aws-east2-runtime: ami-08a52e8f7f287b40a
 instances:
   coops-model: ami-06863fb35ff62f9ba
@@ -528,3 +528,15 @@ upgrades:
   op: upgrade
   run: 2026_10_05t05_03_47_357002
   to: ami-07353d3ce5e252eba
+- from: ami-01a7eb20527c25fe2
+  kind: image
+  name: imgfile-basic-dask@aws-east2-runtime
+  op: follow
+  run: 2026_10_14t22_59_04_565368
+  to: ami-04eafb725bf4f17aa
+- from: ami-01a7eb20527c25fe2
+  kind: image
+  name: imgfile-coops-model@aws-east2-runtime
+  op: follow
+  run: 2026_10_14t22_59_04_565368
+  to: ami-04eafb725bf4f17aa
