@@ -654,3 +654,25 @@ proofs:
   run: 2026_10_15t11_43_35_219878
   runtime: aws-east2-runtime
   time: '2026-10-15T11:43:40+00:00'
+- as: client
+  checks:
+  - detail: '''coops-model-006'' is registered once (8a13371d-5e8f-4469-94fc-4b4a7db57102)'
+    name: one registration
+    ok: true
+  - detail: 'sft resolve coops-model-006: exit 0'
+    name: resolves
+    ok: true
+  - detail: logged in as mykel.alvis over sft ssh
+    name: login
+    ok: true
+  evidence:
+  - uid=150006(mykel.alvis) gid=150006(mykel.alvis) groups=150006(mykel.alvis),90000(sft-admin),180007(coops)
+    context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+  - coops-model-006
+  group: coops
+  hostname: coops-model-006
+  instance: coops-model
+  ok: true
+  run: 2026_10_15t09_18_52_645130
+  runtime: aws-east2-runtime
+  time: '2026-10-15T14:18:58+00:00'
