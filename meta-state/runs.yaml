@@ -1,17 +1,4 @@
 runs:
-- apply: {}
-  dry_run: true
-  error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''init'', ''-backend=false'']''
-    returned non-zero exit status 1.'
-  ok: false
-  requested:
-  - identity
-  - storage
-  - base-image
-  - instance-image
-  - release
-  - retention
-  run: 2026_09_16t05_35_46_598480
 - apply:
     base-image: dry-run
     identity: dry-run
@@ -3123,3 +3110,16 @@ runs:
   requested:
   - release
   run: 2026_10_15t09_11_39_180167
+- apply:
+    base-image: stale-script-skipped
+    identity: stale-script-skipped
+    instance-image: executed
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - instance-image
+  run: 2026_10_15t09_13_36_293268
