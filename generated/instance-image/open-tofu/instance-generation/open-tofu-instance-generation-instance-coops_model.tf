@@ -4,7 +4,7 @@ module "instance_coops_model" {
   source                      = "../../../../tfmodules/aws_instance"
   providers                   = { aws = aws.open_tofu }
   name                        = "coops-model"
-  ami_id                      = "ami-06863fb35ff62f9ba"
+  ami_id                      = "ami-0d328aa065b74c6aa"
   instance_type               = "t3.medium"
   associate_public_ip_address = false
   vpc_security_group_ids      = [aws_security_group.csis_instances.id, "sg-03015ec107ae5f81a"]
