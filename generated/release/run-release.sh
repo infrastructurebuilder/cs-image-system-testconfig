@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # cs-image-system lifecycle runner: release
-# run id: 2026_10_17t09_44_38_451022
+# run id: 2026_10_17t23_20_31_697677
 # Deferred commands accumulated while generating this lifecycle,
 # in phase order. Paths are relative to this lifecycle's directory.
 # NOTE: builders' pre/post finalize hooks are NOT part of this
