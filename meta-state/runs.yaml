@@ -16,24 +16,6 @@ runs:
   - instance-image
   - release
   - retention
-  run: 2026_09_17t14_25_07_696467
-- apply:
-    base-image: dry-run
-    identity: dry-run
-    instance-image: dry-run
-    release: dry-run
-    retention: dry-run
-    storage: dry-run
-  dry_run: true
-  error: null
-  ok: true
-  requested:
-  - identity
-  - storage
-  - base-image
-  - instance-image
-  - release
-  - retention
   run: 2026_09_17t16_50_31_612963
 - apply: {}
   dry_run: true
@@ -3126,3 +3108,21 @@ runs:
   - release
   - retention
   run: 2026_10_17t23_22_28_741609
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_17t23_39_45_936014
