@@ -8,7 +8,7 @@ module "storage_mnt_data" {
   name              = "mnt_data"
   size              = 100
   availability_zone = "us-east-2a"
-  tags              = { "Environment" = "Development", "Project" = "MyProject" }
+  tags              = { "Environment" = "Development", "Project" = "MyProject", "csis_config" = "cs-image-action-test" }
 }
 output "storage_mnt_data" {
   value       = module.storage_mnt_data

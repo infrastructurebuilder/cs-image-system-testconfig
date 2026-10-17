@@ -10,7 +10,7 @@ module "instance_coops_model" {
   vpc_security_group_ids      = [aws_security_group.csis_instances.id, "sg-03015ec107ae5f81a"]
   subnet_id                   = "subnet-09f79018af845358a"
   iam_instance_profile        = "AmazonSSMRoleForInstancesQuickSetup"
-  tags                        = { "group" = "coops", "purpose" = "model" }
+  tags                        = { "csis_config" = "cs-image-action-test", "group" = "coops", "purpose" = "model" }
   user_data = templatefile("${path.module}/user-data-coops_model.sh.tftpl", {
     "ebs" = {
       "mnt_data" = {
