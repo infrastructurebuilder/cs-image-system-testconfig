@@ -1,16 +1,4 @@
 runs:
-- apply: {}
-  dry_run: true
-  error: 'LifecycleRunError: Validation failed with 1 error(s)'
-  ok: false
-  requested:
-  - identity
-  - storage
-  - base-image
-  - instance-image
-  - release
-  - retention
-  run: 2026_09_18t10_32_43_774264
 - apply:
     base-image: dry-run
     identity: dry-run
@@ -3126,3 +3114,16 @@ runs:
   - release
   - retention
   run: 2026_10_23t07_53_29_210055
+- apply:
+    base-image: stale-script-skipped
+    identity: executed
+    instance-image: stale-script-skipped
+    release: stale-script-skipped
+    retention: stale-script-skipped
+    storage: stale-script-skipped
+  dry_run: false
+  error: null
+  ok: true
+  requested:
+  - identity
+  run: 2026_10_23t08_54_22_393846
