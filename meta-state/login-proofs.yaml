@@ -742,3 +742,25 @@ proofs:
   run: 2026_10_17t23_39_32_520566
   runtime: aws-east2-runtime
   time: '2026-10-17T23:39:38+00:00'
+- as: workload
+  checks:
+  - detail: '''coops-model-006'' is registered once (8a13371d-5e8f-4469-94fc-4b4a7db57102)'
+    name: one registration
+    ok: true
+  - detail: 'sft resolve coops-model-006: exit 0'
+    name: resolves
+    ok: true
+  - detail: logged in as wl_cs_image_system_testconfig_ci over sft ssh
+    name: login
+    ok: true
+  evidence:
+  - uid=150035(wl_cs_image_system_testconfig_ci) gid=150035(wl_cs_image_system_testconfig_ci)
+    groups=150035(wl_cs_image_system_testconfig_ci) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+  - coops-model-006
+  group: coops
+  hostname: coops-model-006
+  instance: coops-model
+  ok: true
+  run: 2026_10_23t14_26_44_680853
+  runtime: aws-east2-runtime
+  time: '2026-10-23T14:26:50+00:00'
