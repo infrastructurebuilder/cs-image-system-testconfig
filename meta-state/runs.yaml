@@ -6,19 +6,6 @@ runs:
   ok: false
   requested:
   - identity
-  - storage
-  - base-image
-  - instance-image
-  - release
-  - retention
-  run: 2026_09_19t10_48_57_479099
-- apply: {}
-  dry_run: false
-  error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''plan'']'' returned
-    non-zero exit status 1.'
-  ok: false
-  requested:
-  - identity
   run: 2026_09_19t10_50_39_266277
 - apply:
     base-image: no-script
@@ -3129,3 +3116,21 @@ runs:
   - release
   - retention
   run: 2026_10_27t07_26_00_408863
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_10_27t13_52_39_765347
