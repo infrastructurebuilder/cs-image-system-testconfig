@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # cs-image-system lifecycle runner: identity
-# run id: 2026_10_27t13_52_39_765347
+# run id: 2026_10_27t13_56_26_284738
 # Deferred commands accumulated while generating this lifecycle,
 # in phase order. Paths are relative to this lifecycle's directory.
 # state: workspace oktagroups -> s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/oktagroups.tfstate
@@ -14,7 +14,7 @@ CSIS_ROOT="$(cd "../.." && pwd)"   # the configuration root, relative to this sc
 # --- phase: group-generation ---
 ( cd "oktagroups/group-generation" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && rm -f tfplan )
 ( cd "oktagroups/group-generation" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && /usr/local/bin/tofu init -input=false -reconfigure -backend-config=oktagroups-group-generation.tfbackend.hcl )
-( cd "oktagroups/group-generation" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && cs-image-system --root-dir "$CSIS_ROOT" --no-dry-run prune-attachments --builder oktagroups --tofu /usr/local/bin/tofu --run 2026_10_27t13_52_39_765347 )
+( cd "oktagroups/group-generation" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && cs-image-system --root-dir "$CSIS_ROOT" --no-dry-run prune-attachments --builder oktagroups --tofu /usr/local/bin/tofu --run 2026_10_27t13_56_26_284738 )
 ( cd "oktagroups/group-generation" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && /usr/local/bin/tofu plan -input=false -out=tfplan )
 ( cd "oktagroups/group-generation" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && cs-image-system gate-plan --planfile tfplan --tofu /usr/local/bin/tofu --allow-destroy-from csis-sanctioned-removals.txt )
 ( cd "oktagroups/group-generation" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && cs-image-system apply-check --lifecycle identity --root oktagroups )
