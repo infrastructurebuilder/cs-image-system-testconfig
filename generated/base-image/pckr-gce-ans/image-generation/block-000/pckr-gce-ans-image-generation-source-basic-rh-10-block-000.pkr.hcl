@@ -6,14 +6,14 @@ source "googlecompute" "basic-rh-10" {
   source_image_project_id = [
     "almalinux-cloud",
   ]
-  image_name   = "basic-rh-10-gcloud-east1-20261028-122449"
+  image_name   = "basic-rh-10-gcloud-east1-20261028-225942"
   image_family = "basic-rh-10"
   image_labels = {
     csis_config         = "cs-image-action-test",
     csis_fingerprint    = "c638297c48e9b787",
     csis_identity_types = "okta",
     csis_parent         = "vendor",
-    csis_run            = "2026_10_28t12_25_03_974930",
+    csis_run            = "2026_10_28t22_59_46_850034",
     csis_series         = "basic-rh-10",
     csis_storage_types  = "gcs-pd",
   }
