@@ -3,14 +3,14 @@ source "googlecompute" "imgfile-basic-dask" {
   project_id          = "csis-sandbox"
   zone                = "us-east1-b"
   source_image_family = "basic-rh-10"
-  image_name          = "imgfile-basic-dask-pckr-gce-ans-20261029-202117"
+  image_name          = "imgfile-basic-dask-pckr-gce-ans-20261029-202506"
   image_family        = "imgfile-basic-dask"
   image_labels = {
     csis_config         = "cs-image-action-test",
     csis_fingerprint    = "b728ba7cdbcafee9",
     csis_identity_types = "okta",
     csis_parent         = "series-basic-rh-10",
-    csis_run            = "2026_10_29t20_21_23_703414",
+    csis_run            = "2026_10_29t20_25_12_621078",
     csis_series         = "imgfile-basic-dask",
     csis_storage_types  = "gcs-pd",
     dask                = "true",
