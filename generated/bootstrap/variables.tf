@@ -80,6 +80,11 @@ variable "aws_instance_profile_exists" {
   description = "the instance profile already exists (read, not made)"
 }
 
+variable "aws_other_state_buckets" {
+  type        = map(string)
+  description = "the tree's other S3 backends' buckets this root makes and manages: bucket -> key prefix"
+}
+
 variable "aws_profile" {
   type        = string
   description = "the AWS profile this root is applied with (empty: the environment's credentials)"
@@ -183,6 +188,36 @@ variable "gcp_write_account_exists" {
 variable "gcp_write_roles" {
   type        = list(string)
   description = "project roles the WRITE account holds"
+}
+
+variable "gcp_state_bucket" {
+  type        = string
+  description = "the GCS state bucket (empty when the tree keeps no state in GCS)"
+}
+
+variable "gcp_state_prefix" {
+  type        = string
+  description = "the state prefix within that bucket"
+}
+
+variable "gcp_state_bucket_exists" {
+  type        = bool
+  description = "the bucket already stands (observed at every interview; decides the backend)"
+}
+
+variable "gcp_state_bucket_managed" {
+  type        = bool
+  description = "this root manages the state bucket: made by an apply of it and kept here"
+}
+
+variable "gcp_state_bucket_location" {
+  type        = string
+  description = "the bucket's location when this root makes it"
+}
+
+variable "gcp_labels" {
+  type        = map(string)
+  description = "labels on what this root makes that carries labels"
 }
 
 variable "github_owner" {

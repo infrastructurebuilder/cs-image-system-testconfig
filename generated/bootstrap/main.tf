@@ -6,6 +6,7 @@ module "bootstrap_aws" {
   instance_profile        = var.aws_instance_profile
   instance_profile_exists = var.aws_instance_profile_exists
   oidc_provider_exists    = var.aws_oidc_provider_exists
+  other_state_buckets     = var.aws_other_state_buckets
   owner_id                = var.aws_owner_id
   production_branch       = var.aws_production_branch
   read_extra_subjects     = var.aws_read_extra_subjects
@@ -23,24 +24,30 @@ module "bootstrap_aws" {
 }
 
 module "bootstrap_gcp" {
-  source               = "../../tfmodules/bootstrap_gcp"
-  attribute_condition  = var.gcp_attribute_condition
-  pool                 = var.gcp_pool
-  pool_exists          = var.gcp_pool_exists
-  principal_attribute  = var.gcp_principal_attribute
-  principal_value      = var.gcp_principal_value
-  production_branch    = var.gcp_production_branch
-  project              = var.gcp_project
-  project_number       = var.gcp_project_number
-  provider_exists      = var.gcp_provider_exists
-  provider_id          = var.gcp_provider
-  read_account         = var.gcp_read_account
-  read_account_exists  = var.gcp_read_account_exists
-  read_roles           = var.gcp_read_roles
-  want_write           = var.gcp_want_write
-  write_account        = var.gcp_write_account
-  write_account_exists = var.gcp_write_account_exists
-  write_roles          = var.gcp_write_roles
+  source                = "../../tfmodules/bootstrap_gcp"
+  attribute_condition   = var.gcp_attribute_condition
+  labels                = var.gcp_labels
+  pool                  = var.gcp_pool
+  pool_exists           = var.gcp_pool_exists
+  principal_attribute   = var.gcp_principal_attribute
+  principal_value       = var.gcp_principal_value
+  production_branch     = var.gcp_production_branch
+  project               = var.gcp_project
+  project_number        = var.gcp_project_number
+  provider_exists       = var.gcp_provider_exists
+  provider_id           = var.gcp_provider
+  read_account          = var.gcp_read_account
+  read_account_exists   = var.gcp_read_account_exists
+  read_roles            = var.gcp_read_roles
+  state_bucket          = var.gcp_state_bucket
+  state_bucket_exists   = var.gcp_state_bucket_exists
+  state_bucket_location = var.gcp_state_bucket_location
+  state_bucket_managed  = var.gcp_state_bucket_managed
+  state_prefix          = var.gcp_state_prefix
+  want_write            = var.gcp_want_write
+  write_account         = var.gcp_write_account
+  write_account_exists  = var.gcp_write_account_exists
+  write_roles           = var.gcp_write_roles
 }
 
 module "bootstrap_github" {

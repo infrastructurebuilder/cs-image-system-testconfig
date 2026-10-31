@@ -19,7 +19,8 @@ apply needs nothing typed again; no secret value is in it or in the state.
   - the READ-ONLY account `csis-github-readonly` read (it exists), holding roles/compute.viewer; impersonated by `attribute.repository/infrastructurebuilder/cs-image-system-testconfig`
   - no WRITE account: CI does not perform on a GCE runtime
   - every role and binding here is one member added; nothing existing is replaced; an account that already exists is granted nothing unless you named the roles
-  - labels: Environment=Development, Project=csis-sandbox (service accounts carry no labels; kept for what later iterations make)
+  - no GCS state bucket: the tree keeps its state elsewhere
+  - labels: Environment=Development, Project=csis-sandbox (service accounts carry no labels; the bucket does, when made here)
 - **github** (`tfmodules/bootstrap_github`)
   - the repository `infrastructurebuilder/cs-image-system-testconfig`: default branch `develop`, perform on `main` (a ruleset: no deletion, no force push; ordinary pushes, the perform job's included, unaffected)
   - Actions enabled for all actions; workflow permissions stay read-only (the workflow asks for what each job needs)
@@ -29,6 +30,41 @@ apply needs nothing typed again; no secret value is in it or in the state.
   - the workload role `cs-image-system-testconfig-ci` exists (bound to `github-actions-infrastructurebuilder`: yes; pinned to `main`: yes); named on `oktagroups`: yes
   - the Okta API services app authenticates with its key; read scopes only: yes; its own record readable: no
   - nothing here is terraform: the section reads and checks, and every check above was made when `bootstrap` last ran (re-run it to check again)
+
+## What this root covers
+
+Every underlying resource the tree's declarations imply, and what this root does
+about it: MADE here, READ as it stands, ADOPTED by import, or BY HAND with the
+reason (a decision, never a silence).
+
+| Section | Resource | What this root does | Why |
+| --- | --- | --- | --- |
+| aws | the GitHub OIDC identity provider | READ | read as a data source when the account has it |
+| aws | the READ role `csis-github-readonly` | ADOPTED | stood at the interview: an import block, so its trust and policy are maintained from here |
+| aws | the WRITE role `csis-github-apply` | ADOPTED | stood at the interview: an import block, so its trust and policy are maintained from here |
+| aws | the default S3 backend's bucket `noaa-ioos-cloud-sandbox-tfstate` | READ | stood before this root: read, never managed |
+| aws | the S3 backend `s3-east1`'s bucket `my-east1-tfstate-bucket` | BY HAND | declared but bound to no root, so nothing would use it: not made; bind a root to it and re-run the interview, or drop the backend |
+| aws | the Session Manager instance profile `AmazonSSMRoleForInstancesQuickSetup` | READ | read as a data source when the account has it |
+| aws | the network: VPC, subnets, security groups, the access gateway | BY HAND | the team's, by decision (stage 1's network rule): the system never creates or modifies network configuration |
+| aws | the bake hosts' route to SSM and the package repositories | BY HAND | part of the network: the team's |
+| gcp | the workload identity pool `github` | READ | read as it stands |
+| gcp | the pool's GitHub provider `github` | READ | read as it stands, never rewritten: other repositories may share its condition |
+| gcp | the READ-ONLY service account `csis-github-readonly` | READ | read as it stands; granted only the roles you named |
+| gcp | a WRITE service account | BY HAND | not wanted: CI performs on no GCE runtime, so none is made or read |
+| gcp | a GCS state bucket | BY HAND | the tree declares no gcs backend: nothing to make |
+| gcp | the network and the firewall rules | BY HAND | the team's, by decision: the system never creates or modifies network configuration |
+| github | the repository `infrastructurebuilder/cs-image-system-testconfig` | READ | it exists: read as a data source; the bootstrap never creates a repository |
+| github | the default branch `develop` | MADE | set on the repository |
+| github | Actions enabled, workflow permissions read-only | MADE | set on the repository |
+| github | the ruleset on `main` | MADE | no deletion, no force push |
+| github | the Actions variables | MADE | PERFORM_RUNTIME, AWS_REGION |
+| github | the secrets' values | BY HAND | one file per secret under the secrets directory, set by the script; a value never enters the tfvars or the state (decision D2) |
+| github | the age identity for CI | BY HAND | made on your machine (`age-keygen`); the system never makes a key |
+| okta | the OPA workload connection `github-actions-infrastructurebuilder` | BY HAND | a console act of a DevOps admin and a security admin, by decision D4; it exists and is active |
+| okta | the OPA workload role `cs-image-system-testconfig-ci` | BY HAND | a console act of a security admin, by decision D4; it exists, bound |
+| okta | the per-group CI policies | MADE | the identity lifecycle makes them once the group builder names the connection and role |
+| okta | the Okta API services app | BY HAND | the org's Okta admins', by decision D5/D9; it authenticates |
+| okta | the OPA service user and its key pair | BY HAND | made by hand in the OPA console, by decision D10; the script reads them from files |
 
 ## Apply
 

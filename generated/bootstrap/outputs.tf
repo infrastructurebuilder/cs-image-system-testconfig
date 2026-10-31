@@ -20,6 +20,11 @@ output "aws_state_bucket" {
   description = "the state bucket"
 }
 
+output "aws_other_state_buckets" {
+  value       = module.bootstrap_aws.other_state_buckets
+  description = "the other S3 backends' buckets made here"
+}
+
 output "aws_instance_profile_arn" {
   value       = module.bootstrap_aws.instance_profile_arn
   description = "the Session Manager instance profile"
@@ -38,6 +43,11 @@ output "gcp_read_service_account" {
 output "gcp_write_service_account" {
   value       = module.bootstrap_gcp.write_service_account
   description = "the address CI may write as (the READ-ONLY one when there is no WRITE account): the GCP_APPLY_SERVICE_ACCOUNT secret"
+}
+
+output "gcp_state_bucket" {
+  value       = module.bootstrap_gcp.state_bucket
+  description = "the GCS state bucket, when the tree keeps its state in GCS"
 }
 
 output "github_repository_id" {

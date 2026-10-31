@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # cs-image-system lifecycle runner: instance-image
-# run id: 2026_10_29t20_25_12_621078
+# run id: 2026_10_31t09_05_13_591069
 # Deferred commands accumulated while generating this lifecycle,
 # in phase order. Paths are relative to this lifecycle's directory.
 # state: workspace open-tofu -> s3://noaa-ioos-cloud-sandbox-tfstate/statefiles/csia-image-system-test/open_tofu.tfstate
@@ -10,9 +10,6 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 CSIS_ROOT="$(cd "../.." && pwd)"   # the configuration root, relative to this script
-
-# --- phase: image-generation ---
-( cd "pckr-gce-ans/image-generation/block-000" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && /usr/local/bin/packer build . )
 
 # --- phase: instance-generation ---
 ( cd "open-tofu/instance-generation" && cd "$(cs-image-system materialize . --root-dir "$CSIS_ROOT")" && rm -f tfplan )

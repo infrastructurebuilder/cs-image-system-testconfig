@@ -5,6 +5,7 @@ aws_account_id              = "514190660293"
 aws_instance_profile        = "AmazonSSMRoleForInstancesQuickSetup"
 aws_instance_profile_exists = true
 aws_oidc_provider_exists    = true
+aws_other_state_buckets     = {}
 aws_owner_id                = "50206755"
 aws_production_branch       = "main"
 aws_profile                 = "noaa"
@@ -29,6 +30,10 @@ aws_tags                    = {
 aws_write_extra_subjects    = []
 aws_write_role_name         = "csis-github-apply"
 gcp_attribute_condition     = "assertion.repository in ['infrastructurebuilder/cs-image-system-3', 'infrastructurebuilder/cs-image-system-testconfig']"
+gcp_labels                  = {
+  "Environment" = "Development"
+  "Project"     = "csis-sandbox"
+}
 gcp_pool                    = "github"
 gcp_pool_exists             = true
 gcp_principal_attribute     = "repository"
@@ -43,6 +48,11 @@ gcp_read_account_exists     = true
 gcp_read_roles              = [
   "roles/compute.viewer",
 ]
+gcp_state_bucket            = ""
+gcp_state_bucket_exists     = false
+gcp_state_bucket_location   = "US"
+gcp_state_bucket_managed    = false
+gcp_state_prefix            = ""
 gcp_want_write              = false
 gcp_write_account           = ""
 gcp_write_account_exists    = false
