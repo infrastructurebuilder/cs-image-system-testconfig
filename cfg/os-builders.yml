@@ -101,7 +101,7 @@ os_builders:
       packages: [openssl]
       exclude: ["kernel*"]
     type: rhel
-    family: rhel
+    family: alma-linux
     family_version: 10
     is_default: true
     # stage 22.3 REMOVED -- no field on the OS builder model accepts this, so it has always been dropped. Nothing has ever been named from these templates: images carry the _final_name shape instead (AWS basic-rh-10-aws-east2-runtime-<ts>, GCE imgfile-basic-dask-pckr-gce-ans-<ts>). Kept here because the NOSCSB naming intent may return: reviving it means restoring the field AND making the subconfig property use it, which renames every future image on both clouds and is its own stage.
