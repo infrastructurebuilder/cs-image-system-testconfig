@@ -916,7 +916,11 @@ builds:
     - s3
   chain:
   - imgfile-basic-dask
-  input_fingerprint: 5ea00406f9e214b0bf0fe5391e49f976cb184d1a75a2d4ccc1f14af1f0b8561e
+  fingerprint_restamped:
+  - previous: 5ea00406f9e214b0bf0fe5391e49f976cb184d1a75a2d4ccc1f14af1f0b8561e
+    reason: fingerprint recipe change (stage 9/§11.2)
+    run: 2026_10_31t08_57_38_024902
+  input_fingerprint: 5ed5a6e9f2849386cec7746b8ec88c4d811d0f40ea25c976da0f85bebd404fd8
   local_mods: true
   mods:
   - content_hash: f69207b82321c53a4944d6cba1940d6a4b8e051fa26c8c30c733c7f7c0faea3d
