@@ -62,7 +62,10 @@ builds:
   - previous: a6904302a527f9b8931fa7f07be17ca9e834c9654eeb13be9a92c4c27cafca2e
     reason: fingerprint recipe change (stage 9/§11.2)
     run: 2026_09_26t10_38_27_569578
-  input_fingerprint: 0f73bbba4f70cf01c7895988b569d17af49fe189cdd1a33af41f6c0fc7f5c072
+  - previous: 0f73bbba4f70cf01c7895988b569d17af49fe189cdd1a33af41f6c0fc7f5c072
+    reason: fingerprint recipe change (stage 9/§11.2)
+    run: 2026_10_31t08_57_04_792069
+  input_fingerprint: 4c8dbad6dc02e153d43a4e2d509945e4b1c87cd9389262d8a601a4fb8bedd552
   local_mods: false
   mods: []
   name: my-deb-11-aws-east2-runtime-20260831_174233
@@ -121,7 +124,10 @@ builds:
   - previous: 4fa3f8488c39895142233999edf19ef624fd245afb8615f1904ecc4df480aa6a
     reason: fingerprint recipe change (stage 9/§11.2)
     run: 2026_09_26t10_38_27_569578
-  input_fingerprint: a7c54f83bab8167d9e2880a7e1ee3b02536799a0e2c0ecbf9aa5ee52a689294e
+  - previous: a7c54f83bab8167d9e2880a7e1ee3b02536799a0e2c0ecbf9aa5ee52a689294e
+    reason: fingerprint recipe change (stage 9/§11.2)
+    run: 2026_10_31t08_57_04_792069
+  input_fingerprint: e077d35c3603808c5830741ef11326a337ea2a90c380912908f0042490eec60a
   local_mods: false
   mods: []
   name: basic-rhel-9-aws-east2-runtime-20260831_174233
@@ -943,9 +949,13 @@ builds:
     - efs
     - s3
   chain: []
+  fingerprint_restamped:
+  - previous: 09eb18d0366bcad8
+    reason: fingerprint recipe change (stage 9/§11.2)
+    run: 2026_10_31t08_57_04_792069
   imported: true
   imported_by: 2026_10_04t14_57_51_565299
-  input_fingerprint: 09eb18d0366bcad8
+  input_fingerprint: 4b771a48f9d3c8a751abafe9723a15ac3a458f1d280437225e92e9270e09421c
   mods: []
   name: imgfile-basic-dask-two-pckr-ebs-ans-20261004_153210
   parent: ami-015a9eb88d13c3236
@@ -959,9 +969,13 @@ builds:
     storage_types:
     - ebs
   chain: []
+  fingerprint_restamped:
+  - previous: 49d8b4c37dcbf7b1
+    reason: fingerprint recipe change (stage 9/§11.2)
+    run: 2026_10_31t08_57_04_792069
   imported: true
   imported_by: 2026_10_04t14_57_51_565299
-  input_fingerprint: 49d8b4c37dcbf7b1
+  input_fingerprint: 46abdeddd712a69f0ec31f92f992164e31b2ea73ba3ba2654f9b47724a08a492
   mods: []
   name: imgfile-data-science-pckr-ebs-ans-20261004_153210
   parent: ami-08a52e8f7f287b40a
@@ -997,9 +1011,13 @@ builds:
     - efs
     - s3
   chain: []
+  fingerprint_restamped:
+  - previous: 44a240c36b50db3f
+    reason: fingerprint recipe change (stage 9/§11.2)
+    run: 2026_10_31t08_57_04_792069
   imported: true
   imported_by: 2026_10_04t14_57_51_565299
-  input_fingerprint: 44a240c36b50db3f
+  input_fingerprint: 4aa5eebcb50f017effa716dbd994f70147b651cba1708bff019723b237053917
   mods: []
   name: imgfile-basic-cloudflow-two-pckr-ebs-ans-20261004_153210
   parent: ami-015a9eb88d13c3236
@@ -1061,7 +1079,11 @@ builds:
     - s3
   chain:
   - imgfile-basic-cloudflow-notdocker
-  input_fingerprint: 4221cb1daf4f9341d8f3f8601a126262828095c581336f544d2ef6226530453a
+  fingerprint_restamped:
+  - previous: 4221cb1daf4f9341d8f3f8601a126262828095c581336f544d2ef6226530453a
+    reason: fingerprint recipe change (stage 9/§11.2)
+    run: 2026_10_31t08_57_04_792069
+  input_fingerprint: 03e120e6b0f4ae51dd56dec6844a78b6d497d188f51acaef5c06f9958082b823
   local_mods: false
   mods: []
   name: imgfile-basic-cloudflow-notdocker-pckr-ebs-ans-20261005_112420
@@ -1082,7 +1104,11 @@ builds:
     - efs
     - s3
   chain: []
-  input_fingerprint: a4015532aa25b7afaec55b7b925c91d565777f62010991bd213407a8240b03d3
+  fingerprint_restamped:
+  - previous: a4015532aa25b7afaec55b7b925c91d565777f62010991bd213407a8240b03d3
+    reason: fingerprint recipe change (stage 9/§11.2)
+    run: 2026_10_31t08_57_04_792069
+  input_fingerprint: 29586e2c7947026148ad6634c8579346d1df4ac54a7a60405bbdf48f50b8229e
   local_mods: false
   mods: []
   name: basic-rh-10-aws-east2-runtime-20261014_225859
@@ -1110,7 +1136,11 @@ builds:
     - s3
   chain:
   - imgfile-basic-dask
-  input_fingerprint: fb714ea6e66a47cb7e75bc357313033be9fdc62af785f20e95201bb2ba045497
+  fingerprint_restamped:
+  - previous: fb714ea6e66a47cb7e75bc357313033be9fdc62af785f20e95201bb2ba045497
+    reason: fingerprint recipe change (stage 9/§11.2)
+    run: 2026_10_31t08_57_04_792069
+  input_fingerprint: ef141e121a997211ce21ae986ef5da5d5d6b380c02f860b5839fbb47f0c284b7
   local_mods: true
   mods:
   - content_hash: f69207b82321c53a4944d6cba1940d6a4b8e051fa26c8c30c733c7f7c0faea3d
@@ -1144,7 +1174,11 @@ builds:
     - s3
   chain:
   - imgfile-coops-model
-  input_fingerprint: c5f4a22d5c23773f9c1fc008ec8edc87e553a08de8542aea2baa3be93cbb45ad
+  fingerprint_restamped:
+  - previous: c5f4a22d5c23773f9c1fc008ec8edc87e553a08de8542aea2baa3be93cbb45ad
+    reason: fingerprint recipe change (stage 9/§11.2)
+    run: 2026_10_31t08_57_04_792069
+  input_fingerprint: 467aaea71b57c0009d8665a3c235abb21d5bcd54a2cc2b43b6e17983da849ba5
   local_mods: true
   mods:
   - content_hash: b49f9c19f3668ef0c636d6d7d518936e4db4c379b138f3f8c25e838baa0de5b9
@@ -1204,7 +1238,11 @@ builds:
   chain:
   - imgfile-basic-cloudflow
   - imgfile-basic-dask
-  input_fingerprint: e141166aa1b99a9d8d793aac83d2a976a096ea3897374e6d354618065edc6b08
+  fingerprint_restamped:
+  - previous: e141166aa1b99a9d8d793aac83d2a976a096ea3897374e6d354618065edc6b08
+    reason: fingerprint recipe change (stage 9/§11.2)
+    run: 2026_10_31t08_57_04_792069
+  input_fingerprint: 55a4007871a98c57f0c5c343e66cb2f8af4ecbee97e1b9628e8100aa0bfe94b0
   local_mods: false
   mods: []
   name: imgfile-basic-cloudflow-some-other-builder-20261017_232224
