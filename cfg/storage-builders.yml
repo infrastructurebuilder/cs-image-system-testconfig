@@ -85,3 +85,12 @@ storage_builders:
   #   variables:
   #     size: 375 # Size in GB
   #     encrypted: false
+
+  # Stage 103: named docker volumes, mounted by the platform.
+  - name: docker-volumes
+    type: tf-docker-volume
+    runtime: docker-orbstack
+    executable: open-tofu-1
+    variables:
+      tags:
+        project: MyProject

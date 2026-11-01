@@ -24,3 +24,14 @@ instance_builders:
     runtime: gcloud-east1
     executable: open-tofu-1
     state_configuration: s3-east2 # decision: GCP roots keep the S3 backend for now
+  # Stage 103: containers on the docker runtime. Its roots keep the S3 backend with
+  # the rest (so they need the AWS session the GCE roots need).
+  - name: tofu-docker
+    type: tofu-docker
+    runtime: docker-orbstack
+    executable: open-tofu-1
+    required_plugins:
+      - name: docker
+        source: kreuzwerker/docker
+        version: '>= 3.0.0'
+    state_configuration: s3-east2

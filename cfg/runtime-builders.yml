@@ -196,3 +196,31 @@ runtime_builders:
     #   config:
     #     some_docker_swarm_setting: some_docker_swarm_value
     #   default_image_builder: packer-docker-ansible
+
+    # Stage 103 (docker runtime): the operator's local OrbStack, by its docker
+    # context. Decided 2026-11-01: this machine is the container host for now and
+    # will not be reinstalled soon; a durable host replaces the one `context:` line.
+    # The context is a NAME that exists on this machine only (no address, no secret).
+    # WHOEVER CAN REACH THE DAEMON IS ROOT ON ITS HOST. CI never reaches it, so the
+    # workflow guards it (GUARD_RUNTIME) and never performs on it.
+    - name: docker-orbstack
+      type: docker
+      aliases:
+        - docker
+        - orbstack
+      description: "The local OrbStack daemon, reached by its docker context"
+      context: orbstack
+      executable: docker
+      repository: csis/reference
+      credentials: {}
+      ephemeral: false
+      tags:
+        project: MyProject
+        environment: development
+      default_machine_type: small
+      default_image_builder: packer-docker
+      machine_types:
+        small: { cpus: 1, memory: 1g }
+        medium: { cpus: 2, memory: 4g }
+      networking:
+        network: bridge
