@@ -358,7 +358,9 @@ jobs:
         # before anything performs (the record is already pushed)
         run: |
           if [ -n "$GUARD_RUNTIME" ]; then
-            just runtime-unchanged "$GUARD_RUNTIME" "${{ steps.proof.outputs.before }}"
+            for guarded in $GUARD_RUNTIME; do
+              just runtime-unchanged "$guarded" "${{ steps.proof.outputs.before }}"
+            done
           else
             echo "no runtime is guarded (GUARD_RUNTIME is empty)"
           fi
