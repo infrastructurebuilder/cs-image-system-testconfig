@@ -93,7 +93,7 @@ bash generated/bootstrap/set-secrets.sh
 - The first performing run (CI_SETUP.md 3.8), after the secrets are set.
 - The network and the firewall rules: the team's, never modified by the system.
 - No WRITE service account: `GCP_APPLY_SERVICE_ACCOUNT` is set to the READ-ONLY account's address (CI never writes to a runtime it does not perform on), or delete those lines from the `perform` job (CI_SETUP.md 3.4 step 4).
-- The nine secrets' VALUES: one file per secret under the secrets directory (`_uncommitted/secrets`, never committed), then `bash set-secrets.sh` (CI_SETUP.md 3.7).
+- The secrets' VALUES: one file per secret under the secrets directory (`_uncommitted/secrets`, never committed), then `bash set-secrets.sh` (CI_SETUP.md 3.7).
 - The age identity for CI (CI_SETUP.md 3.6): `age-keygen`, the public key into encryption.recipients, `reencrypt`.
 - The values in `.github/workflows/ci.yml` still marked REPLACE-ME: PERFORM_RUNTIME, GUARD_RUNTIME and AWS_REGION are set as Actions variables by this root, but the workflow reads its own literals until a release makes it read `vars`.
 - Ask the org's Okta admins to confirm the API services app grants no `*.manage` scope and allows private-key client authentication only: its read scopes cannot see its own record, so the bootstrap could not check either.
@@ -121,6 +121,8 @@ not created, and whatever else relies on them loses them:
 | `TF_VAR_KEY` | a file named after it in the secrets directory |
 | `TF_VAR_SECRET` | a file named after it in the secrets directory |
 | `CSIS_CONFIG_IDENTITY` | a file named after it in the secrets directory |
+| `DOCKER_HOST_SSH_KEY` | a file named after it in the secrets directory |
+| `DOCKER_HOST_KNOWN_HOSTS` | a file named after it in the secrets directory |
 | `CSIS_PROOF_SSH_KEY` | a file named after it in the secrets directory |
 
 ## Afterwards

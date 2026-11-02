@@ -39,5 +39,9 @@ from_file TF_VAR_KEY
 from_file TF_VAR_SECRET
 # CI's age identity, the whole file (3.6)
 from_file CSIS_CONFIG_IDENTITY
+# the private key (PEM) of a user on the docker host who may use its daemon (3.4a; only with a docker host CI reaches)
+from_file DOCKER_HOST_SSH_KEY
+# the docker host's known_hosts line, checked by hand (3.4a; only with a docker host CI reaches)
+from_file DOCKER_HOST_KNOWN_HOSTS
 # a posix group's proof user's private key, PEM (3.7; only with one)
 from_file CSIS_PROOF_SSH_KEY
