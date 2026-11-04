@@ -68,39 +68,32 @@ or CI's on `main`. `.gitignore` keeps only tool residue out of that commit
 
 ## What stands
 
-The reference configuration keeps one durable machine on AWS and two EFS
-filesystems, and the records in `meta-state/` are its memory; this
-section is the human summary, revised when the machine changes (stages
-72 and 73 of the system, 2026-09-30 and 2026-10-01).
+The reference configuration keeps one durable machine on AWS (the
+`coops-model` instance, the standing working node of the `coops` group),
+one EBS volume mounted on it, two EFS filesystems, and an ephemeral GCE
+instance (`gce-test`) that exists only within a cycle run. The records
+under `meta-state/` are the memory of what stands, and they are the only
+place this repository says so:
 
-- **`coops-model`** stands as `coops-model-005`: durable generation 5,
-  alias `gar` (the pool's third live draw, after `cod` and `eel`), a
-  `t3.medium` on `ami-06863fb35ff62f9ba` (the coops model image's third
-  release). Its biography is `meta-state/instance-state.yaml`: generation
-  3 (`coops-model-003`, alias `cod`) was resized in place twice on
-  2026-09-30 (`c5n.4xlarge` to `t3.xlarge` to `t3.medium`, two `resized`
-  events on the one generation, the same instance id throughout) and then
-  decommissioned the same day; generation 4 (`coops-model-004`, alias
-  `eel`) was raised from the same image with the same storages and proved
-  the EFS data persisted, then decommissioned on 2026-10-01; generation 5
-  was raised onto a different share.
-- **`/mnt/efs` is `efs-scratch`** (`fs-09c4927fd6e539753`, declared
-  2026-10-01, coops access point only): empty when the machine first
-  mounted it. **`efs-storage`** (`fs-02d658f1561aab44b`, coops and stofs
-  access points) is still declared and still holds everything it held --
-  including `/ABC/DEF/here_we_are.txt`, the file stage 72 planted to prove
-  persistence -- and is mounted by no machine. Its fate (keep as an
-  archive, re-attach to something, or delete the entry and with it the
-  filesystem) is the operator's decision, not yet taken.
-- **`/mnt/data` is `mnt_data`** (`vol-0fe1e27716f86c2f2`, 100 GB,
-  us-east-2a), attached to every generation so far; its contents came
-  through each replacement.
-- `gce-test` is declared `ephemeral: true` on `gcloud-east1` and stands
-  only within a cycle run.
+- `meta-state/instance-state.yaml`: every generation of every instance
+  (its hostname, alias, image and instance id), with the `resized`,
+  `decommissioned` and replacement events that make up its biography.
+- `meta-state/storage.yaml` and `meta-state/storage-state.yaml`: each
+  declared storage, its provider id, and where it is in its lifecycle.
+- `meta-state/pins.yaml` and `meta-state/releases.yaml`: which build each
+  instance follows and which builds are released.
 
-The strict state query (`just state-query --strict`) is the word on
-whether this summary and reality agree; `main`'s `perform` job runs it
-last, after logging in to the machine by its bare name.
+The strict state query (`just state-query --strict`) reads the clouds and
+the OPA API and reports every drift between those records and what
+exists; `main`'s `perform` job runs it last, after logging in to the
+machine by its bare name. A fact about what stands belongs in a record,
+not in this page, so that the query can check it.
+
+One open decision is recorded here because no record holds it:
+`efs-storage` is declared, still holds what it held, and is mounted by no
+machine (the machine mounts `efs-scratch`). Whether it stays as an
+archive, is re-attached, or is deleted together with its filesystem is
+the operator's decision, not yet taken.
 
 ## Branches and CI
 
