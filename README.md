@@ -13,7 +13,7 @@ sandbox on AWS and GCE, with SSH access governed by Okta Privileged
 Access. What each file and field means is in the system's
 [configuration reference](https://github.com/infrastructurebuilder/cs-image-system-3/blob/develop/docs/CONFIGURATION.md);
 how a team works with such a repository, from the first command on, is
-its [daily driver](https://github.com/infrastructurebuilder/cs-image-system-3/blob/develop/DAILY_DRIVER.md).
+its [daily driver](https://github.com/infrastructurebuilder/cs-image-system-3/blob/develop/docs/DAILY_DRIVER.md).
 
 It is also the system's REFERENCE configuration: the tree the system's own
 live proofs run against, and the first repository ever written by
