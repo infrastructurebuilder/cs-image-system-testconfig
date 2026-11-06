@@ -119,8 +119,10 @@ take version patched="no":
 	test_index=(--index-url https://test.pypi.org/simple/ --extra-index-url https://pypi.org/simple/ --index-strategy unsafe-first-match)
 	index=(); [[ "$version" == *.dev* ]] && index=("${test_index[@]}")
 	oldindex=(); [[ "$old" == *.dev* ]] && oldindex=("${test_index[@]}")
+	# the umbrella with the extras this tree's `type:` words need (`just extras`): a bare install carries no runtime
+	extras=$(just extras)
 	if [ -z "${CSIS:-}" ]; then
-		uv tool install --force ${index[@]+"${index[@]}"} "cs-image-system==$version" >/dev/null 2>&1 || { echo "take: cs-image-system==$version could not be installed from the index (a development release is on TestPyPI, a final one on PyPI) -- nothing was changed"; exit 1; }
+		uv tool install --force ${index[@]+"${index[@]}"} "cs-image-system${extras:+[$extras]}==$version" >/dev/null 2>&1 || { echo "take: cs-image-system${extras:+[$extras]}==$version could not be installed from the index (a development release is on TestPyPI, a final one on PyPI) -- nothing was changed"; exit 1; }
 	fi
 	have=$({{csis}} --version 2>/dev/null | awk '{print $NF}')
 	if [ "$have" != "$version" ]; then
@@ -155,6 +157,36 @@ take version patched="no":
 	git commit -q -m "Take $version"
 	git push origin develop
 	echo "take: $version is taken and develop is pushed. Pushing develop to main is its own act (main performs): git push origin develop:main"
+
+# The extras of the umbrella this tree needs, comma-separated in the order aws,gcloud,docker,okta
+# (empty when it needs none): `uv tool install cs-image-system` carries no runtime, and each provider
+# is an extra -- `cs-image-system[aws,okta]`. Read from the `type:` words under cfg/ (every file but
+# executables.yml, which names tools, not plugins): a runtime's word, its terraform roots' instance
+# and storage words, its state backend's word and the Okta identity words map to their extra. The
+# table is the umbrella's own, cs_image_system.extras.WORDS; a test holds the two to be one.
+# `take` and the workflows install with it: "cs-image-system${extras:+[$extras]}==$version".
+[private]
+extras:
+	#!/usr/bin/env bash
+	set -euo pipefail
+	aws=; gcloud=; docker=; okta=
+	words=$(for f in "{{root}}"/cfg/*.yml; do
+		[ -f "$f" ] || continue
+		case "$f" in */executables.yml) continue ;; esac
+		sed -n 's/^[[:space:]]*type:[[:space:]]*\([^#[:space:]]*\).*/\1/p' "$f"
+	done | tr -d "'\"" | sort -u)
+	for word in $words; do
+		case "$word" in
+			aws|s3|tf-aws|tf-aws-ebs|tf-aws-efs|tf-aws-s3|tofu) aws=aws ;;
+			gcloud|gcs|tf-gcp|tf-gcp-filestore|tf-gcp-gcs|tf-gcp-pd|tofu-gce) gcloud=gcloud ;;
+			docker|tf-docker-volume|tofu-docker) docker=docker ;;
+			okta-tf|okta-tf-ro) okta=okta ;;
+			*) ;;
+		esac
+	done
+	out=""
+	for extra in $aws $gcloud $docker $okta; do out="${out:+$out,}$extra"; done
+	printf '%s\n' "$out"
 
 # ------------------------------------------------------------ every day
 
