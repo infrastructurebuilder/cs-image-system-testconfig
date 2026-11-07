@@ -6,7 +6,7 @@
 image_builders:
   - name: pckr-ebs-ans
     is_default: true
-    type: packer-ebs
+    type: packer
     # Optional, but if the version is specified, it must actually match
     runtime: default
     executable: packer    
@@ -20,7 +20,7 @@ image_builders:
         source: github.com/hashicorp/ansible
         version: '>= 1.0.0'    
   - name: some-other-builder
-    type: packer-ebs
+    type: packer
     # Optional, but if the version is specified, it must actually match
     runtime: default
     executable: packer   # stage 48.1: the phantom packer-1.9.4 entry is gone; every declared executable must exist
@@ -35,7 +35,7 @@ image_builders:
         version: '>= 1.0.0'
   # GCP readiness (2026-09-02): GCE bakes via the googlecompute source
   - name: pckr-gce-ans
-    type: packer-gce
+    type: packer
     runtime: gcloud-east1
     executable: packer
     # stage 26: `parameters: [build, .]` removed -- argv the packer plugin assembles itself;
@@ -51,7 +51,7 @@ image_builders:
   # Stage 103: bakes on the docker runtime (a base image pulled and pinned by digest,
   # the ansible modifications run in the container, the result committed as a tag).
   - name: packer-docker
-    type: packer-docker
+    type: packer
     runtime: docker-orbstack
     executable: packer
     required_plugins:
