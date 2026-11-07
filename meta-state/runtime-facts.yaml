@@ -1,0 +1,32 @@
+runtimes:
+  aws-east1:
+    checked_at: '2026-11-07T00:12:50+00:00'
+    network: vpc-0381e9f82c9ae68e7
+    security_groups: []
+    subnets:
+    - subnet-010dcda462c567c27
+    - subnet-0978450a55b662bd3
+    - subnet-01ce99f9006e8ed06
+    - subnet-027cfa8f898714c8e
+  aws-east2-runtime:
+    checked_at: '2026-11-07T00:12:51+00:00'
+    network: vpc-0c78d0d63b7a100df
+    security_groups:
+    - sg-03015ec107ae5f81a
+    subnets:
+    - subnet-09f79018af845358a
+    - subnet-00075cfbfcbc8f2cf
+    - subnet-01e56d2f9c1c95cc8
+    - subnet-0c127b762e075a94d
+  gcloud-east1:
+    checked_at: '2026-11-07T00:13:01+00:00'
+    network: default
+    subnets:
+    - projects/csis-sandbox/regions/us-east1/subnetworks/default
+  west1:
+    checked_at: '2026-11-07T00:13:03+00:00'
+    network: vpc-0415ea827d48782fe
+    security_groups: []
+    subnets:
+    - subnet-09add21146fbccbc3
+    - subnet-0ca0978d152fca976
