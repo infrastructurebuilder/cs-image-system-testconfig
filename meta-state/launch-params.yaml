@@ -29,9 +29,9 @@ instances:
       share_mode: '2775'
       storage: efs-scratch
       type: efs
-    run: 2026_11_11t12_40_44_501405
+    run: 2026_11_11t12_51_12_190597
     session: ssm
-    user_data_sha256: 6c363d6b7fe83a4aa4d7f7141d45c5d256619bdb1411abbae969089a551591de
+    user_data_sha256: 542ea8c643b461a7c7b70b0aab730035ad70e42d9e22c6fba80c9a30c542b84d
   gce-test:
     build: imgfile-basic-dask-pckr-gce-ans-20260926-064527
     enrollment:
@@ -53,6 +53,6 @@ instances:
       share_mode: '2770'
       storage: gce_data
       type: pd
-    run: 2026_11_11t12_40_44_501405
+    run: 2026_11_11t12_51_12_190597
     session: iap
-    user_data_sha256: 21a6594fdeb74b7eefebd83f62cf1565133fd507ca54256d0f109f6be10976a4
+    user_data_sha256: 8a78966bd6b12f424d01e6bdb6e65b2f7220ebedc1c5786399d51a784c35e6ba

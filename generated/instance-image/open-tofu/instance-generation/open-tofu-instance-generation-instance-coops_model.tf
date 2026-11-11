@@ -24,8 +24,8 @@ module "instance_coops_model" {
         "file_system_id"  = data.terraform_remote_state.aws_efs.outputs.storage_efs_scratch.file_system_id
       }
     }
-    "enrollment_token" = (var.enrollment_token != "" ? var.enrollment_token : data.terraform_remote_state.oktagroups.outputs.group_enrollment_tokens["coops"])
-    "group_gid"        = data.terraform_remote_state.oktagroups.outputs.group_gids["coops"]
+    "group_gid"            = data.terraform_remote_state.oktagroups.outputs.group_gids["coops"]
+    "sft_enrollment_token" = (var.sft_enrollment_token != "" ? var.sft_enrollment_token : data.terraform_remote_state.oktagroups.outputs.group_enrollment_tokens["coops"])
   })
   ebs_volumes = {
     "mnt_data" = {
