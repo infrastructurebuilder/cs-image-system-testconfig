@@ -1,0 +1,3 @@
+plugin: docker-runtime
+release: 0.1.7
+hash: sha256:e58890b2b9af489c5152619a7fe84d4ac649b68d5913831ee992bc66653d2628
