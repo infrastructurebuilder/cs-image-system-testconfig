@@ -12,10 +12,10 @@ module "instance_gce_test" {
   public_ip    = false
   labels       = { "csis_config" = "cs-image-action-test" }
   startup_script = templatefile("${path.module}/user-data-gce_test.sh.tftpl", {
-    "efs"                  = {}
-    "filestore"            = {}
-    "group_gid"            = data.terraform_remote_state.oktagroups.outputs.group_gids["coops"]
-    "sft_enrollment_token" = var.sft_enrollment_token
+    "ebs"              = {}
+    "efs"              = {}
+    "enrollment_token" = var.enrollment_token
+    "group_gid"        = data.terraform_remote_state.oktagroups.outputs.group_gids["coops"]
   })
   attached_disks = {
     "gce_data" = {

@@ -1,17 +1,4 @@
 runs:
-- apply:
-    base-image: stale-script-skipped
-    identity: executed
-    instance-image: stale-script-skipped
-    release: stale-script-skipped
-    retention: stale-script-skipped
-    storage: stale-script-skipped
-  dry_run: false
-  error: null
-  ok: true
-  requested:
-  - identity
-  run: 2026_09_22t08_20_35_419227
 - apply: {}
   dry_run: false
   error: 'LifecycleRunError: Validation failed with 5 error(s)'
@@ -3224,3 +3211,21 @@ runs:
   - release
   - retention
   run: 2026_11_11t12_51_12_190597
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_11_12t07_34_12_604653
