@@ -1,12 +1,4 @@
 runs:
-- apply:
-    identity: failed
-  dry_run: false
-  error: 'LifecycleRunError: Apply failed for lifecycle identity'
-  ok: false
-  requested:
-  - identity
-  run: 2026_09_23t10_14_12_559979
 - apply: {}
   dry_run: false
   error: 'CalledProcessError: Command ''[''/usr/local/bin/tofu'', ''plan'']'' returned
@@ -3288,3 +3280,21 @@ runs:
   - release
   - retention
   run: 2026_11_14t13_21_35_622181
+- apply:
+    base-image: dry-run
+    identity: dry-run
+    instance-image: dry-run
+    release: dry-run
+    retention: dry-run
+    storage: dry-run
+  dry_run: true
+  error: null
+  ok: true
+  requested:
+  - identity
+  - storage
+  - base-image
+  - instance-image
+  - release
+  - retention
+  run: 2026_11_16t05_30_19_030828
