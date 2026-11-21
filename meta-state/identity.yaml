@@ -17,7 +17,7 @@ groups:
       policy: basic_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
       role_id: 69d795dc-c911-47d0-979e-d157d2cba70d
-      run: 2026_11_20t18_37_19_943380
+      run: 2026_11_20t18_57_39_890189
   coops:
     admins:
     - mykel.alvis
@@ -37,7 +37,7 @@ groups:
       policy: coops_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
       role_id: 69d795dc-c911-47d0-979e-d157d2cba70d
-      run: 2026_11_20t18_37_19_943380
+      run: 2026_11_20t18_57_39_890189
   pxproof:
     admins: []
     builder: posix-local
@@ -69,7 +69,7 @@ groups:
       policy: secofs_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
       role_id: 69d795dc-c911-47d0-979e-d157d2cba70d
-      run: 2026_11_20t18_37_19_943380
+      run: 2026_11_20t18_57_39_890189
   stofs:
     admins:
     - mykel.alvis
@@ -90,7 +90,7 @@ groups:
       policy: stofs_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
       role_id: 69d795dc-c911-47d0-979e-d157d2cba70d
-      run: 2026_11_20t18_37_19_943380
+      run: 2026_11_20t18_57_39_890189
   tcmet:
     admins:
     - jason.ducker
@@ -114,9 +114,9 @@ groups:
       policy: tcmet_v1_security_policy_ci
       role: cs-image-system-testconfig-ci
       role_id: 69d795dc-c911-47d0-979e-d157d2cba70d
-      run: 2026_11_20t18_37_19_943380
+      run: 2026_11_20t18_57_39_890189
 note: structural facts only; gids flow by terraform remote-state reference (N7)
-run: 2026_11_20t18_37_19_943380
+run: 2026_11_20t18_57_39_890189
 user_builders:
   okta-tf-users: okta-tf-ro
 users:

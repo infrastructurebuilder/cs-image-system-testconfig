@@ -575,3 +575,14 @@ upgrades:
   op: ephemeral
   run: 2026_11_20t18_37_19_943380
   to: null
+- kind: instance
+  name: gce-test
+  op: bind
+  run: 2026_11_20t18_57_39_890189
+  to: imgfile-basic-dask-pckr-gce-ans-20260926-064527
+- from: imgfile-basic-dask-pckr-gce-ans-20260926-064527
+  kind: instance
+  name: gce-test
+  op: ephemeral
+  run: 2026_11_20t18_57_39_890189
+  to: null

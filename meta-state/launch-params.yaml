@@ -29,6 +29,6 @@ instances:
       share_mode: '2775'
       storage: efs-scratch
       type: efs
-    run: 2026_11_20t18_37_19_943380
+    run: 2026_11_20t18_57_39_890189
     session: ssm
     user_data_sha256: 6c363d6b7fe83a4aa4d7f7141d45c5d256619bdb1411abbae969089a551591de

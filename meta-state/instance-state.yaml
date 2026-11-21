@@ -273,7 +273,7 @@ instances:
   gce-test:
     generation:
       durable: 0
-      ephemeral: 6
+      ephemeral: 7
     history:
     - closed_at: '2026-09-24T17:31:17+00:00'
       closed_run: 2026_09_24t12_01_15_155175
@@ -467,6 +467,39 @@ instances:
       number: 6
       opened_at: '2026-11-21T00:50:13+00:00'
       opened_run: 2026_11_20t18_37_19_943380
+      why: ephemeral
+    - closed_at: '2026-11-21T01:11:10+00:00'
+      closed_run: 2026_11_20t18_57_39_890189
+      how: inferred
+      kind: ephemeral
+      launch_params:
+        build: imgfile-basic-dask-pckr-gce-ans-20260926-064527
+        enrollment:
+          enrollment: sftd-token
+          server_label: sftd.tx.group=coops
+        ephemeral: true
+        group: coops
+        hostname: gce-test-007
+        identity_type: okta
+        image: imgfile-basic-dask
+        launched: true
+        launched_run: 2026_11_20t18_57_39_890189
+        machine_type: e2-micro
+        mounts:
+        - builder: gcp-pd
+          device: /dev/disk/by-id/google-gce-data
+          group: coops
+          mount_point: /mnt/gce-data
+          public_read: false
+          share_mode: '2770'
+          storage: gce_data
+          type: pd
+        run: 2026_11_20t18_57_39_890189
+        session: iap
+        user_data_sha256: 6bcf1866042244e98eb23c3b24ccd0b660df82db57dcf7b51a98a4ab29910851
+      number: 7
+      opened_at: '2026-11-21T01:11:09+00:00'
+      opened_run: 2026_11_20t18_57_39_890189
       why: ephemeral
   posix-proof:
     generation:
