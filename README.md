@@ -40,9 +40,21 @@ for byte:
 The command comes from a release (`uv tool install cs-image-system`, or a
 `pyproject.toml` depending on it with `CSIS="uv run cs-image-system"`).
 Whoever develops the system drives this tree with the development
-checkout instead: `export CSIS=<checkout>/.venv/bin/cs-image-system` (the
-ignored `.envrc` here does that), or `just cli ...` from the system
-repository, which points at this checkout beside it by default.
+checkout instead. The checkout's venv does not hold the Google Cloud
+family this tree declares (the family is released from its own
+repository), so the command goes through the checkout's
+`scripts/with-released-families`, which layers the family in from the
+package index for each command:
+
+```sh
+export CSIS="uv run --project <checkout> --no-sync python <checkout>/scripts/with-released-families cs-image-system"
+```
+
+The ignored `.envrc` here sets it. Pointing `CSIS` at
+`<checkout>/.venv/bin/cs-image-system` alone no longer loads this tree
+(`runtime type 'gcloud' is registered by no installed plugin`). Or run
+`just cli ...` from the system repository, which points at this checkout
+beside it by default and layers the family in the same way.
 
 ```sh
 just init                          # the hook, the plugin cache, a check that the command runs
