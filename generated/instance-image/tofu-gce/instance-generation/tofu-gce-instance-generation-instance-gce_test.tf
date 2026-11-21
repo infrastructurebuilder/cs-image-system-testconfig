@@ -3,7 +3,7 @@
 module "instance_gce_test" {
   source       = "../../../../tfmodules/gce_instance"
   providers    = { google = google.tofu_gce }
-  count        = 0 # ephemeral, not standing, not launched by this run
+  count        = var.ephemeral_present ? 1 : 0
   name         = "gce-test"
   image        = "imgfile-basic-dask-pckr-gce-ans-20260926-064527"
   machine_type = "e2-micro"
