@@ -8,6 +8,7 @@ images:
   imgfile-data-science@aws-east2-runtime: ami-08a52e8f7f287b40a
 instances:
   coops-model: ami-0d328aa065b74c6aa
+  gce-test: imgfile-basic-dask-pckr-gce-ans-20260926-064527
 pending_replacements: {}
 upgrades:
 - kind: image
@@ -586,3 +587,8 @@ upgrades:
   op: ephemeral
   run: 2026_11_20t18_57_39_890189
   to: null
+- kind: instance
+  name: gce-test
+  op: bind
+  run: 2026_11_20t21_12_05_945730
+  to: imgfile-basic-dask-pckr-gce-ans-20260926-064527

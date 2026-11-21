@@ -29,6 +29,30 @@ instances:
       share_mode: '2775'
       storage: efs-scratch
       type: efs
-    run: 2026_11_20t18_57_39_890189
+    run: 2026_11_20t21_12_05_945730
     session: ssm
     user_data_sha256: 6c363d6b7fe83a4aa4d7f7141d45c5d256619bdb1411abbae969089a551591de
+  gce-test:
+    build: imgfile-basic-dask-pckr-gce-ans-20260926-064527
+    enrollment:
+      enrollment: sftd-token
+      server_label: sftd.tx.group=coops
+    ephemeral: true
+    group: coops
+    hostname: gce-test-008
+    identity_type: okta
+    image: imgfile-basic-dask
+    launched: false
+    machine_type: e2-micro
+    mounts:
+    - builder: gcp-pd
+      device: /dev/disk/by-id/google-gce-data
+      group: coops
+      mount_point: /mnt/gce-data
+      public_read: false
+      share_mode: '2770'
+      storage: gce_data
+      type: pd
+    run: 2026_11_20t21_12_05_945730
+    session: iap
+    user_data_sha256: f17035ff94358663feb086bae2be658430c89b3379538c0c21ef6a6eb0c9fa96
